@@ -1,0 +1,418 @@
+{
+  "method": "adaptive_tree",
+  "state_dim": 4,
+  "state_names": [
+    "x",
+    "x_dot",
+    "theta",
+    "theta_dot"
+  ],
+  "mean": [
+    0.005036613483441086,
+    -0.013208740521669884,
+    -0.003965214396338761,
+    0.007949643843717963
+  ],
+  "scale": [
+    2.4,
+    3.0,
+    0.21,
+    3.0
+  ],
+  "n_regions": 49,
+  "tree": {
+    "dim": 3,
+    "dim_name": "theta_dot",
+    "threshold": 0.022273215713319614,
+    "left": {
+      "dim": 1,
+      "dim_name": "x_dot",
+      "threshold": 0.01877834746215095,
+      "left": {
+        "dim": 2,
+        "dim_name": "theta",
+        "threshold": -0.11653580147680262,
+        "left": {
+          "dim": 2,
+          "dim_name": "theta",
+          "threshold": -0.5506038050574864,
+          "left": {
+            "region_id": 0
+          },
+          "right": {
+            "dim": 0,
+            "dim_name": "x",
+            "threshold": 0.013816895029937134,
+            "left": {
+              "dim": 3,
+              "dim_name": "theta_dot",
+              "threshold": -0.017334097773117355,
+              "left": {
+                "region_id": 1
+              },
+              "right": {
+                "dim": 1,
+                "dim_name": "x_dot",
+                "threshold": 0.0024134714882243016,
+                "left": {
+                  "region_id": 2
+                },
+                "right": {
+                  "region_id": 3
+                }
+              }
+            },
+            "right": {
+              "region_id": 4
+            }
+          }
+        },
+        "right": {
+          "dim": 3,
+          "dim_name": "theta_dot",
+          "threshold": -0.012970217342458698,
+          "left": {
+            "dim": 0,
+            "dim_name": "x",
+            "threshold": -0.0019787012672333147,
+            "left": {
+              "region_id": 5
+            },
+            "right": {
+              "region_id": 6
+            }
+          },
+          "right": {
+            "dim": 2,
+            "dim_name": "theta",
+            "threshold": 0.15104415444424749,
+            "left": {
+              "dim": 3,
+              "dim_name": "theta_dot",
+              "threshold": -0.0008789707122900743,
+              "left": {
+                "dim": 1,
+                "dim_name": "x_dot",
+                "threshold": -0.002019192427247597,
+                "left": {
+                  "region_id": 7
+                },
+                "right": {
+                  "dim": 0,
+                  "dim_name": "x",
+                  "threshold": -0.00026701918951637564,
+                  "left": {
+                    "region_id": 8
+                  },
+                  "right": {
+                    "region_id": 9
+                  }
+                }
+              },
+              "right": {
+                "dim": 2,
+                "dim_name": "theta",
+                "threshold": -0.04995867785091864,
+                "left": {
+                  "region_id": 10
+                },
+                "right": {
+                  "dim": 1,
+                  "dim_name": "x_dot",
+                  "threshold": 0.0009755024398202691,
+                  "left": {
+                    "region_id": 11
+                  },
+                  "right": {
+                    "region_id": 12
+                  }
+                }
+              }
+            },
+            "right": {
+              "dim": 3,
+              "dim_name": "theta_dot",
+              "threshold": 0.008810994438546363,
+              "left": {
+                "dim": 1,
+                "dim_name": "x_dot",
+                "threshold": 0.004819830711401072,
+                "left": {
+                  "region_id": 13
+                },
+                "right": {
+                  "region_id": 14
+                }
+              },
+              "right": {
+                "region_id": 15
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "dim": 1,
+        "dim_name": "x_dot",
+        "threshold": 0.3326349415942035,
+        "left": {
+          "dim": 3,
+          "dim_name": "theta_dot",
+          "threshold": -0.17661046793505472,
+          "left": {
+            "dim": 2,
+            "dim_name": "theta",
+            "threshold": -0.3969547353338576,
+            "left": {
+              "dim": 0,
+              "dim_name": "x",
+              "threshold": 0.02172256062874686,
+              "left": {
+                "dim": 3,
+                "dim_name": "theta_dot",
+                "threshold": -0.4417633392788793,
+                "left": {
+                  "region_id": 16
+                },
+                "right": {
+                  "dim": 2,
+                  "dim_name": "theta",
+                  "threshold": -0.48521007784386905,
+                  "left": {
+                    "region_id": 17
+                  },
+                  "right": {
+                    "region_id": 18
+                  }
+                }
+              },
+              "right": {
+                "dim": 3,
+                "dim_name": "theta_dot",
+                "threshold": -0.3558835755167231,
+                "left": {
+                  "dim": 1,
+                  "dim_name": "x_dot",
+                  "threshold": 0.26695572057339895,
+                  "left": {
+                    "region_id": 19
+                  },
+                  "right": {
+                    "region_id": 20
+                  }
+                },
+                "right": {
+                  "dim": 3,
+                  "dim_name": "theta_dot",
+                  "threshold": -0.3051053788639928,
+                  "left": {
+                    "region_id": 21
+                  },
+                  "right": {
+                    "region_id": 22
+                  }
+                }
+              }
+            },
+            "right": {
+              "dim": 0,
+              "dim_name": "x",
+              "threshold": 0.02029555827929236,
+              "left": {
+                "dim": 2,
+                "dim_name": "theta",
+                "threshold": -0.17701126822015079,
+                "left": {
+                  "dim": 2,
+                  "dim_name": "theta",
+                  "threshold": -0.2241757420801875,
+                  "left": {
+                    "region_id": 23
+                  },
+                  "right": {
+                    "region_id": 24
+                  }
+                },
+                "right": {
+                  "dim": 1,
+                  "dim_name": "x_dot",
+                  "threshold": 0.19226454919219035,
+                  "left": {
+                    "region_id": 25
+                  },
+                  "right": {
+                    "region_id": 26
+                  }
+                }
+              },
+              "right": {
+                "dim": 0,
+                "dim_name": "x",
+                "threshold": 0.027773272498940342,
+                "left": {
+                  "dim": 1,
+                  "dim_name": "x_dot",
+                  "threshold": 0.19966292698158175,
+                  "left": {
+                    "region_id": 27
+                  },
+                  "right": {
+                    "region_id": 28
+                  }
+                },
+                "right": {
+                  "dim": 0,
+                  "dim_name": "x",
+                  "threshold": 0.03376499062022724,
+                  "left": {
+                    "region_id": 29
+                  },
+                  "right": {
+                    "region_id": 30
+                  }
+                }
+              }
+            }
+          },
+          "right": {
+            "dim": 0,
+            "dim_name": "x",
+            "threshold": -0.013174014534061243,
+            "left": {
+              "dim": 2,
+              "dim_name": "theta",
+              "threshold": 0.05598002950916259,
+              "left": {
+                "region_id": 31
+              },
+              "right": {
+                "region_id": 32
+              }
+            },
+            "right": {
+              "dim": 1,
+              "dim_name": "x_dot",
+              "threshold": 0.07929735576748864,
+              "left": {
+                "dim": 3,
+                "dim_name": "theta_dot",
+                "threshold": -0.1089738490559484,
+                "left": {
+                  "dim": 3,
+                  "dim_name": "theta_dot",
+                  "threshold": -0.11579753336421239,
+                  "left": {
+                    "region_id": 33
+                  },
+                  "right": {
+                    "region_id": 34
+                  }
+                },
+                "right": {
+                  "dim": 0,
+                  "dim_name": "x",
+                  "threshold": 0.01459750763276707,
+                  "left": {
+                    "region_id": 35
+                  },
+                  "right": {
+                    "region_id": 36
+                  }
+                }
+              },
+              "right": {
+                "dim": 2,
+                "dim_name": "theta",
+                "threshold": 0.16354897608748079,
+                "left": {
+                  "dim": 0,
+                  "dim_name": "x",
+                  "threshold": -0.0009488051343914999,
+                  "left": {
+                    "region_id": 37
+                  },
+                  "right": {
+                    "region_id": 38
+                  }
+                },
+                "right": {
+                  "region_id": 39
+                }
+              }
+            }
+          }
+        },
+        "right": {
+          "dim": 3,
+          "dim_name": "theta_dot",
+          "threshold": -0.5221664208549088,
+          "left": {
+            "dim": 2,
+            "dim_name": "theta",
+            "threshold": -0.5703095514394882,
+            "left": {
+              "dim": 0,
+              "dim_name": "x",
+              "threshold": 0.05679389538896903,
+              "left": {
+                "dim": 0,
+                "dim_name": "x",
+                "threshold": 0.039815263082081984,
+                "left": {
+                  "region_id": 40
+                },
+                "right": {
+                  "dim": 2,
+                  "dim_name": "theta",
+                  "threshold": -0.7927343026758135,
+                  "left": {
+                    "region_id": 41
+                  },
+                  "right": {
+                    "region_id": 42
+                  }
+                }
+              },
+              "right": {
+                "region_id": 43
+              }
+            },
+            "right": {
+              "dim": 0,
+              "dim_name": "x",
+              "threshold": 0.03339307931594873,
+              "left": {
+                "region_id": 44
+              },
+              "right": {
+                "region_id": 45
+              }
+            }
+          },
+          "right": {
+            "dim": 1,
+            "dim_name": "x_dot",
+            "threshold": 0.3420847740336261,
+            "left": {
+              "region_id": 46
+            },
+            "right": {
+              "region_id": 47
+            }
+          }
+        }
+      }
+    },
+    "right": {
+      "region_id": 48
+    }
+  },
+  "meta": {
+    "min_leaf": 40,
+    "max_depth": 8,
+    "max_regions": 48,
+    "var_eps": 1e-06,
+    "n_fit_transitions": 6219,
+    "fit_delta_var": 0.03156652523536814
+  }
+}

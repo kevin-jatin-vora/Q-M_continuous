@@ -1,0 +1,396 @@
+{
+  "source_json": "generated directly by scripts/train_reward_components.py",
+  "metadata": {
+    "dynamics_sigma": 0.0005,
+    "sigma_source": "explicit runtime argument/config",
+    "deterministic_sigma_scale": 0.0001,
+    "deterministic_sigma": 5.0000000000000004e-08,
+    "behavior_policies": [
+      "R1 epsilon-greedy DQN",
+      "R2 epsilon-greedy DQN"
+    ],
+    "seed_r1": 0,
+    "seed_r2": 1000000,
+    "delta_mean_semantics": "Pooled mean free displacement delta = s' - s per (category, action). Q_single trains on s' = clip(s + delta_mean).",
+    "delta_std_semantics": "Pooled per-axis sample std of delta around delta_mean.",
+    "student_t_half_width_semantics": "Student-t interval half-width per axis: t * delta_std * sqrt(1 + 1/n) at confidence_level.",
+    "pruning_radius_semantics": "r = L2 of student_t_half_width; RA-DQN margins use this as the radius of next s' around s + delta_mean.",
+    "delta_estimation": "Free region-action steps only (exclude boundary cancel/clip when configured)."
+  },
+  "config": {
+    "confidence_level": 0.95,
+    "exclude_boundary_affected_transitions": true
+  },
+  "by_region_action": {
+    "1": {
+      "0": {
+        "n_total": 8741,
+        "n_q1_behavior": 6544,
+        "n_q2_behavior": 2197,
+        "delta_mean": [
+          1.0137083327459288e-05,
+          -0.038401966430600565
+        ],
+        "delta_std": [
+          0.0004954678975803422,
+          0.0004996137373447732
+        ],
+        "student_t_half_width": [
+          0.0009712892910103936,
+          0.0009794165779347377
+        ],
+        "pruning_radius": 0.0013793693196402714
+      },
+      "1": {
+        "n_total": 2555,
+        "n_q1_behavior": 1412,
+        "n_q2_behavior": 1143,
+        "delta_mean": [
+          -1.0337581864417825e-05,
+          0.03840518501494262
+        ],
+        "delta_std": [
+          0.0005131561302101082,
+          0.0004913459849815618
+        ],
+        "student_t_half_width": [
+          0.0010064412959566132,
+          0.000963665560587667
+        ],
+        "pruning_radius": 0.0013934042467530984
+      },
+      "2": {
+        "n_total": 4387,
+        "n_q1_behavior": 3051,
+        "n_q2_behavior": 1336,
+        "delta_mean": [
+          -0.03840021753069315,
+          -4.835061307874231e-06
+        ],
+        "delta_std": [
+          0.0004964338023578081,
+          0.0005007015543118133
+        ],
+        "student_t_half_width": [
+          0.0009733718733272846,
+          0.0009817397759451893
+        ],
+        "pruning_radius": 0.0013824853675383252
+      },
+      "3": {
+        "n_total": 6481,
+        "n_q1_behavior": 1485,
+        "n_q2_behavior": 4996,
+        "delta_mean": [
+          0.03839308422077789,
+          6.932996998327949e-06
+        ],
+        "delta_std": [
+          0.000497170799764055,
+          0.0005019802792336572
+        ],
+        "student_t_half_width": [
+          0.0009746940925724174,
+          0.0009841229874906112
+        ],
+        "pruning_radius": 0.0013851088869121495
+      }
+    },
+    "2": {
+      "0": {
+        "n_total": 21011,
+        "n_q1_behavior": 19059,
+        "n_q2_behavior": 1952,
+        "delta_mean": [
+          1.584588779238221e-06,
+          -0.0419989776522819
+        ],
+        "delta_std": [
+          0.000594357096752586,
+          0.0005234878725149379
+        ],
+        "student_t_half_width": [
+          0.001165013340061394,
+          0.0010261009049482802
+        ],
+        "pruning_radius": 0.0015524622860658113
+      },
+      "1": {
+        "n_total": 4872,
+        "n_q1_behavior": 2622,
+        "n_q2_behavior": 2250,
+        "delta_mean": [
+          9.932696046261805e-06,
+          0.041999107174734374
+        ],
+        "delta_std": [
+          0.0005979114562772033,
+          0.000520302847608362
+        ],
+        "student_t_half_width": [
+          0.0011722964768886741,
+          0.001020132979160786
+        ],
+        "pruning_radius": 0.0015540110440074287
+      },
+      "2": {
+        "n_total": 24720,
+        "n_q1_behavior": 22405,
+        "n_q2_behavior": 2315,
+        "delta_mean": [
+          -0.03599672906257478,
+          6.685510856433981e-06
+        ],
+        "delta_std": [
+          0.0005897337980724854,
+          0.0005261878353280667
+        ],
+        "student_t_half_width": [
+          0.0011559369837908064,
+          0.0010313805674094653
+        ],
+        "pruning_radius": 0.001549172742248345
+      },
+      "3": {
+        "n_total": 4003,
+        "n_q1_behavior": 2256,
+        "n_q2_behavior": 1747,
+        "delta_mean": [
+          0.0360079485808585,
+          2.4129011438633246e-06
+        ],
+        "delta_std": [
+          0.0005933249087190271,
+          0.0005222663456641768
+        ],
+        "student_t_half_width": [
+          0.0011633925507168587,
+          0.0010240607921680103
+        ],
+        "pruning_radius": 0.0015498976524658818
+      }
+    },
+    "3": {
+      "0": {
+        "n_total": 20929,
+        "n_q1_behavior": 20057,
+        "n_q2_behavior": 872,
+        "delta_mean": [
+          -3.202240159512143e-06,
+          -0.03519882118626037
+        ],
+        "delta_std": [
+          0.000547283021516444,
+          0.0006116048717950535
+        ],
+        "student_t_half_width": [
+          0.0010727426789571399,
+          0.0011988214924240077
+        ],
+        "pruning_radius": 0.001608710609759837
+      },
+      "1": {
+        "n_total": 1578,
+        "n_q1_behavior": 1208,
+        "n_q2_behavior": 370,
+        "delta_mean": [
+          2.4039712684354136e-06,
+          0.03518567357745839
+        ],
+        "delta_std": [
+          0.0005715205519205987,
+          0.0006190573736905499
+        ],
+        "student_t_half_width": [
+          0.0011213752285464595,
+          0.0012146467901683717
+        ],
+        "pruning_radius": 0.001653133154970873
+      },
+      "2": {
+        "n_total": 17967,
+        "n_q1_behavior": 17213,
+        "n_q2_behavior": 754,
+        "delta_mean": [
+          -0.04319407219323178,
+          2.3472488558146587e-07
+        ],
+        "delta_std": [
+          0.0005501384844007115,
+          0.0006103266868505872
+        ],
+        "student_t_half_width": [
+          0.0010783542703238433,
+          0.0011963322103795044
+        ],
+        "pruning_radius": 0.0016106081739259799
+      },
+      "3": {
+        "n_total": 1596,
+        "n_q1_behavior": 1235,
+        "n_q2_behavior": 361,
+        "delta_mean": [
+          0.04320140598916022,
+          2.2350605036366034e-05
+        ],
+        "delta_std": [
+          0.0005352330202032166,
+          0.00061657501492366
+        ],
+        "student_t_half_width": [
+          0.0010501629423608405,
+          0.0012097613701272886
+        ],
+        "pruning_radius": 0.001601987758430205
+      }
+    },
+    "4": {
+      "0": {
+        "n_total": 387,
+        "n_q1_behavior": 166,
+        "n_q2_behavior": 221,
+        "delta_mean": [
+          -2.4137995626960307e-05,
+          -0.03998852700226067
+        ],
+        "delta_std": [
+          0.0004643121736570994,
+          0.0006322395333598417
+        ],
+        "student_t_half_width": [
+          0.0009140762081608188,
+          0.0012446693153682579
+        ],
+        "pruning_radius": 0.001544259375540569
+      },
+      "1": {
+        "n_total": 1419,
+        "n_q1_behavior": 571,
+        "n_q2_behavior": 848,
+        "delta_mean": [
+          4.806766487327237e-06,
+          0.03998929157149548
+        ],
+        "delta_std": [
+          0.0004764403187933412,
+          0.0006312965317081522
+        ],
+        "student_t_half_width": [
+          0.0009349328648094008,
+          0.0012388117706514943
+        ],
+        "pruning_radius": 0.0015520161290416424
+      },
+      "2": {
+        "n_total": 534,
+        "n_q1_behavior": 205,
+        "n_q2_behavior": 329,
+        "delta_mean": [
+          -0.040004807716228545,
+          -3.239869624934393e-05
+        ],
+        "delta_std": [
+          0.00047594254843155167,
+          0.0006024738374172868
+        ],
+        "student_t_half_width": [
+          0.0009358283257598139,
+          0.0011846221449255347
+        ],
+        "pruning_radius": 0.0015096702558977542
+      },
+      "3": {
+        "n_total": 445,
+        "n_q1_behavior": 183,
+        "n_q2_behavior": 262,
+        "delta_mean": [
+          0.03998125465900711,
+          -1.4303105600764243e-05
+        ],
+        "delta_std": [
+          0.0004578103770427281,
+          0.0006483433336433142
+        ],
+        "student_t_half_width": [
+          0.0009007548598178411,
+          0.0012756338385820595
+        ],
+        "pruning_radius": 0.0015616020644264846
+      }
+    },
+    "5": {
+      "0": {
+        "n_total": 51198,
+        "n_q1_behavior": 6297,
+        "n_q2_behavior": 44901,
+        "delta_mean": [
+          1.5018163162673134e-10,
+          -0.0399999956403291
+        ],
+        "delta_std": [
+          5.268258508214456e-08,
+          5.095405268831889e-08
+        ],
+        "student_t_half_width": [
+          1.0325941895508905e-07,
+          9.987144453520847e-08
+        ],
+        "pruning_radius": 1.4365518799017258e-07
+      },
+      "1": {
+        "n_total": 12391,
+        "n_q1_behavior": 4697,
+        "n_q2_behavior": 7694,
+        "delta_mean": [
+          -5.147039779652003e-10,
+          0.04000000419975597
+        ],
+        "delta_std": [
+          5.2318694095478674e-08,
+          5.328689975641663e-08
+        ],
+        "student_t_half_width": [
+          1.0255691250258612e-07,
+          1.0445482270409292e-07
+        ],
+        "pruning_radius": 1.4638555355022772e-07
+      },
+      "2": {
+        "n_total": 39284,
+        "n_q1_behavior": 34287,
+        "n_q2_behavior": 4997,
+        "delta_mean": [
+          -0.03999999509653022,
+          -1.046934807342141e-10
+        ],
+        "delta_std": [
+          5.1609552504573675e-08,
+          5.035835455646021e-08
+        ],
+        "student_t_half_width": [
+          1.0115726841192949e-07,
+          9.870485872163906e-08
+        ],
+        "pruning_radius": 1.413345042366579e-07
+      },
+      "3": {
+        "n_total": 73971,
+        "n_q1_behavior": 4376,
+        "n_q2_behavior": 69595,
+        "delta_mean": [
+          0.040000020385173675,
+          -3.377132010266968e-10
+        ],
+        "delta_std": [
+          5.3133359046747664e-08,
+          5.062651380066959e-08
+        ],
+        "student_t_half_width": [
+          1.041418780918708e-07,
+          9.922843808551704e-08
+        ],
+        "pruning_radius": 1.4384649351789346e-07
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "b1_transitions": 3129,
+  "b2_transitions": 3090,
+  "seed_b1": 0,
+  "seed_b2": 1000,
+  "reward_notes": {
+    "b1": "angle reward favoring negative pole angle",
+    "b2": "angle reward favoring positive pole angle",
+    "shape": "tanh",
+    "kappa": 0.174,
+    "angle_thresh": 0.174
+  }
+}

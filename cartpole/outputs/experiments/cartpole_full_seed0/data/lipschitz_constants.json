@@ -1,0 +1,892 @@
+{
+  "gamma": 0.97,
+  "metadata": {
+    "estimation": "10% trimmed pairwise ratios inside each (region, action)",
+    "Lf": "||s'_i - s'_j|| / ||s_i - s_j||",
+    "LQ_bellman_bound": "Lr / (1 - gamma*Lf) when defined"
+  },
+  "constants": [
+    {
+      "region": 0,
+      "action": 0,
+      "n": 42,
+      "Lr_sum": 1.9596956973352246,
+      "Lf_sum": 1.005876756053603,
+      "Lq_empirical_sum": 14.685872530999534,
+      "LQ_bellman_bound": 80.64741813234862
+    },
+    {
+      "region": 0,
+      "action": 1,
+      "n": 29,
+      "Lr_sum": 1.859871848478709,
+      "Lf_sum": 1.0116994171558404,
+      "Lq_empirical_sum": 22.332937976833097,
+      "LQ_bellman_bound": 99.71666252654386
+    },
+    {
+      "region": 1,
+      "action": 0,
+      "n": 27,
+      "Lr_sum": 3.2792371348359715,
+      "Lf_sum": 1.0253658842239153,
+      "Lq_empirical_sum": 9.62887270486407,
+      "LQ_bellman_bound": 607.8185415164688
+    },
+    {
+      "region": 1,
+      "action": 1,
+      "n": 40,
+      "Lr_sum": 2.8079394690353054,
+      "Lf_sum": 1.0182225951281436,
+      "Lq_empirical_sum": 5.140422436338702,
+      "LQ_bellman_bound": 227.84166022998264
+    },
+    {
+      "region": 2,
+      "action": 0,
+      "n": 29,
+      "Lr_sum": 3.4865117363924543,
+      "Lf_sum": 1.0021341263325432,
+      "Lq_empirical_sum": 7.447671360728742,
+      "LQ_bellman_bound": 124.83081048564934
+    },
+    {
+      "region": 2,
+      "action": 1,
+      "n": 18,
+      "Lr_sum": 3.2958568689436043,
+      "Lf_sum": 1.005107688990283,
+      "Lq_empirical_sum": 4.979381075680718,
+      "LQ_bellman_bound": 131.59455327936044
+    },
+    {
+      "region": 3,
+      "action": 0,
+      "n": 18,
+      "Lr_sum": 1.7782482092001133,
+      "Lf_sum": 1.01419659792707,
+      "Lq_empirical_sum": 5.341275173914976,
+      "LQ_bellman_bound": 109.57023457715917
+    },
+    {
+      "region": 3,
+      "action": 1,
+      "n": 24,
+      "Lr_sum": 5.9412391655225285,
+      "Lf_sum": 1.0111304343262977,
+      "Lq_empirical_sum": 6.28395749096028,
+      "LQ_bellman_bound": 309.38348500589063
+    },
+    {
+      "region": 4,
+      "action": 0,
+      "n": 20,
+      "Lr_sum": 4.134851325692672,
+      "Lf_sum": 1.029544087102614,
+      "Lq_empirical_sum": 9.029753152733923,
+      "LQ_bellman_bound": 3080.570655042497
+    },
+    {
+      "region": 4,
+      "action": 1,
+      "n": 44,
+      "Lr_sum": 2.142996577786153,
+      "Lf_sum": 1.0353823406232425,
+      "Lq_empirical_sum": 5.703300575816365,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 5,
+      "action": 0,
+      "n": 33,
+      "Lr_sum": 2.5884087677148924,
+      "Lf_sum": 1.0167653796866805,
+      "Lq_empirical_sum": 9.745611693523392,
+      "LQ_bellman_bound": 188.41807994315968
+    },
+    {
+      "region": 5,
+      "action": 1,
+      "n": 8,
+      "Lr_sum": 2.4847340465423917,
+      "Lf_sum": 1.0139248009640542,
+      "Lq_empirical_sum": 4.452968792340923,
+      "LQ_bellman_bound": 150.65437604251943
+    },
+    {
+      "region": 6,
+      "action": 0,
+      "n": 21,
+      "Lr_sum": 2.9204905980480893,
+      "Lf_sum": 1.0234765382528697,
+      "Lq_empirical_sum": 13.949562669848303,
+      "LQ_bellman_bound": 404.0659137438744
+    },
+    {
+      "region": 6,
+      "action": 1,
+      "n": 24,
+      "Lr_sum": 2.6641336913463216,
+      "Lf_sum": 1.026987358518639,
+      "Lq_empirical_sum": 3.748558676936346,
+      "LQ_bellman_bound": 697.0044246605784
+    },
+    {
+      "region": 7,
+      "action": 0,
+      "n": 16,
+      "Lr_sum": 2.0410831354985555,
+      "Lf_sum": 1.0023787266796207,
+      "Lq_empirical_sum": 7.394815436774027,
+      "LQ_bellman_bound": 73.70490842050124
+    },
+    {
+      "region": 7,
+      "action": 1,
+      "n": 29,
+      "Lr_sum": 2.48192764403411,
+      "Lf_sum": 1.0136060980769783,
+      "Lq_empirical_sum": 6.467471283705249,
+      "LQ_bellman_bound": 147.7154569761307
+    },
+    {
+      "region": 8,
+      "action": 0,
+      "n": 20,
+      "Lr_sum": 2.0091753882712835,
+      "Lf_sum": 1.0235093603684702,
+      "Lq_empirical_sum": 9.720739629058945,
+      "LQ_bellman_bound": 279.2103392891051
+    },
+    {
+      "region": 8,
+      "action": 1,
+      "n": 26,
+      "Lr_sum": 2.4642028909046183,
+      "Lf_sum": 1.0264041601162468,
+      "Lq_empirical_sum": 4.661877676195511,
+      "LQ_bellman_bound": 561.582206454402
+    },
+    {
+      "region": 9,
+      "action": 0,
+      "n": 25,
+      "Lr_sum": 2.6643432485753555,
+      "Lf_sum": 1.0059143155226666,
+      "Lq_empirical_sum": 11.877458807747503,
+      "LQ_bellman_bound": 109.81044126623978
+    },
+    {
+      "region": 9,
+      "action": 1,
+      "n": 16,
+      "Lr_sum": 2.236591089128526,
+      "Lf_sum": 1.0212608706212993,
+      "Lq_empirical_sum": 5.54747632590211,
+      "LQ_bellman_bound": 238.51996415713785
+    },
+    {
+      "region": 10,
+      "action": 0,
+      "n": 31,
+      "Lr_sum": 1.6654108827234055,
+      "Lf_sum": 0.9965484854541952,
+      "Lq_empirical_sum": 5.064317048532654,
+      "LQ_bellman_bound": 49.940398986768635
+    },
+    {
+      "region": 10,
+      "action": 1,
+      "n": 11,
+      "Lr_sum": 2.12396538466889,
+      "Lf_sum": 1.0054654912835332,
+      "Lq_empirical_sum": 7.3051016100402855,
+      "LQ_bellman_bound": 85.99581624107428
+    },
+    {
+      "region": 11,
+      "action": 0,
+      "n": 44,
+      "Lr_sum": 2.239930228687464,
+      "Lf_sum": 1.017981218109086,
+      "Lq_empirical_sum": 8.576653550967032,
+      "LQ_bellman_bound": 178.36369389704183
+    },
+    {
+      "region": 11,
+      "action": 1,
+      "n": 22,
+      "Lr_sum": 1.7617023780260395,
+      "Lf_sum": 1.0163768515104639,
+      "Lq_empirical_sum": 6.452333564624471,
+      "LQ_bellman_bound": 124.81548161028438
+    },
+    {
+      "region": 12,
+      "action": 0,
+      "n": 51,
+      "Lr_sum": 1.764722084888147,
+      "Lf_sum": 0.9973770974540613,
+      "Lq_empirical_sum": 6.009235800867718,
+      "LQ_bellman_bound": 54.2253687614236
+    },
+    {
+      "region": 12,
+      "action": 1,
+      "n": 54,
+      "Lr_sum": 1.9251940769841258,
+      "Lf_sum": 1.0149387348749912,
+      "Lq_empirical_sum": 6.7188117375332626,
+      "LQ_bellman_bound": 124.13057269786303
+    },
+    {
+      "region": 13,
+      "action": 0,
+      "n": 32,
+      "Lr_sum": 3.4226209571133146,
+      "Lf_sum": 1.0054811438927491,
+      "Lq_empirical_sum": 5.671956076870311,
+      "LQ_bellman_bound": 138.66145470543952
+    },
+    {
+      "region": 13,
+      "action": 1,
+      "n": 25,
+      "Lr_sum": 4.17766278276496,
+      "Lf_sum": 1.0080643927328625,
+      "Lq_empirical_sum": 5.433867401852766,
+      "LQ_bellman_bound": 188.37359607445262
+    },
+    {
+      "region": 14,
+      "action": 0,
+      "n": 17,
+      "Lr_sum": 4.404190125333131,
+      "Lf_sum": 1.0193259533100811,
+      "Lq_empirical_sum": 6.466204905221429,
+      "LQ_bellman_bound": 391.3504974660799
+    },
+    {
+      "region": 14,
+      "action": 1,
+      "n": 26,
+      "Lr_sum": 3.4659474252499236,
+      "Lf_sum": 1.0064959615638025,
+      "Lq_empirical_sum": 5.967389444043931,
+      "LQ_bellman_bound": 146.24918868001797
+    },
+    {
+      "region": 15,
+      "action": 0,
+      "n": 11,
+      "Lr_sum": 4.476323438258785,
+      "Lf_sum": 1.0216314551978445,
+      "Lq_empirical_sum": 9.226082305723699,
+      "LQ_bellman_bound": 496.4046762091961
+    },
+    {
+      "region": 15,
+      "action": 1,
+      "n": 30,
+      "Lr_sum": 4.407915925303295,
+      "Lf_sum": 1.0059068166881324,
+      "Lq_empirical_sum": 5.477201877955201,
+      "LQ_bellman_bound": 181.61703716291598
+    },
+    {
+      "region": 16,
+      "action": 0,
+      "n": 15,
+      "Lr_sum": 2.5025583035478935,
+      "Lf_sum": 1.0433036609378388,
+      "Lq_empirical_sum": 47.119690194951275,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 16,
+      "action": 1,
+      "n": 26,
+      "Lr_sum": 0.49491114456157165,
+      "Lf_sum": 1.0170354740434655,
+      "Lq_empirical_sum": 37.44105746831824,
+      "LQ_bellman_bound": 36.72649123564812
+    },
+    {
+      "region": 17,
+      "action": 0,
+      "n": 15,
+      "Lr_sum": 1.3737624183982562,
+      "Lf_sum": 1.0087073186195517,
+      "Lq_empirical_sum": 24.851297399909,
+      "LQ_bellman_bound": 63.736138636060886
+    },
+    {
+      "region": 17,
+      "action": 1,
+      "n": 37,
+      "Lr_sum": 0.6873802520022976,
+      "Lf_sum": 1.0057199002592254,
+      "Lq_empirical_sum": 29.398551549183253,
+      "LQ_bellman_bound": 28.11176087577726
+    },
+    {
+      "region": 18,
+      "action": 0,
+      "n": 8,
+      "Lr_sum": 5.2144916057027535,
+      "Lf_sum": 1.0033468774244183,
+      "Lq_empirical_sum": 13.637425089006454,
+      "LQ_bellman_bound": 194.90855301826423
+    },
+    {
+      "region": 18,
+      "action": 1,
+      "n": 40,
+      "Lr_sum": 0.45331178678447404,
+      "Lf_sum": 1.0028427228994437,
+      "Lq_empirical_sum": 25.284744974113053,
+      "LQ_bellman_bound": 16.6398388022131
+    },
+    {
+      "region": 19,
+      "action": 0,
+      "n": 47,
+      "Lr_sum": 1.6716475939031845,
+      "Lf_sum": 1.0180923634264347,
+      "Lq_empirical_sum": 42.06389385471844,
+      "LQ_bellman_bound": 134.26448869865607
+    },
+    {
+      "region": 19,
+      "action": 1,
+      "n": 51,
+      "Lr_sum": 0.9300316700473056,
+      "Lf_sum": 1.0129212543316382,
+      "Lq_empirical_sum": 45.95802314985634,
+      "LQ_bellman_bound": 53.24695182529493
+    },
+    {
+      "region": 20,
+      "action": 0,
+      "n": 72,
+      "Lr_sum": 0.6200676120362402,
+      "Lf_sum": 1.0291843850997369,
+      "Lq_empirical_sum": 47.95587151416615,
+      "LQ_bellman_bound": 366.6551828451451
+    },
+    {
+      "region": 20,
+      "action": 1,
+      "n": 121,
+      "Lr_sum": 0.5691204579031303,
+      "Lf_sum": 1.017972520680963,
+      "Lq_empirical_sum": 45.616570619935146,
+      "LQ_bellman_bound": 45.28814236124087
+    },
+    {
+      "region": 21,
+      "action": 0,
+      "n": 15,
+      "Lr_sum": 10.84805204444513,
+      "Lf_sum": 1.0330712777967315,
+      "Lq_empirical_sum": 55.89885592649241,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 21,
+      "action": 1,
+      "n": 49,
+      "Lr_sum": 0.8640321458470303,
+      "Lf_sum": 1.0193473471529433,
+      "Lq_empirical_sum": 51.843586816692394,
+      "LQ_bellman_bound": 76.91858903807216
+    },
+    {
+      "region": 22,
+      "action": 0,
+      "n": 33,
+      "Lr_sum": 3.49039787089311,
+      "Lf_sum": 1.016093938007529,
+      "Lq_empirical_sum": 25.042988238615592,
+      "LQ_bellman_bound": 242.5760614240991
+    },
+    {
+      "region": 22,
+      "action": 1,
+      "n": 51,
+      "Lr_sum": 2.233849638740512,
+      "Lf_sum": 1.0190292175766391,
+      "Lq_empirical_sum": 37.026159182322885,
+      "LQ_bellman_bound": 193.54666848934738
+    },
+    {
+      "region": 23,
+      "action": 0,
+      "n": 70,
+      "Lr_sum": 0.758606331663122,
+      "Lf_sum": 1.003885939654455,
+      "Lq_empirical_sum": 11.89726553478671,
+      "LQ_bellman_bound": 28.920620085009947
+    },
+    {
+      "region": 23,
+      "action": 1,
+      "n": 99,
+      "Lr_sum": 0.633398559364931,
+      "Lf_sum": 1.0023857974406893,
+      "Lq_empirical_sum": 20.291730998188523,
+      "LQ_bellman_bound": 22.87812154246716
+    },
+    {
+      "region": 24,
+      "action": 0,
+      "n": 35,
+      "Lr_sum": 0.5167344372329875,
+      "Lf_sum": 1.001648885732555,
+      "Lq_empirical_sum": 8.861340676399767,
+      "LQ_bellman_bound": 18.194502434813874
+    },
+    {
+      "region": 24,
+      "action": 1,
+      "n": 34,
+      "Lr_sum": 0.34395930381744483,
+      "Lf_sum": 1.0010182819478635,
+      "Lq_empirical_sum": 15.276644056669264,
+      "LQ_bellman_bound": 11.85565090862866
+    },
+    {
+      "region": 25,
+      "action": 0,
+      "n": 81,
+      "Lr_sum": 1.5888489843608142,
+      "Lf_sum": 1.0258311505310458,
+      "Lq_empirical_sum": 3.6782075842075983,
+      "LQ_bellman_bound": 321.38317313586697
+    },
+    {
+      "region": 25,
+      "action": 1,
+      "n": 185,
+      "Lr_sum": 1.6007534059681554,
+      "Lf_sum": 1.0173388761496729,
+      "Lq_empirical_sum": 12.549147512856603,
+      "LQ_bellman_bound": 121.44133006676627
+    },
+    {
+      "region": 26,
+      "action": 0,
+      "n": 78,
+      "Lr_sum": 0.8536303610534752,
+      "Lf_sum": 1.0161736864976716,
+      "Lq_empirical_sum": 10.363777348236795,
+      "LQ_bellman_bound": 59.64636297660237
+    },
+    {
+      "region": 26,
+      "action": 1,
+      "n": 123,
+      "Lr_sum": 0.8999755272412534,
+      "Lf_sum": 1.0134146898751752,
+      "Lq_empirical_sum": 21.42380012932824,
+      "LQ_bellman_bound": 52.97790959615889
+    },
+    {
+      "region": 27,
+      "action": 0,
+      "n": 15,
+      "Lr_sum": 1.6953502918252499,
+      "Lf_sum": 1.028510236746434,
+      "Lq_empirical_sum": 4.906258937928771,
+      "LQ_bellman_bound": 722.9421870082683
+    },
+    {
+      "region": 27,
+      "action": 1,
+      "n": 35,
+      "Lr_sum": 1.4272528261587594,
+      "Lf_sum": 1.0176079404937728,
+      "Lq_empirical_sum": 18.342318114940337,
+      "LQ_bellman_bound": 110.46593948330693
+    },
+    {
+      "region": 28,
+      "action": 0,
+      "n": 14,
+      "Lr_sum": 1.3599874591863015,
+      "Lf_sum": 1.0315859043006492,
+      "Lq_empirical_sum": 27.372488778507343,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 28,
+      "action": 1,
+      "n": 65,
+      "Lr_sum": 1.2347066755746139,
+      "Lf_sum": 1.026625155960499,
+      "Lq_empirical_sum": 36.531227563533996,
+      "LQ_bellman_bound": 295.8374196724
+    },
+    {
+      "region": 29,
+      "action": 0,
+      "n": 17,
+      "Lr_sum": 0.41159982726064637,
+      "Lf_sum": 1.0024782517895892,
+      "Lq_empirical_sum": 15.930571754594025,
+      "LQ_bellman_bound": 14.915147083817654
+    },
+    {
+      "region": 29,
+      "action": 1,
+      "n": 30,
+      "Lr_sum": 0.8559407682231743,
+      "Lf_sum": 1.0103897303813962,
+      "Lq_empirical_sum": 25.680603108286544,
+      "LQ_bellman_bound": 42.96468331857142
+    },
+    {
+      "region": 30,
+      "action": 0,
+      "n": 24,
+      "Lr_sum": 1.1974075469154597,
+      "Lf_sum": 1.0058096712384546,
+      "Lq_empirical_sum": 20.29041346973709,
+      "LQ_bellman_bound": 49.14534275680347
+    },
+    {
+      "region": 30,
+      "action": 1,
+      "n": 27,
+      "Lr_sum": 0.6781715893667289,
+      "Lf_sum": 1.0048936668503405,
+      "Lq_empirical_sum": 23.5618188626819,
+      "LQ_bellman_bound": 26.85493782693333
+    },
+    {
+      "region": 31,
+      "action": 0,
+      "n": 7,
+      "Lr_sum": 1.0609293869391596,
+      "Lf_sum": 1.0223283574648843,
+      "Lq_empirical_sum": 0.8359930114518407,
+      "LQ_bellman_bound": 127.1869860694969
+    },
+    {
+      "region": 31,
+      "action": 1,
+      "n": 37,
+      "Lr_sum": 2.350942364870338,
+      "Lf_sum": 1.0231313682215633,
+      "Lq_empirical_sum": 8.801989873700245,
+      "LQ_bellman_bound": 310.8654183233378
+    },
+    {
+      "region": 32,
+      "action": 0,
+      "n": 23,
+      "Lr_sum": 1.6166910301658919,
+      "Lf_sum": 1.003602931478664,
+      "Lq_empirical_sum": 4.630528615232374,
+      "LQ_bellman_bound": 60.99533999198554
+    },
+    {
+      "region": 32,
+      "action": 1,
+      "n": 48,
+      "Lr_sum": 1.7775244611956895,
+      "Lf_sum": 1.0334447573771435,
+      "Lq_empirical_sum": 5.954128006559264,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 33,
+      "action": 0,
+      "n": 40,
+      "Lr_sum": 4.32369224538059,
+      "Lf_sum": 1.0400970172157098,
+      "Lq_empirical_sum": 5.012678928817466,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 33,
+      "action": 1,
+      "n": 49,
+      "Lr_sum": 3.053487744601577,
+      "Lf_sum": 1.0387602603816293,
+      "Lq_empirical_sum": 17.39244575312791,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 34,
+      "action": 0,
+      "n": 10,
+      "Lr_sum": 4.0719048391096475,
+      "Lf_sum": 1.026217328934994,
+      "Lq_empirical_sum": 7.472174291929607,
+      "LQ_bellman_bound": 891.1653942170619
+    },
+    {
+      "region": 34,
+      "action": 1,
+      "n": 35,
+      "Lr_sum": 3.434737964238062,
+      "Lf_sum": 1.023922531430922,
+      "Lq_empirical_sum": 13.306011788591054,
+      "LQ_bellman_bound": 505.469450748177
+    },
+    {
+      "region": 35,
+      "action": 0,
+      "n": 100,
+      "Lr_sum": 2.054803838675683,
+      "Lf_sum": 1.0247604019693621,
+      "Lq_empirical_sum": 5.58117597816396,
+      "LQ_bellman_bound": 343.47425332927554
+    },
+    {
+      "region": 35,
+      "action": 1,
+      "n": 149,
+      "Lr_sum": 1.9550057766171072,
+      "Lf_sum": 1.0274380361668465,
+      "Lq_empirical_sum": 5.886171520976295,
+      "LQ_bellman_bound": 577.5318118294529
+    },
+    {
+      "region": 36,
+      "action": 0,
+      "n": 44,
+      "Lr_sum": 2.15030252327355,
+      "Lf_sum": 1.0264270258312307,
+      "Lq_empirical_sum": 4.643144964689901,
+      "LQ_bellman_bound": 492.53514568404563
+    },
+    {
+      "region": 36,
+      "action": 1,
+      "n": 36,
+      "Lr_sum": 2.4339155067729297,
+      "Lf_sum": 1.032632160365705,
+      "Lq_empirical_sum": 7.594857041224108,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 37,
+      "action": 0,
+      "n": 26,
+      "Lr_sum": 1.6363004517752537,
+      "Lf_sum": 1.0172847527629447,
+      "Lq_empirical_sum": 1.8070203251990065,
+      "LQ_bellman_bound": 123.64564301220149
+    },
+    {
+      "region": 37,
+      "action": 1,
+      "n": 16,
+      "Lr_sum": 1.220199401843236,
+      "Lf_sum": 1.006222213202531,
+      "Lq_empirical_sum": 5.5888797384938185,
+      "LQ_bellman_bound": 50.91705585721043
+    },
+    {
+      "region": 38,
+      "action": 0,
+      "n": 39,
+      "Lr_sum": 1.8637054264678805,
+      "Lf_sum": 1.0330495050461515,
+      "Lq_empirical_sum": 2.8229235708686113,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 38,
+      "action": 1,
+      "n": 62,
+      "Lr_sum": 1.5611285927848242,
+      "Lf_sum": 1.0243197986733987,
+      "Lq_empirical_sum": 9.423213923256514,
+      "LQ_bellman_bound": 243.5535805642542
+    },
+    {
+      "region": 39,
+      "action": 0,
+      "n": 31,
+      "Lr_sum": 1.5370885085784598,
+      "Lf_sum": 1.0145652022350655,
+      "Lq_empirical_sum": 3.7650966659003027,
+      "LQ_bellman_bound": 96.84427599177813
+    },
+    {
+      "region": 39,
+      "action": 1,
+      "n": 15,
+      "Lr_sum": 0.9983306060363102,
+      "Lf_sum": 1.010674457024217,
+      "Lq_empirical_sum": 9.956809982269736,
+      "LQ_bellman_bound": 50.81655064937428
+    },
+    {
+      "region": 40,
+      "action": 0,
+      "n": 44,
+      "Lr_sum": 0.4119179120709631,
+      "Lf_sum": 1.0122024868533726,
+      "Lq_empirical_sum": 27.790006816663222,
+      "LQ_bellman_bound": 22.678224021045626
+    },
+    {
+      "region": 40,
+      "action": 1,
+      "n": 34,
+      "Lr_sum": 0.33760753103373803,
+      "Lf_sum": 1.0052700558316634,
+      "Lq_empirical_sum": 25.302803646414574,
+      "LQ_bellman_bound": 13.565047780752408
+    },
+    {
+      "region": 41,
+      "action": 0,
+      "n": 21,
+      "Lr_sum": 0.068441995089006,
+      "Lf_sum": 1.001406176101757,
+      "Lq_empirical_sum": 19.78622984046465,
+      "LQ_bellman_bound": 2.3900675075111546
+    },
+    {
+      "region": 41,
+      "action": 1,
+      "n": 23,
+      "Lr_sum": 0.08438479368198887,
+      "Lf_sum": 1.0028493644754233,
+      "Lq_empirical_sum": 21.493482564681123,
+      "LQ_bellman_bound": 3.0982682060974125
+    },
+    {
+      "region": 42,
+      "action": 0,
+      "n": 12,
+      "Lr_sum": 0.16785421077155271,
+      "Lf_sum": 0.9879178041342053,
+      "Lq_empirical_sum": 14.711099945991164,
+      "LQ_bellman_bound": 4.023377208158038
+    },
+    {
+      "region": 42,
+      "action": 1,
+      "n": 29,
+      "Lr_sum": 0.6252604174257927,
+      "Lf_sum": 1.0047059805998453,
+      "Lq_empirical_sum": 23.58125242990755,
+      "LQ_bellman_bound": 24.582485943833746
+    },
+    {
+      "region": 43,
+      "action": 0,
+      "n": 36,
+      "Lr_sum": 0.23421939538336098,
+      "Lf_sum": 1.012096192375685,
+      "Lq_empirical_sum": 25.657410034615207,
+      "LQ_bellman_bound": 12.822210912017853
+    },
+    {
+      "region": 43,
+      "action": 1,
+      "n": 17,
+      "Lr_sum": 1.066870755722858,
+      "Lf_sum": 1.0139804332536124,
+      "Lq_empirical_sum": 30.76459340336311,
+      "LQ_bellman_bound": 64.89884240611167
+    },
+    {
+      "region": 44,
+      "action": 0,
+      "n": 26,
+      "Lr_sum": 0.7727508000040221,
+      "Lf_sum": 1.0180439742966847,
+      "Lq_empirical_sum": 32.770472031568445,
+      "LQ_bellman_bound": 61.8331977068194
+    },
+    {
+      "region": 44,
+      "action": 1,
+      "n": 21,
+      "Lr_sum": 1.8997516265071694,
+      "Lf_sum": 1.022475575622333,
+      "Lq_empirical_sum": 42.72190098398921,
+      "LQ_bellman_bound": 231.71399882515493
+    },
+    {
+      "region": 45,
+      "action": 0,
+      "n": 33,
+      "Lr_sum": 1.2389859328117632,
+      "Lf_sum": 1.02238829363806,
+      "Lq_empirical_sum": 33.87793088916169,
+      "LQ_bellman_bound": 149.57537220391032
+    },
+    {
+      "region": 45,
+      "action": 1,
+      "n": 9,
+      "Lr_sum": 1.9438070338016464,
+      "Lf_sum": 1.0336600241340639,
+      "Lq_empirical_sum": 39.58004219307655,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 46,
+      "action": 0,
+      "n": 20,
+      "Lr_sum": 1.545059528032485,
+      "Lf_sum": 1.059395258317268,
+      "Lq_empirical_sum": 73.12472729384942,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 46,
+      "action": 1,
+      "n": 36,
+      "Lr_sum": 1.7373410197932335,
+      "Lf_sum": 1.06319457298754,
+      "Lq_empirical_sum": 75.75111871982479,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 47,
+      "action": 0,
+      "n": 22,
+      "Lr_sum": 1.4500265411982016,
+      "Lf_sum": 1.0444395929547825,
+      "Lq_empirical_sum": 55.64644870300723,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 47,
+      "action": 1,
+      "n": 20,
+      "Lr_sum": 2.1228058452675027,
+      "Lf_sum": 1.0461746498201085,
+      "Lq_empirical_sum": 57.232062863960735,
+      "LQ_bellman_bound": null
+    },
+    {
+      "region": 48,
+      "action": 0,
+      "n": 1712,
+      "Lr_sum": 0.6373539049220326,
+      "Lf_sum": 1.0192720070838552,
+      "Lq_empirical_sum": 19.387811488839553,
+      "LQ_bellman_bound": 56.37230432571947
+    },
+    {
+      "region": 48,
+      "action": 1,
+      "n": 962,
+      "Lr_sum": 0.7534716814187891,
+      "Lf_sum": 1.0239020909274525,
+      "Lq_empirical_sum": 11.321808137722524,
+      "LQ_bellman_bound": 110.56123245847698
+    }
+  ]
+}

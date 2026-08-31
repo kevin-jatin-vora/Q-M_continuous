@@ -1,0 +1,22 @@
+{
+  "dynamics_sigma": 0.002,
+  "training_seed": 2,
+  "evaluation_seed_start": 0,
+  "evaluation_episodes": 5,
+  "steps": 200000,
+  "evaluation_interval": 20000,
+  "cold_start_eval": -437.64311532974244,
+  "episodes_completed": 13200,
+  "final_epsilon": 0.05,
+  "gamma": 0.98,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "buffer_size": 100000,
+  "target_tau": 0.0005,
+  "update_every": 4,
+  "epsilon_start": 1.0,
+  "epsilon_end": 0.05,
+  "epsilon_decay": 0.994,
+  "max_steps_per_episode": 100,
+  "env_horizon": 200
+}

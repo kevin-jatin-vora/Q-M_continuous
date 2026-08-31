@@ -1,0 +1,71 @@
+{
+  "config_path": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\configs\\radial_match.json",
+  "config_sigma": 0.005,
+  "cli_sigma": 0.002,
+  "effective_sigma": 0.002,
+  "config_determinism": 0.0,
+  "cli_determinism": 0.0,
+  "effective_determinism": 0.0,
+  "config_gamma": 0.98,
+  "cli_gamma": null,
+  "effective_gamma": 0.98,
+  "profile": "full",
+  "seed": 0,
+  "n_runs": 1,
+  "empirical": false,
+  "python": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\.venv\\Scripts\\python.exe",
+  "training": {
+    "gamma": 0.98,
+    "lr": 0.001,
+    "batch_size": 256,
+    "buffer_size": 100000,
+    "tau": 0.0005,
+    "update_every": 4,
+    "eps_start": 1.0,
+    "eps_end": 0.05,
+    "eps_decay": 0.994,
+    "max_t": 100
+  },
+  "environment": {
+    "sigma": 0.002,
+    "determinism": 0.0,
+    "step_size": 0.04,
+    "tau": 2.4,
+    "horizon": 200
+  },
+  "component_max_steps_per_episode": 200,
+  "component_epsilon_decay": 0.998,
+  "legacy_margin": false,
+  "include_boundary_transitions_in_stats": false,
+  "from_source_json": false,
+  "confidence_level": 0.95,
+  "pruning_radius": "student_t_l2",
+  "q_single": "delta_mean",
+  "bounds_sigma_policy": "error",
+  "runtime_check": {
+    "requested_sigma": 0.002,
+    "env_sigma": 0.002,
+    "determinism": 0.0,
+    "tile_counts": {
+      "5": 0,
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 4
+    },
+    "category1_variance": 4e-06,
+    "category1_std": 0.002,
+    "category4_variance": 3.6e-06,
+    "category4_std": 0.0018973665961010276,
+    "deterministic_category": 5,
+    "n_categories": 5,
+    "n_tiles": 16
+  },
+  "layout": "16-tile / 5-category",
+  "output_layout": {
+    "data": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\experiments\\sigma_2e-03_det00_cfg_radial_match_6c6b241d6e5c_full_seed0\\data",
+    "models": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\experiments\\sigma_2e-03_det00_cfg_radial_match_6c6b241d6e5c_full_seed0\\models",
+    "plots": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\experiments\\sigma_2e-03_det00_cfg_radial_match_6c6b241d6e5c_full_seed0\\plots",
+    "videos": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\experiments\\sigma_2e-03_det00_cfg_radial_match_6c6b241d6e5c_full_seed0\\videos"
+  }
+}

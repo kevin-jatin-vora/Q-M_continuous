@@ -1,0 +1,11 @@
+{
+  "config": "D:\\dollar_euro_lipschitz_clean\\cartpole\\configs\\default.json",
+  "profile": "full",
+  "seed": 0,
+  "n_runs": 1,
+  "parallel_runs": 1,
+  "behavior_episodes": 200,
+  "q_single_iters": 30000,
+  "agent_steps": 500000,
+  "resume": false
+}

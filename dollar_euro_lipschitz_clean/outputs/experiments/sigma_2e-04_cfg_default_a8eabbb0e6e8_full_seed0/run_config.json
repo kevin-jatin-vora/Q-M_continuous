@@ -1,0 +1,40 @@
+{
+  "config_path": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_lipschitz_clean\\configs\\default.json",
+  "config_sigma": 8e-05,
+  "cli_sigma": 0.00016,
+  "effective_sigma": 0.00016,
+  "profile": "full",
+  "seed": 0,
+  "n_runs": 5,
+  "empirical": true,
+  "python": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_lipschitz_clean\\.venv\\Scripts\\python.exe",
+  "training": {
+    "gamma": 0.99,
+    "lr": 0.001,
+    "batch_size": 256,
+    "buffer_size": 100000,
+    "tau": 0.0005,
+    "update_every": 4,
+    "eps_start": 1.0,
+    "eps_end": 0.05,
+    "eps_decay": 0.995,
+    "max_t": 100
+  },
+  "environment": {
+    "sigma": 0.00016,
+    "step_size": 0.04,
+    "tau": 2.4,
+    "horizon": 200
+  },
+  "component_max_steps_per_episode": 200,
+  "component_epsilon_decay": 0.998,
+  "from_source_json": false,
+  "pruning_radius": "student_t_mean_ci",
+  "bounds_sigma_policy": "error",
+  "runtime_check": {
+    "requested_sigma": 0.00016,
+    "env_sigma": 0.00016,
+    "region1_variance": 2.5600000000000004e-08,
+    "region1_std": 0.00016
+  }
+}

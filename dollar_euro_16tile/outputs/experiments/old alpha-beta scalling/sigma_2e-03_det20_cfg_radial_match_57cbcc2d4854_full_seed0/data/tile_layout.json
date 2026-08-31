@@ -1,0 +1,65 @@
+{
+  "determinism": 0.2,
+  "grid_size": 4,
+  "n_tiles": 16,
+  "n_categories": 5,
+  "layout_mode": "shuffled",
+  "counts": {
+    "5": 3,
+    "1": 4,
+    "2": 3,
+    "3": 3,
+    "4": 3
+  },
+  "category_names": {
+    "1": "radial_r1_top_right",
+    "2": "radial_r2_top_left",
+    "3": "radial_r3_bottom_left",
+    "4": "radial_r4_bottom_right",
+    "5": "deterministic"
+  },
+  "tile_map_row_major": [
+    1,
+    2,
+    1,
+    5,
+    5,
+    3,
+    3,
+    4,
+    1,
+    2,
+    2,
+    5,
+    3,
+    1,
+    4,
+    4
+  ],
+  "tile_map_grid_yx": [
+    [
+      1,
+      2,
+      1,
+      5
+    ],
+    [
+      5,
+      3,
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      2,
+      5
+    ],
+    [
+      3,
+      1,
+      4,
+      4
+    ]
+  ]
+}

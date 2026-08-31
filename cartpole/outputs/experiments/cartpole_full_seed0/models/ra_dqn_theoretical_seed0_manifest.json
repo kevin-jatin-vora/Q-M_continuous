@@ -1,0 +1,10 @@
+{
+  "training_seed": 0,
+  "evaluation_seeded": false,
+  "evaluation_episodes": 20,
+  "steps": 500000,
+  "lq_source": "theoretical",
+  "n_regions": 49,
+  "cold_start_eval": 87.75,
+  "rank_coef": 0.001
+}

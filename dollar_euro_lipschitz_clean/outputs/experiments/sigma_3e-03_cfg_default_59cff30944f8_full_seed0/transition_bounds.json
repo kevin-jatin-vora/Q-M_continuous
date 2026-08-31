@@ -1,0 +1,334 @@
+{
+  "source_json": "generated directly by scripts/train_reward_components.py",
+  "metadata": {
+    "dynamics_sigma": 0.003,
+    "sigma_source": "explicit runtime argument/config",
+    "behavior_policies": [
+      "R1 epsilon-greedy DQN",
+      "R2 epsilon-greedy DQN"
+    ],
+    "seed_r1": 0,
+    "seed_r2": 1000000,
+    "radius_scalar_semantics": "L2 norm of the Student-t CI of the pooled R1/R2 mean delta; estimated only on transitions not affected by boundary cancel/clip",
+    "delta_estimation": "mean_delta / radius use free region-action steps only (exclude env boundary cancel and post-noise clip). Q_single applies clip(s+mu) at use time; RA-DQN uses the live env clip."
+  },
+  "config": {
+    "confidence": 0.95,
+    "norm_ord": 2,
+    "exclude_boundary_affected_transitions": true
+  },
+  "by_region_action": {
+    "1": {
+      "0": {
+        "n_total": 1225,
+        "n_q1_behavior": 761,
+        "n_q2_behavior": 464,
+        "mean_delta": [
+          0.0,
+          -0.03839999437332153
+        ],
+        "sample_std_delta": [
+          0.0,
+          0.0
+        ],
+        "student_t_multiplier": 1.9619039999812804,
+        "student_t_conf_radius_mean_delta": [
+          0.0,
+          0.0
+        ],
+        "radius_scalar": 0.0
+      },
+      "1": {
+        "n_total": 5852,
+        "n_q1_behavior": 4120,
+        "n_q2_behavior": 1732,
+        "mean_delta": [
+          0.0,
+          0.03839999437332153
+        ],
+        "sample_std_delta": [
+          0.0,
+          0.0
+        ],
+        "student_t_multiplier": 1.960369514141985,
+        "student_t_conf_radius_mean_delta": [
+          0.0,
+          0.0
+        ],
+        "radius_scalar": 0.0
+      },
+      "2": {
+        "n_total": 1441,
+        "n_q1_behavior": 884,
+        "n_q2_behavior": 557,
+        "mean_delta": [
+          -0.03839999437332153,
+          0.0
+        ],
+        "sample_std_delta": [
+          0.0,
+          0.0
+        ],
+        "student_t_multiplier": 1.9616127571316377,
+        "student_t_conf_radius_mean_delta": [
+          0.0,
+          0.0
+        ],
+        "radius_scalar": 0.0
+      },
+      "3": {
+        "n_total": 1158,
+        "n_q1_behavior": 722,
+        "n_q2_behavior": 436,
+        "mean_delta": [
+          0.03839999437332153,
+          0.0
+        ],
+        "sample_std_delta": [
+          0.0,
+          0.0
+        ],
+        "student_t_multiplier": 1.962016458730294,
+        "student_t_conf_radius_mean_delta": [
+          0.0,
+          0.0
+        ],
+        "radius_scalar": 0.0
+      }
+    },
+    "2": {
+      "0": {
+        "n_total": 1247,
+        "n_q1_behavior": 643,
+        "n_q2_behavior": 604,
+        "mean_delta": [
+          0.0,
+          -0.041999995708465576
+        ],
+        "sample_std_delta": [
+          0.0,
+          0.0
+        ],
+        "student_t_multiplier": 1.9618697133723726,
+        "student_t_conf_radius_mean_delta": [
+          0.0,
+          0.0
+        ],
+        "radius_scalar": 0.0
+      },
+      "1": {
+        "n_total": 5184,
+        "n_q1_behavior": 3398,
+        "n_q2_behavior": 1786,
+        "mean_delta": [
+          0.0,
+          0.041999995708465576
+        ],
+        "sample_std_delta": [
+          0.0,
+          0.0
+        ],
+        "student_t_multiplier": 1.9604217919670202,
+        "student_t_conf_radius_mean_delta": [
+          0.0,
+          0.0
+        ],
+        "radius_scalar": 0.0
+      },
+      "2": {
+        "n_total": 1323,
+        "n_q1_behavior": 711,
+        "n_q2_behavior": 612,
+        "mean_delta": [
+          -0.03600000716796538,
+          0.0
+        ],
+        "sample_std_delta": [
+          8.49035758215886e-09,
+          0.0
+        ],
+        "student_t_multiplier": 1.9617600569417584,
+        "student_t_conf_radius_mean_delta": [
+          4.579224620412464e-10,
+          0.0
+        ],
+        "radius_scalar": 4.579224620412464e-10
+      },
+      "3": {
+        "n_total": 1652,
+        "n_q1_behavior": 785,
+        "n_q2_behavior": 867,
+        "mean_delta": [
+          0.03600000806567744,
+          0.0
+        ],
+        "sample_std_delta": [
+          8.53688455075315e-09,
+          0.0
+        ],
+        "student_t_multiplier": 1.961401889892823,
+        "student_t_conf_radius_mean_delta": [
+          4.1196562194995903e-10,
+          0.0
+        ],
+        "radius_scalar": 4.1196562194995903e-10
+      }
+    },
+    "3": {
+      "0": {
+        "n_total": 43736,
+        "n_q1_behavior": 37436,
+        "n_q2_behavior": 6300,
+        "mean_delta": [
+          3.334270963306446e-05,
+          -0.03516613117093638
+        ],
+        "sample_std_delta": [
+          0.0033094742664486494,
+          0.0036708319651629264
+        ],
+        "student_t_multiplier": 1.960018227955351,
+        "student_t_conf_radius_mean_delta": [
+          3.101698559210067e-05,
+          3.4403694667993493e-05
+        ],
+        "radius_scalar": 4.632135147023567e-05
+      },
+      "1": {
+        "n_total": 9091,
+        "n_q1_behavior": 5710,
+        "n_q2_behavior": 3381,
+        "mean_delta": [
+          3.0873522342182643e-06,
+          0.03520339576521535
+        ],
+        "sample_std_delta": [
+          0.003297035425049104,
+          0.003603963773787717
+        ],
+        "student_t_multiplier": 1.9602249946354477,
+        "student_t_conf_radius_mean_delta": [
+          6.778345586772852e-05,
+          7.409356828666582e-05
+        ],
+        "radius_scalar": 0.00010042138094461314
+      },
+      "2": {
+        "n_total": 64827,
+        "n_q1_behavior": 59064,
+        "n_q2_behavior": 5763,
+        "mean_delta": [
+          -0.04319838898850524,
+          4.941338632376297e-06
+        ],
+        "sample_std_delta": [
+          0.0032775830208769713,
+          0.003673068103949788
+        ],
+        "student_t_multiplier": 1.9600005796526707,
+        "student_t_conf_radius_mean_delta": [
+          2.5230853320395133e-05,
+          2.8275299809730627e-05
+        ],
+        "radius_scalar": 3.789575884720409e-05
+      },
+      "3": {
+        "n_total": 7971,
+        "n_q1_behavior": 4464,
+        "n_q2_behavior": 3507,
+        "mean_delta": [
+          0.04321665786278695,
+          -7.64042682909041e-06
+        ],
+        "sample_std_delta": [
+          0.0032431012034182735,
+          0.0037029381063911153
+        ],
+        "student_t_multiplier": 1.960261679070906,
+        "student_t_conf_radius_mean_delta": [
+          7.12062552643354e-05,
+          8.130253713754174e-05
+        ],
+        "radius_scalar": 0.00010807605347055862
+      }
+    },
+    "4": {
+      "0": {
+        "n_total": 56401,
+        "n_q1_behavior": 12811,
+        "n_q2_behavior": 43590,
+        "mean_delta": [
+          -1.3323238632725103e-05,
+          -0.04001989555116404
+        ],
+        "sample_std_delta": [
+          0.0028501938357537106,
+          0.0037858640034470173
+        ],
+        "student_t_multiplier": 1.9600060469740144,
+        "student_t_conf_radius_mean_delta": [
+          2.3522766937481627e-05,
+          3.124489130983462e-05
+        ],
+        "radius_scalar": 3.910963816450438e-05
+      },
+      "1": {
+        "n_total": 8698,
+        "n_q1_behavior": 3904,
+        "n_q2_behavior": 4794,
+        "mean_delta": [
+          -4.404100036314094e-06,
+          0.03999133312817304
+        ],
+        "sample_std_delta": [
+          0.002848047400700605,
+          0.0037687087650798007
+        ],
+        "student_t_multiplier": 1.9602367907722178,
+        "student_t_conf_radius_mean_delta": [
+          5.986128667209682e-05,
+          7.921207902459404e-05
+        ],
+        "radius_scalar": 9.928709435489331e-05
+      },
+      "2": {
+        "n_total": 11432,
+        "n_q1_behavior": 6962,
+        "n_q2_behavior": 4470,
+        "mean_delta": [
+          -0.04001939007354166,
+          -4.602907430132925e-05
+        ],
+        "sample_std_delta": [
+          0.0028310230999725903,
+          0.0038197541769593273
+        ],
+        "student_t_multiplier": 1.960171535774943,
+        "student_t_conf_radius_mean_delta": [
+          5.1901078618732384e-05,
+          7.002746174855192e-05
+        ],
+        "radius_scalar": 8.716402561110141e-05
+      },
+      "3": {
+        "n_total": 76263,
+        "n_q1_behavior": 6111,
+        "n_q2_behavior": 70152,
+        "mean_delta": [
+          0.03999287660733134,
+          -2.3939938472136614e-05
+        ],
+        "sample_std_delta": [
+          0.002840411326962031,
+          0.003793662819619254
+        ],
+        "student_t_multiplier": 1.9599950918837021,
+        "student_t_conf_radius_mean_delta": [
+          2.015947774442478e-05,
+          2.692506555512283e-05
+        ],
+        "radius_scalar": 3.363575029749775e-05
+      }
+    }
+  }
+}

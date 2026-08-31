@@ -1,0 +1,7 @@
+{
+  "training_seed": 0,
+  "evaluation_seeded": false,
+  "evaluation_episodes": 20,
+  "steps": 500000,
+  "cold_start_eval": 93.4
+}

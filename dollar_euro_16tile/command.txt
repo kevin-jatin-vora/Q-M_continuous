@@ -1,0 +1,2 @@
+cd /d D:\dollar_euro_lipschitz_clean\dollar_euro_16tile
+run_experiment.cmd configs\default.json --sigma 0.01 --gamma 0.97 --determinism 0.5 --profile full --runs 1
