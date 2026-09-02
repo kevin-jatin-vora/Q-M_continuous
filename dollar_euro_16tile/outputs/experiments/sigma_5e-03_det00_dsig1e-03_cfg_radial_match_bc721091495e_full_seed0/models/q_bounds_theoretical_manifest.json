@@ -1,0 +1,31 @@
+{
+  "method": "learned_lipschitz_bellman_q_bounds",
+  "sigma": 0.005,
+  "determinism": 0.0,
+  "deterministic_sigma_scale": 0.001,
+  "gamma": 0.98,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "target_tau": 0.01,
+  "iters": 120000,
+  "seed": 0,
+  "lq_source": "theoretical",
+  "bounds": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\experiments\\sigma_5e-03_det00_dsig1e-03_cfg_radial_match_bc721091495e_full_seed0\\data\\transition_bounds.json",
+  "lipschitz": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\experiments\\sigma_5e-03_det00_dsig1e-03_cfg_radial_match_bc721091495e_full_seed0\\data\\lipschitz_constants.json",
+  "initialization": {
+    "q_ub_equals_q_lb": true,
+    "q_ub_target_equals_q_ub": true,
+    "q_lb_target_equals_q_lb": true
+  },
+  "consistency_loss": false,
+  "q_clipping": false,
+  "gradient_clipping": true,
+  "max_grad_norm": 10.0,
+  "early_stopping": false,
+  "best_checkpoint_replacement": false,
+  "double_q": false,
+  "delta_r": "Lr(tile,a) * pruning_radius(category,a)",
+  "delta_q": "Lq(tile,a) * pruning_radius(category,a)",
+  "ub_target": "R + delta_r + gamma*(1-d)*(max_a Q_UB_target(s_bar,a) + delta_q)",
+  "lb_target": "R - delta_r + gamma*(1-d)*(max_a Q_LB_target(s_bar,a) - delta_q)"
+}

@@ -38,7 +38,11 @@ from dollar_euro_lipschitz.config import (
     resolve_sigma,
 )
 from dollar_euro_lipschitz.env import ContinuousDollarEuroEnv
-from dollar_euro_lipschitz.layout import N_TILES, layout_summary, tile_ids_from_states
+from dollar_euro_lipschitz.layout import (
+    N_TILES,
+    layout_summary,
+    tile_ids_from_states,
+)
 from dollar_euro_lipschitz.models import QNet
 from dollar_euro_lipschitz.replay import ReplayBuffer
 from dollar_euro_lipschitz.bounds import (
@@ -385,8 +389,23 @@ def build_bounds(q1_records, q2_records, args, sigma, category_counts=None):
     return output
 
 
-def build_lipschitz(category_constants1, category_constants2, tile_constants1, tile_constants2, args, sigma, tile_map):
-    """Per-tile Lr/Lq; category-level Lf (max over R1/R2) shared by all tiles in a category."""
+def build_lipschitz(
+    category_constants1,
+    category_constants2,
+    tile_constants1,
+    tile_constants2,
+    args,
+    sigma,
+    tile_map,
+):
+    """Per-tile Lr/Lq; category-level Lf (max over R1/R2) shared by all tiles in a category.
+
+    Theoretical Lq is the infinite-horizon Bellman bound
+      LQ_bellman_bound = Lr_sum / (1 - gamma * Lf_sum)
+    for every tile/action, identical for terminal and non-terminal tiles.
+    Requires gamma * Lf_sum < 1; invalid rows (denominator <= 0) are rejected
+    downstream by ``require_finite_bellman_lq``.
+    """
     category_lr_lq = {}
     category_lf = {}
     for region in range(1, 6):
@@ -434,8 +453,15 @@ def build_lipschitz(category_constants1, category_constants2, tile_constants1, t
                 lq1 = float(first["Lq"])
                 lq2 = float(second["Lq"])
                 lq_emp = lq1 + lq2
-            denominator = 1.0 - args.gamma * lf_sum
-            bellman = lr_sum / denominator if denominator > 0 else None
+            x = args.gamma * lf_sum
+            denominator = 1.0 - x
+            # Infinite-horizon Bellman bound. Invalid rows (denominator <= 0) are
+            # preserved with a NaN/invalid value and rejected downstream by
+            # require_finite_bellman_lq (original behavior).
+            if denominator > 0:
+                bellman = lr_sum / denominator
+            else:
+                bellman = None
             rows.append(
                 {
                     "tile": tile_id,
@@ -475,7 +501,10 @@ def build_lipschitz(category_constants1, category_constants2, tile_constants1, t
                 "Category-level (pooled over all tiles in the category): "
                 "Lf_sum=max(Lf1, Lf2) from R1/R2 behavior."
             ),
-            "LQ_bellman_bound": "Lr_tile / (1 - gamma*Lf_category); requires gamma*Lf < 1 or the run aborts",
+            "LQ_bellman_bound": (
+                "LQ_bellman_bound = Lr_sum / (1 - gamma * Lf_sum); "
+                "requires gamma * Lf_sum < 1."
+            ),
             "pruning_radius": (
                 "Student-t L2 radius of next free s' around s+delta_mean; "
                 "Q_single uses delta_mean; RA-DQN uses the live env"
