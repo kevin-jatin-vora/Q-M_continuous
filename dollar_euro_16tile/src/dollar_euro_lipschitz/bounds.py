@@ -60,7 +60,7 @@ def format_undefined_bellman_lq_error(bad_cells, gamma, *, path=None) -> str:
     lines = [
         "error: theoretical Bellman Lq is undefined because gamma * Lf >= 1 "
         f"(gamma={float(gamma):.17g}).",
-        "  LQ_bellman = Lr / (1 - gamma*Lf) requires 1 - gamma*Lf > 0.",
+        "  LQ_bellman = Lr * Lf / (1 - gamma*Lf) requires 1 - gamma*Lf > 0.",
         "  This usually means sigma is too high or the empirical Lf estimate is too large.",
         "  Offending (region, action) cells:",
     ]

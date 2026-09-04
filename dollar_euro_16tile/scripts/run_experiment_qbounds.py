@@ -164,6 +164,112 @@ def require_files(paths):
         )
 
 
+def validate_cross_category_artifact(
+    path, expected_sigma, expected_det_sigma_scale, expected_gamma, kind="cross"
+):
+    """Validate a v3 cross (tile-reward or category-dynamics) Lipschitz artifact.
+
+    ``kind`` is one of "cross_tile" | "cross_category" | "cross" (generic).
+
+    Raises a clear error on missing/incompatible schema so that --resume does
+    not silently reuse an experiment produced by an incompatible (older)
+    pipeline.
+    """
+    try:
+        import json as _json
+        data = _json.load(open(path, encoding="utf-8"))
+    except Exception as e:  # noqa: BLE001
+        raise SystemExit(
+            f"Cross Lipschitz artifact could not be read: {path}\n  {e}"
+        )
+
+    issues = []
+
+    def check(ok, msg):
+        if not ok:
+            issues.append(msg)
+
+    check(
+        "sigma" in data,
+        "missing 'sigma' provenance",
+    )
+    check(
+        "deterministic_sigma_scale" in data,
+        "missing 'deterministic_sigma_scale' provenance",
+    )
+    check(
+        "gamma" in data,
+        "missing 'gamma' provenance",
+    )
+    check(
+        "tile_map" in data,
+        "missing 'tile_map' provenance",
+    )
+    if kind == "cross_tile":
+        check(
+            "neighbor_tile_pairs" in data,
+            "missing 'neighbor_tile_pairs' provenance",
+        )
+        check(
+            isinstance(data.get("neighbor_tile_pairs"), list),
+            "'neighbor_tile_pairs' must be a list",
+        )
+    elif kind == "cross_category":
+        check(
+            "neighbor_category_pairs" in data,
+            "missing 'neighbor_category_pairs' provenance",
+        )
+        check(
+            isinstance(data.get("neighbor_category_pairs"), list),
+            "'neighbor_category_pairs' must be a list",
+        )
+    check(
+        "lipschitz_method_version" in data,
+        "missing 'lipschitz_method_version' provenance",
+    )
+    if data.get("lipschitz_method_version") != 3:
+        issues.append(
+            "Old Lipschitz artifacts use incompatible reward grouping/"
+            "cross-boundary semantics; regenerate from scratch. "
+            f"(artifact version={data.get('lipschitz_method_version')!r}, "
+            "required=3)"
+        )
+
+    if data.get("sigma") is not None and expected_sigma is not None:
+        if abs(float(data["sigma"]) - float(expected_sigma)) > 1e-12:
+            issues.append(
+                f"sigma mismatch: artifact={data['sigma']} command={expected_sigma}"
+            )
+    if (
+        data.get("deterministic_sigma_scale") is not None
+        and expected_det_sigma_scale is not None
+    ):
+        if abs(
+            float(data["deterministic_sigma_scale"])
+            - float(expected_det_sigma_scale)
+        ) > 1e-12:
+            issues.append(
+                "deterministic_sigma_scale mismatch: "
+                f"artifact={data['deterministic_sigma_scale']} "
+                f"command={expected_det_sigma_scale}"
+            )
+    if data.get("gamma") is not None and expected_gamma is not None:
+        if abs(float(data["gamma"]) - float(expected_gamma)) > 1e-12:
+            issues.append(
+                f"gamma mismatch: artifact={data['gamma']} command={expected_gamma}"
+            )
+
+    if issues:
+        raise SystemExit(
+            "Cross Lipschitz artifact is incompatible (provenance/schema "
+            "mismatch). Refusing to resume on an experiment produced by an "
+            f"incompatible pipeline:\n  {path}\n  "
+            + "\n  ".join(f"- {msg}" for msg in issues)
+        )
+
+    return data
+
+
 # ================================================================
 # CLI
 # ================================================================
@@ -1328,6 +1434,21 @@ def main():
         / "lipschitz_constants.json"
     )
 
+    cross_tile_reward_path = (
+        data_dir
+        / "cross_tile_reward_lipschitz.json"
+    )
+
+    cross_cat_dynamics_path = (
+        data_dir
+        / "cross_category_dynamics_lipschitz.json"
+    )
+
+    noise_ratio_path = (
+        data_dir
+        / "category_noise_action_ratio.json"
+    )
+
     run_config_path = (
         data_dir
         / "run_config.json"
@@ -1338,8 +1459,18 @@ def main():
             [
                 bounds_path,
                 lipschitz_path,
+                cross_tile_reward_path,
+                cross_cat_dynamics_path,
+                noise_ratio_path,
                 run_config_path,
             ]
+        )
+
+        validate_cross_category_artifact(
+            cross_tile_reward_path, sigma, det_sigma_scale, gamma, kind="cross_tile"
+        )
+        validate_cross_category_artifact(
+            cross_cat_dynamics_path, sigma, det_sigma_scale, gamma, kind="cross_category"
         )
 
         models_dir.mkdir(
@@ -1411,6 +1542,10 @@ def main():
                 bounds_path,
                 "--lipschitz",
                 lipschitz_path,
+                "--cross-tile-reward-lipschitz",
+                cross_tile_reward_path,
+                "--cross-category-dynamics-lipschitz",
+                cross_cat_dynamics_path,
                 "--lq-source",
                 args.lq_source,
                 "--iters",

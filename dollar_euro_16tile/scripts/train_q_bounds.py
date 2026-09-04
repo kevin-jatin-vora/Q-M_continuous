@@ -1,10 +1,24 @@
 """Train learned Q upper/lower Bellman bounds for the Dollar-Euro project.
 
-Uses the existing project artifacts and equations:
+Uses the existing project artifacts and equations.
 
-    s_bar' = clip(s + delta_mean(category, action), 0, 1)
-    delta_r = Lr(tile, action) * pruning_radius(category, action)
-    delta_q = Lq(tile, action) * pruning_radius(category, action)
+The CURRENT action a controls the transition uncertainty:
+
+    s_bar' = clip(s + delta_mean(category, a), 0, 1)
+    r     = pruning_radius(source_category, a)      (current-action radius)
+
+The next-state uncertainty ball B(s_bar', r) yields:
+
+    Lr_eff(mask)            (mask only)
+    Lf_eff(mask, b)         for every future action b in {0,1,2,3}
+    Lq_eff(mask, b)  = Lr_eff * Lf_eff(mask, b) / (1 - gamma*Lf_eff(mask, b))
+    Lq_future_eff(mask) = max_b Lq_eff(mask, b)
+
+The FUTURE action b appears inside the continuation max_a Q(s_bar',a), so the
+future Q Lipschitz constant must cover all next actions.  Then:
+
+    delta_r = Lr_eff(mask) * r
+    delta_q = Lq_future_eff(mask) * r
 
     y_UB = R + delta_r + gamma * (1-done) * (max_a Q_UB_tgt(s_bar',a) + delta_q)
     y_LB = R - delta_r + gamma * (1-done) * (max_a Q_LB_tgt(s_bar',a) - delta_q)
@@ -43,11 +57,13 @@ from dollar_euro_lipschitz.config import (
     validate_pruning_provenance,
 )
 from dollar_euro_lipschitz.env import ContinuousDollarEuroEnv
-from dollar_euro_lipschitz.layout import categories_from_states
+from dollar_euro_lipschitz.layout import categories_from_states, tile_ids_from_states
 from dollar_euro_lipschitz.models import QNet
 from dollar_euro_lipschitz.q_bounds import (
+    OverlapAwareConstants,
     build_one_step_uncertainty_tables,
     batch_uncertainty,
+    batch_uncertainty_overlap_aware,
 )
 from dollar_euro_lipschitz.rewards import scalar_reward_from_next_states
 
@@ -72,6 +88,18 @@ def main():
 
     parser.add_argument("--bounds", required=True)
     parser.add_argument("--lipschitz", required=True)
+    parser.add_argument(
+        "--cross-tile-reward-lipschitz",
+        default=None,
+        help="Path to cross_tile_reward_lipschitz.json (v3, next-tile reward Lr)",
+    )
+    parser.add_argument(
+        "--cross-category-dynamics-lipschitz",
+        default=None,
+        help="Path to cross_category_dynamics_lipschitz.json (v3, source-category/action dynamics Lf)",
+    )
+    parser.add_argument("--no-overlap-aware", action="store_true",
+                        help="Disable overlap-aware constant selection (use ordinary per-tile lookup)")
     parser.add_argument(
         "--lq-source",
         choices=["empirical", "theoretical"],
@@ -143,6 +171,48 @@ def main():
         determinism,
     )
 
+    use_overlap = (
+        (not args.no_overlap_aware)
+        and (args.cross_tile_reward_lipschitz is not None)
+        and (args.cross_category_dynamics_lipschitz is not None)
+    )
+    overlap_constants = None
+    if use_overlap:
+        overlap_constants = OverlapAwareConstants(
+            args.lipschitz,
+            args.cross_tile_reward_lipschitz,
+            args.cross_category_dynamics_lipschitz,
+            float(args.gamma),
+        )
+
+    # Category x action pruning radius (for overlap-aware ball construction)
+    radius_table_cat = np.zeros((6, 4), dtype=np.float32)
+    for cat in range(1, 6):
+        for act in range(4):
+            radius_table_cat[cat, act] = float(
+                bounds.get(cat, act)["pruning_radius"]
+            )
+
+    # Counter diagnostics (corrected future-action semantics)
+    diag = {
+        "total_lookups": 0,
+        "single_tile": 0,
+        "crossed_tile_boundary": 0,
+        "single_category": 0,
+        "crossed_category_boundary": 0,
+        "max_tiles_intersected": 0,
+        "max_categories_intersected": 0,
+        "lr_from_ordinary_tile": 0,
+        "lr_from_cross_tile": 0,
+        "lf_from_ordinary_category": [0, 0, 0, 0],
+        "lf_from_cross_category": [0, 0, 0, 0],
+        "max_lr_effective": 0.0,
+        "max_lf_effective_over_all_next_actions": 0.0,
+        "max_lq_future_effective": 0.0,
+        "future_action_argmax": [0, 0, 0, 0],
+    }
+    tile_map = env.tile_map
+
     # Exact same initialization for UB and LB.
     q_ub = QNet().to(device)
     q_lb = QNet().to(device)
@@ -179,7 +249,35 @@ def main():
         f"iters={args.iters} tau={args.target_tau:g} "
         f"grad_clip={args.max_grad_norm:g} Lq={args.lq_source}"
     )
+    print(
+        f"overlap_aware={use_overlap} "
+        f"cross_tile_reward={args.cross_tile_reward_lipschitz or '(none)'} "
+        f"cross_cat_dynamics={args.cross_category_dynamics_lipschitz or '(none)'}"
+    )
     print("Q_UB_0 == Q_LB_0; no consistency loss; no Q clipping")
+
+    # Print noise/action ratio summary if the artifact exists next to bounds
+    import json as _json
+    from pathlib import Path as _Path
+    _noise_path = _Path(args.bounds).parent / "category_noise_action_ratio.json"
+    if _noise_path.is_file():
+        try:
+            _noise = _json.load(open(_noise_path, encoding="utf-8"))
+            print("\n=== Noise relative to deterministic movement ===")
+            print(f"{'category':>8} {'action':>6} {'move_norm':>12} "
+                  f"{'noise_norm':>12} {'noise_percent':>14}")
+            for cat in _noise.get("categories", []):
+                cid = cat.get("category")
+                for act in cat.get("actions", []):
+                    print(
+                        f"{cid:>8} {act['action']:>6} {act['move_norm']:>12.6g} "
+                        f"{cat['noise_std_norm']:>12.6g} {act['noise_percent']:>14.6g}"
+                    )
+            s = _noise.get("summary", {})
+            print(f"MIN noise/action %: {s.get('minimum_noise_percent', 0):.6g}")
+            print(f"MAX noise/action %: {s.get('maximum_noise_percent', 0):.6g}")
+        except Exception as _e:
+            print(f"(noise summary could not be printed: {_e})")
 
     for iteration in range(1, args.iters + 1):
         states_np = np.random.rand(args.batch_size, 2).astype(np.float32)
@@ -203,12 +301,52 @@ def main():
         rewards_np, dones_np = scalar_reward_from_next_states(
             next_states_np, env
         )
-        delta_r_np, delta_q_np = batch_uncertainty(
-            states_np,
-            actions_np,
-            dr_table,
-            dq_table,
-        )
+
+        tile_ids_np = tile_ids_from_states(states_np)
+
+        if use_overlap:
+            delta_r_np, delta_q_np, d_diag = batch_uncertainty_overlap_aware(
+                states_np,
+                actions_np,
+                mean_deltas,
+                radius_table_cat,
+                tile_map,
+                overlap_constants,
+                next_states_np=next_states_np,
+            )
+            # Accumulate concise diagnostics (corrected future-action semantics)
+            diag["total_lookups"] += d_diag["total"]
+            diag["single_tile"] += d_diag["single_tile"]
+            diag["crossed_tile_boundary"] += d_diag["crossed_tile_boundary"]
+            diag["single_category"] += d_diag["single_category"]
+            diag["crossed_category_boundary"] += d_diag["crossed_category_boundary"]
+            diag["max_tiles_intersected"] = max(
+                diag["max_tiles_intersected"], d_diag["max_tiles_intersected"]
+            )
+            diag["max_categories_intersected"] = max(
+                diag["max_categories_intersected"], d_diag["max_categories_intersected"]
+            )
+            diag["lr_from_ordinary_tile"] += d_diag["lr_from_ordinary_tile"]
+            diag["lr_from_cross_tile"] += d_diag["lr_from_cross_tile"]
+            for _b in range(4):
+                diag["lf_from_ordinary_category"][_b] += d_diag["lf_from_ordinary_category"][_b]
+                diag["lf_from_cross_category"][_b] += d_diag["lf_from_cross_category"][_b]
+                diag["future_action_argmax"][_b] += d_diag["future_action_argmax"][_b]
+            diag["max_lr_effective"] = max(diag["max_lr_effective"], d_diag["max_lr_effective"])
+            diag["max_lf_effective_over_all_next_actions"] = max(
+                diag["max_lf_effective_over_all_next_actions"],
+                d_diag["max_lf_effective_over_all_next_actions"],
+            )
+            diag["max_lq_future_effective"] = max(
+                diag["max_lq_future_effective"], d_diag["max_lq_future_effective"]
+            )
+        else:
+            delta_r_np, delta_q_np = batch_uncertainty(
+                states_np,
+                actions_np,
+                dr_table,
+                dq_table,
+            )
 
         states = torch.as_tensor(
             states_np, dtype=torch.float32, device=device
@@ -329,6 +467,38 @@ def main():
     torch.save(q_ub.state_dict(), out_ub)
     torch.save(q_lb.state_dict(), out_lb)
 
+    # Corrected overlap-aware diagnostic summary
+    if use_overlap and diag["total_lookups"] > 0:
+        total = diag["total_lookups"]
+        tile_cross_pct = 100.0 * diag["crossed_tile_boundary"] / total
+        cat_cross_pct = 100.0 * diag["crossed_category_boundary"] / total
+        lr_cross_pct = 100.0 * diag["lr_from_cross_tile"] / total
+        print("\n=== Overlap-aware uncertainty summary (future-action semantics) ===")
+        print(f"total bound lookups:                   {total}")
+        print(f"stayed in one tile:                    {diag['single_tile']}")
+        print(f"crossed >=1 tile boundary:             {diag['crossed_tile_boundary']} "
+              f"({tile_cross_pct:.2f}%)")
+        print(f"stayed in one category:                {diag['single_category']}")
+        print(f"crossed >=1 category boundary:         {diag['crossed_category_boundary']} "
+              f"({cat_cross_pct:.2f}%)")
+        print(f"max tiles intersected:                 {diag['max_tiles_intersected']}")
+        print(f"max categories intersected:            {diag['max_categories_intersected']}")
+        print(f"Lr_eff from ordinary tile:             {diag['lr_from_ordinary_tile']}  "
+              f"from cross tile: {diag['lr_from_cross_tile']} ({lr_cross_pct:.2f}%)")
+        for _b in range(4):
+            print(
+                f"  Lf_eff(action {_b}) ordinary/cross:    "
+                f"{diag['lf_from_ordinary_category'][_b]} / "
+                f"{diag['lf_from_cross_category'][_b]}"
+            )
+        print(f"max selected Lr_effective:             {diag['max_lr_effective']:.6g}")
+        print(f"max selected Lf_future_effective:      {diag['max_lf_effective_over_all_next_actions']:.6g}")
+        print(f"max selected Lq_future_effective:      {diag['max_lq_future_effective']:.6g}")
+        print("future-action argmax (which next action controls max Lq):")
+        for _b in range(4):
+            print(f"  action {_b}: {diag['future_action_argmax'][_b]}  "
+                  f"({100.0 * diag['future_action_argmax'][_b] / total:.2f}%)")
+
     manifest = (
         Path(args.manifest)
         if args.manifest
@@ -348,8 +518,49 @@ def main():
         "iters": args.iters,
         "seed": args.seed,
         "lq_source": args.lq_source,
+        "q_bound_runtime_method_version": 2,
+        "current_action_role": (
+            "current action determines delta_mean, nominal next state, and "
+            "Student-t radius"
+        ),
+        "future_action_role": (
+            "future Bellman max requires Lq_future_effective = "
+            "max_b Lq_effective(b) over all next actions"
+        ),
         "bounds": str(Path(args.bounds).resolve()),
         "lipschitz": str(Path(args.lipschitz).resolve()),
+        "overlap_aware": {
+            "enabled": use_overlap,
+            "cross_tile_reward_artifact": (
+                str(Path(args.cross_tile_reward_lipschitz).resolve())
+                if args.cross_tile_reward_lipschitz else None
+            ),
+            "cross_category_dynamics_artifact": (
+                str(Path(args.cross_category_dynamics_lipschitz).resolve())
+                if args.cross_category_dynamics_lipschitz else None
+            ),
+            "method": (
+                "geometric L2 distance from B(s_bar', current-action pruning "
+                "radius) to each 4x4 tile rectangle; mask-keyed lazy cache"
+            ),
+            "reward_selection": (
+                "Lr_effective = maximum applicable ordinary next-state-tile Lr "
+                "and neighboring cross-tile reward Lr over all tiles intersected "
+                "by the next-state Student-t L2 uncertainty ball"
+            ),
+            "dynamics_selection": (
+                "for each possible future action b: Lf_effective(b) = maximum "
+                "applicable ordinary source-category/action Lf and neighboring "
+                "cross-category/action Lf over all represented categories and "
+                "their neighbor pairs"
+            ),
+            "q_derivation": (
+                "Lq_effective(b) = Lr_effective * Lf_effective(b) / "
+                "(1 - gamma*Lf_effective(b)); Lq_future_effective = max_b "
+                "Lq_effective(b); raises (never 0) if gamma*Lf_effective(b)>=1 "
+                "for any future action b in the continuation max"
+            ),
+        },
         "initialization": {
             "q_ub_equals_q_lb": True,
             "q_ub_target_equals_q_ub": True,
@@ -362,14 +573,50 @@ def main():
         "early_stopping": False,
         "best_checkpoint_replacement": False,
         "double_q": False,
-        "delta_r": "Lr(tile,a) * pruning_radius(category,a)",
-        "delta_q": "Lq(tile,a) * pruning_radius(category,a)",
+        "delta_r": (
+            "Lr_effective(mask) * radius(source_category,current_action); "
+            "Lr_effective = max(applicable ordinary next-state-tile Lr and "
+            "cross-tile reward Lr)"
+        ),
+        "delta_q": (
+            "max_b[Lr_effective(mask)*Lf_effective(mask,b)/"
+            "(1-gamma*Lf_effective(mask,b))] * radius(source_category,"
+            "current_action) = Lq_future_effective(mask) * "
+            "radius(source_category,current_action)"
+        ),
         "ub_target": (
             "R + delta_r + gamma*(1-d)*(max_a Q_UB_target(s_bar,a) + delta_q)"
         ),
         "lb_target": (
             "R - delta_r + gamma*(1-d)*(max_a Q_LB_target(s_bar,a) - delta_q)"
         ),
+        "overlap_diagnostics": {
+            "total_lookups": diag.get("total_lookups", 0),
+            "single_tile": diag.get("single_tile", 0),
+            "crossed_tile_boundary": diag.get("crossed_tile_boundary", 0),
+            "crossed_tile_boundary_percent": (
+                (100.0 * diag["crossed_tile_boundary"] / diag["total_lookups"])
+                if use_overlap and diag.get("total_lookups", 0) > 0 else 0.0
+            ),
+            "single_category": diag.get("single_category", 0),
+            "crossed_category_boundary": diag.get("crossed_category_boundary", 0),
+            "crossed_category_boundary_percent": (
+                (100.0 * diag["crossed_category_boundary"] / diag["total_lookups"])
+                if use_overlap and diag.get("total_lookups", 0) > 0 else 0.0
+            ),
+            "max_tiles_intersected": diag.get("max_tiles_intersected", 0),
+            "max_categories_intersected": diag.get("max_categories_intersected", 0),
+            "effective_lr_from_ordinary_tile": diag.get("lr_from_ordinary_tile", 0),
+            "effective_lr_from_cross_tile": diag.get("lr_from_cross_tile", 0),
+            "effective_lf_from_ordinary_category": diag.get("lf_from_ordinary_category", [0, 0, 0, 0]),
+            "effective_lf_from_cross_category": diag.get("lf_from_cross_category", [0, 0, 0, 0]),
+            "max_lr_effective": diag.get("max_lr_effective", 0.0),
+            "max_lf_effective_over_all_next_actions": diag.get(
+                "max_lf_effective_over_all_next_actions", 0.0
+            ),
+            "max_lq_future_effective": diag.get("max_lq_future_effective", 0.0),
+            "future_action_argmax_counts": diag.get("future_action_argmax", [0, 0, 0, 0]),
+        },
     }
     manifest.write_text(
         json.dumps(manifest_data, indent=2), encoding="utf-8"
