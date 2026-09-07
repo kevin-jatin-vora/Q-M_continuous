@@ -1,0 +1,11 @@
+{
+  "sigma": 0.0005,
+  "gamma": 0.96,
+  "determinism": 0.0,
+  "deterministic_sigma_scale": 0.001,
+  "steps": 150000,
+  "seed": 0,
+  "r2_seed_offset": 1000000,
+  "include_boundary_transitions": false,
+  "min_cell_samples": 2
+}

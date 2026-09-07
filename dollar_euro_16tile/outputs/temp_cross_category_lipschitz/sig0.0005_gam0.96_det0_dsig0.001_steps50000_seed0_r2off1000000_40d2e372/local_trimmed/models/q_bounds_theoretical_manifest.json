@@ -1,0 +1,77 @@
+{
+  "method": "learned_lipschitz_bellman_q_bounds",
+  "sigma": 0.0005,
+  "determinism": 0.0,
+  "deterministic_sigma_scale": 0.001,
+  "gamma": 0.96,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "target_tau": 0.01,
+  "iters": 120000,
+  "seed": 999,
+  "lq_source": "theoretical",
+  "q_bound_runtime_method_version": 2,
+  "current_action_role": "current action determines delta_mean, nominal next state, and Student-t radius",
+  "future_action_role": "future Bellman max requires Lq_future_effective = max_b Lq_effective(b) over all next actions",
+  "bounds": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\temp_cross_category_lipschitz\\sig0.0005_gam0.96_det0_dsig0.001_steps50000_seed0_r2off1000000_40d2e372\\shared\\transition_bounds.json",
+  "lipschitz": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\temp_cross_category_lipschitz\\sig0.0005_gam0.96_det0_dsig0.001_steps50000_seed0_r2off1000000_40d2e372\\local_trimmed\\lipschitz_constants.json",
+  "overlap_aware": {
+    "enabled": true,
+    "cross_tile_reward_artifact": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\temp_cross_category_lipschitz\\sig0.0005_gam0.96_det0_dsig0.001_steps50000_seed0_r2off1000000_40d2e372\\local_trimmed\\cross_tile_reward_lipschitz.json",
+    "cross_category_dynamics_artifact": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\temp_cross_category_lipschitz\\sig0.0005_gam0.96_det0_dsig0.001_steps50000_seed0_r2off1000000_40d2e372\\local_trimmed\\cross_category_dynamics_lipschitz.json",
+    "method": "geometric L2 distance from B(s_bar', current-action pruning radius) to each 4x4 tile rectangle; mask-keyed lazy cache",
+    "reward_selection": "Lr_effective = maximum applicable ordinary next-state-tile Lr and neighboring cross-tile reward Lr over all tiles intersected by the next-state Student-t L2 uncertainty ball",
+    "dynamics_selection": "for each possible future action b: Lf_effective(b) = maximum applicable ordinary source-category/action Lf and neighboring cross-category/action Lf over all represented categories and their neighbor pairs",
+    "q_derivation": "Lq_effective(b) = Lr_effective * Lf_effective(b) / (1 - gamma*Lf_effective(b)); Lq_future_effective = max_b Lq_effective(b); raises (never 0) if gamma*Lf_effective(b)>=1 for any future action b in the continuation max"
+  },
+  "initialization": {
+    "q_ub_equals_q_lb": true,
+    "q_ub_target_equals_q_ub": true,
+    "q_lb_target_equals_q_lb": true
+  },
+  "consistency_loss": false,
+  "q_clipping": false,
+  "gradient_clipping": true,
+  "max_grad_norm": 10.0,
+  "early_stopping": false,
+  "best_checkpoint_replacement": false,
+  "double_q": false,
+  "delta_r": "Lr_effective(mask) * radius(source_category,current_action); Lr_effective = max(applicable ordinary next-state-tile Lr and cross-tile reward Lr)",
+  "delta_q": "max_b[Lr_effective(mask)*Lf_effective(mask,b)/(1-gamma*Lf_effective(mask,b))] * radius(source_category,current_action) = Lq_future_effective(mask) * radius(source_category,current_action)",
+  "ub_target": "R + delta_r + gamma*(1-d)*(max_a Q_UB_target(s_bar,a) + delta_q)",
+  "lb_target": "R - delta_r + gamma*(1-d)*(max_a Q_LB_target(s_bar,a) - delta_q)",
+  "overlap_diagnostics": {
+    "total_lookups": 30720000,
+    "single_tile": 30163390,
+    "crossed_tile_boundary": 556610,
+    "crossed_tile_boundary_percent": 1.8118815104166666,
+    "single_category": 30534329,
+    "crossed_category_boundary": 185671,
+    "crossed_category_boundary_percent": 0.6043977864583333,
+    "max_tiles_intersected": 4,
+    "max_categories_intersected": 4,
+    "effective_lr_from_ordinary_tile": 30720000,
+    "effective_lr_from_cross_tile": 0,
+    "effective_lf_from_ordinary_category": [
+      30675185,
+      30578869,
+      30579215,
+      30626809
+    ],
+    "effective_lf_from_cross_category": [
+      44815,
+      141131,
+      140785,
+      93191
+    ],
+    "max_lr_effective": 7.4224990414331815,
+    "max_lf_effective_over_all_next_actions": 1.0146976442587616,
+    "max_lq_future_effective": 185.99657695462056,
+    "future_action_argmax_counts": [
+      7681721,
+      48290,
+      7694007,
+      15295982
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "method": "local_trimmed",
+    "valid": "yes",
+    "heatmap": "generated"
+  },
+  {
+    "method": "global_trimmed",
+    "valid": "yes",
+    "heatmap": "generated"
+  },
+  {
+    "method": "local_max",
+    "valid": "yes",
+    "heatmap": "generated"
+  },
+  {
+    "method": "global_max",
+    "valid": "yes",
+    "heatmap": "generated"
+  }
+]

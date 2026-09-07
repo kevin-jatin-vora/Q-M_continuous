@@ -350,6 +350,18 @@ def parse_args():
         default=None,
     )
 
+    parser.add_argument(
+        "--steps",
+        type=int,
+        default=None,
+        help=(
+            "Explicit agent training steps per run, overriding the "
+            "profile/config default (smoke=2000, full=300000 or "
+            "config['agent_steps']). Also namespaces the experiment "
+            "directory so different step counts do not collide."
+        ),
+    )
+
     # Kept for CLI compatibility.
     # Runs are currently launched sequentially.
     parser.add_argument(
@@ -438,6 +450,7 @@ def experiment_identity(
     gamma,
     determinism,
     det_sigma_scale,
+    steps,
     profile,
     seed,
     output_root,
@@ -473,6 +486,11 @@ def experiment_identity(
         + b"\0effective_deterministic_sigma_scale="
         + det_sigma_scale_arg.encode("ascii")
     )
+    if steps is not None:
+        identity += (
+            b"\0effective_steps="
+            + str(int(steps)).encode("ascii")
+        )
 
     config_hash = hashlib.sha256(
         identity
@@ -495,12 +513,19 @@ def experiment_identity(
             f"{artifact_sigma_tag(det_sigma_scale)}"
         )
 
+    steps_tag = (
+        f"_steps{int(steps)}"
+        if steps is not None
+        else ""
+    )
+
     return (
         Path(output_root)
         / (
             f"sigma_"
             f"{artifact_sigma_tag(sigma)}"
             f"{det_tag}"
+            f"{steps_tag}"
             f"_cfg_{stem}_"
             f"{config_hash}_"
             f"{profile}_seed{seed}"
@@ -1171,6 +1196,56 @@ def main():
     )
 
     # ------------------------------------------------------------
+    # Profile / steps resolution
+    # ------------------------------------------------------------
+
+    if args.profile == "smoke":
+        default_steps = 2_000
+        eval_every = 500
+        default_runs = 2
+
+    else:
+        default_steps = 300_000
+        eval_every = 20_000
+
+        default_runs = int(
+            config.get(
+                "n_runs",
+                30,
+            )
+        )
+
+    if args.steps is not None:
+        agent_steps = int(args.steps)
+
+    else:
+        agent_steps = int(
+            config.get(
+                "agent_steps",
+                default_steps,
+            )
+        )
+
+    if agent_steps <= 0:
+        raise SystemExit(
+            "--steps (effective agent steps) must be >= 1"
+        )
+
+    eval_every = int(
+        config.get(
+            "eval_every",
+            eval_every,
+        )
+    )
+
+    eval_episodes = int(
+        config.get(
+            "eval_episodes",
+            30,
+        )
+    )
+
+    # ------------------------------------------------------------
     # Exact experiment directory
     # ------------------------------------------------------------
 
@@ -1181,6 +1256,7 @@ def main():
             gamma,
             determinism,
             det_sigma_scale,
+            args.steps,
             args.profile,
             args.seed,
             args.output_root,
@@ -1205,47 +1281,6 @@ def main():
     videos_dir = (
         output_dir
         / "videos"
-    )
-
-    # ------------------------------------------------------------
-    # Profile
-    # ------------------------------------------------------------
-
-    if args.profile == "smoke":
-        agent_steps = 2_000
-        eval_every = 500
-        default_runs = 2
-
-    else:
-        agent_steps = 300_000
-        eval_every = 20_000
-
-        default_runs = int(
-            config.get(
-                "n_runs",
-                30,
-            )
-        )
-
-    agent_steps = int(
-        config.get(
-            "agent_steps",
-            agent_steps,
-        )
-    )
-
-    eval_every = int(
-        config.get(
-            "eval_every",
-            eval_every,
-        )
-    )
-
-    eval_episodes = int(
-        config.get(
-            "eval_episodes",
-            30,
-        )
     )
 
     n_runs = (
@@ -1408,6 +1443,14 @@ def main():
         "--stop-after",
         "videos",
     ]
+
+    if args.steps is not None:
+        original_cmd.append(
+            "--steps"
+        )
+        original_cmd.append(
+            args.steps
+        )
 
     if args.resume:
         original_cmd.append(

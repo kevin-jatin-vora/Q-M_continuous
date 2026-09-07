@@ -66,6 +66,17 @@ def parse_args():
         ),
     )
     parser.add_argument("--profile", choices=["smoke", "full"], default="full")
+    parser.add_argument(
+        "--steps",
+        type=int,
+        default=None,
+        help=(
+            "Explicit step budget for R1/R2 component collection and (if "
+            "trained) agent training, overriding profile/config defaults "
+            "(smoke: 10000/2000, full: 150000/300000). When set, the "
+            "effective value also namespaces the experiment directory."
+        ),
+    )
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--runs", type=int, default=None, help="Independent agent seeds to average (config n_runs if omitted)")
     parser.add_argument(
@@ -350,6 +361,38 @@ def main():
         "--determinism", det_arg,
         "--deterministic-sigma-scale", det_sigma_scale_arg,
     ]
+    # ------------------------------------------------------------
+    # Profile / steps resolution
+    # ------------------------------------------------------------
+
+    if args.profile == "smoke":
+        default_component_steps, min_cell, center_iters = 10_000, 2, 1_000
+        default_agent_steps, eval_every = 2_000, 500
+        grid_size, dpi = 31, 100
+        default_runs = 2
+    else:
+        default_component_steps, min_cell, center_iters = 150_000, 2, 80_000
+        default_agent_steps, eval_every = 300_000, 20_000
+        grid_size, dpi = 201, 300
+        default_runs = int(config.get("n_runs", 30))
+
+    if args.steps is not None:
+        if args.steps <= 0:
+            raise SystemExit("error: --steps must be >= 1")
+        component_steps = int(args.steps)
+        agent_steps = int(args.steps)
+    else:
+        component_steps = int(config.get("component_steps", default_component_steps))
+        agent_steps = int(config.get("agent_steps", default_agent_steps))
+
+    center_iters = int(config.get("center_q_iters", center_iters))
+    eval_every = int(config.get("eval_every", eval_every))
+    eval_episodes = int(config.get("eval_episodes", 30))
+
+    # ------------------------------------------------------------
+    # Experiment directory identity
+    # ------------------------------------------------------------
+
     identity = (
         config_path.read_bytes()
         + b"\0effective_sigma="
@@ -361,33 +404,26 @@ def main():
         + b"\0effective_deterministic_sigma_scale="
         + det_sigma_scale_arg.encode("ascii")
     )
+    if args.steps is not None:
+        identity += (
+            b"\0effective_steps="
+            + str(int(agent_steps)).encode("ascii")
+        )
     config_hash = hashlib.sha256(identity).hexdigest()[:12]
     stem = re.sub(r"[^A-Za-z0-9_.-]+", "_", config_path.stem)
     source_tag = "_sourcejson" if args.from_source_json else ""
     det_tag = f"_det{int(round(determinism * 100)):02d}"
     if det_sigma_scale > 0.0:
         det_tag += f"_dsig{artifact_sigma_tag(det_sigma_scale)}"
+    steps_tag = f"_steps{int(agent_steps)}" if args.steps is not None else ""
     output_dir = (
         Path(args.output_root)
-        / f"sigma_{artifact_sigma_tag(sigma)}{det_tag}_cfg_{stem}_{config_hash}_{args.profile}{source_tag}_seed{args.seed}"
+        / f"sigma_{artifact_sigma_tag(sigma)}{det_tag}{steps_tag}_cfg_{stem}_{config_hash}_{args.profile}{source_tag}_seed{args.seed}"
     )
     data_dir = output_dir / "data"
     models_dir = output_dir / "models"
     plots_dir = output_dir / "plots"
     videos_dir = output_dir / "videos"
-    if args.profile == "smoke":
-        component_steps, min_cell, center_iters, agent_steps, eval_every = 10_000, 2, 1_000, 2_000, 500
-        grid_size, dpi = 31, 100
-        default_runs = 2
-    else:
-        component_steps, min_cell, center_iters, agent_steps, eval_every = 150_000, 2, 80_000, 300_000, 20_000
-        grid_size, dpi = 201, 300
-        default_runs = int(config.get("n_runs", 30))
-    component_steps = int(config.get("component_steps", component_steps))
-    center_iters = int(config.get("center_q_iters", center_iters))
-    agent_steps = int(config.get("agent_steps", agent_steps))
-    eval_every = int(config.get("eval_every", eval_every))
-    eval_episodes = int(config.get("eval_episodes", 30))
     legacy_margin = bool(config.get("legacy_margin", False))
     legacy_margin_args = ["--legacy-margin"] if legacy_margin else ["--no-legacy-margin"]
     include_boundary = not bool(config.get("exclude_boundary_affected_transitions", True))
@@ -429,6 +465,7 @@ def main():
     print(f"n_runs:          {n_runs}  (agent seeds {args.seed}..{args.seed + n_runs - 1})")
     print(f"parallel_runs:   {parallel_workers_hint}  (independent seed jobs)")
     print(f"agent_steps:     {agent_steps}")
+    print(f"component_steps: {component_steps}")
     print(f"eval_every:      {eval_every}")
     print(f"eval_episodes:   {eval_episodes}  (unseeded greedy rollouts)")
     print(f"empirical:       {'yes' if args.empirical else 'no'}")
