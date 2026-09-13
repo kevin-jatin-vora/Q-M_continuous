@@ -1,0 +1,127 @@
+{
+  "definition": "f_hat(s,a)=s+mu_hat[c,a]",
+  "analytic_Lf": 1.0,
+  "reason": "The same constant displacement cancels when two mapped states are subtracted.",
+  "checks": [
+    {
+      "category": 1,
+      "action": 0,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 1,
+      "action": 1,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 1,
+      "action": 2,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 1,
+      "action": 3,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 2,
+      "action": 0,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 2,
+      "action": 1,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 2,
+      "action": 2,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 2,
+      "action": 3,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 3,
+      "action": 0,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 3,
+      "action": 1,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 3,
+      "action": 2,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 3,
+      "action": 3,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 4,
+      "action": 0,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 4,
+      "action": 1,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 4,
+      "action": 2,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 4,
+      "action": 3,
+      "represented": true,
+      "Lf": 1.0
+    },
+    {
+      "category": 5,
+      "action": 0,
+      "represented": false,
+      "Lf": 0.0
+    },
+    {
+      "category": 5,
+      "action": 1,
+      "represented": false,
+      "Lf": 0.0
+    },
+    {
+      "category": 5,
+      "action": 2,
+      "represented": false,
+      "Lf": 0.0
+    },
+    {
+      "category": 5,
+      "action": 3,
+      "represented": false,
+      "Lf": 0.0
+    }
+  ]
+}

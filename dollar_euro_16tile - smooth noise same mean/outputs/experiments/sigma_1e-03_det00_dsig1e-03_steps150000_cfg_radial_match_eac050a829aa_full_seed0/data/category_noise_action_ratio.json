@@ -1,0 +1,256 @@
+{
+  "sigma": 0.001,
+  "determinism": 0.0,
+  "deterministic_sigma_scale": 0.001,
+  "deterministic_sigma": 1e-06,
+  "step_size": 0.04,
+  "definition": {
+    "move_norm": "||action_vector * step_size * action_scale[category]||_2",
+    "noise_norm": "||sqrt(diag(noise_cov[category]))||_2",
+    "noise_percent": "100 * noise_norm / move_norm"
+  },
+  "categories": [
+    {
+      "category": 1,
+      "noise_std_vector": [
+        0.001,
+        0.001
+      ],
+      "noise_std_norm": 0.001414213562373095,
+      "actions": [
+        {
+          "action": 0,
+          "deterministic_displacement": [
+            0.0,
+            -0.04
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 3.5355339059327373
+        },
+        {
+          "action": 1,
+          "deterministic_displacement": [
+            0.0,
+            0.04
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 3.5355339059327373
+        },
+        {
+          "action": 2,
+          "deterministic_displacement": [
+            -0.04,
+            0.0
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 3.5355339059327373
+        },
+        {
+          "action": 3,
+          "deterministic_displacement": [
+            0.04,
+            0.0
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 3.5355339059327373
+        }
+      ]
+    },
+    {
+      "category": 2,
+      "noise_std_vector": [
+        0.0011,
+        0.0011
+      ],
+      "noise_std_norm": 0.0015556349186104045,
+      "actions": [
+        {
+          "action": 0,
+          "deterministic_displacement": [
+            0.0,
+            -0.04
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 3.8890872965260113
+        },
+        {
+          "action": 1,
+          "deterministic_displacement": [
+            0.0,
+            0.04
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 3.8890872965260113
+        },
+        {
+          "action": 2,
+          "deterministic_displacement": [
+            -0.04,
+            0.0
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 3.8890872965260113
+        },
+        {
+          "action": 3,
+          "deterministic_displacement": [
+            0.04,
+            0.0
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 3.8890872965260113
+        }
+      ]
+    },
+    {
+      "category": 3,
+      "noise_std_vector": [
+        0.0012,
+        0.0012
+      ],
+      "noise_std_norm": 0.001697056274847714,
+      "actions": [
+        {
+          "action": 0,
+          "deterministic_displacement": [
+            0.0,
+            -0.04
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 4.242640687119285
+        },
+        {
+          "action": 1,
+          "deterministic_displacement": [
+            0.0,
+            0.04
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 4.242640687119285
+        },
+        {
+          "action": 2,
+          "deterministic_displacement": [
+            -0.04,
+            0.0
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 4.242640687119285
+        },
+        {
+          "action": 3,
+          "deterministic_displacement": [
+            0.04,
+            0.0
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 4.242640687119285
+        }
+      ]
+    },
+    {
+      "category": 4,
+      "noise_std_vector": [
+        0.0013000000000000002,
+        0.0013000000000000002
+      ],
+      "noise_std_norm": 0.0018384776310850237,
+      "actions": [
+        {
+          "action": 0,
+          "deterministic_displacement": [
+            0.0,
+            -0.04
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 4.59619407771256
+        },
+        {
+          "action": 1,
+          "deterministic_displacement": [
+            0.0,
+            0.04
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 4.59619407771256
+        },
+        {
+          "action": 2,
+          "deterministic_displacement": [
+            -0.04,
+            0.0
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 4.59619407771256
+        },
+        {
+          "action": 3,
+          "deterministic_displacement": [
+            0.04,
+            0.0
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 4.59619407771256
+        }
+      ]
+    },
+    {
+      "category": 5,
+      "noise_std_vector": [
+        1e-06,
+        1e-06
+      ],
+      "noise_std_norm": 1.414213562373095e-06,
+      "actions": [
+        {
+          "action": 0,
+          "deterministic_displacement": [
+            0.0,
+            -0.04
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 0.003535533905932737
+        },
+        {
+          "action": 1,
+          "deterministic_displacement": [
+            0.0,
+            0.04
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 0.003535533905932737
+        },
+        {
+          "action": 2,
+          "deterministic_displacement": [
+            -0.04,
+            0.0
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 0.003535533905932737
+        },
+        {
+          "action": 3,
+          "deterministic_displacement": [
+            0.04,
+            0.0
+          ],
+          "move_norm": 0.04,
+          "noise_percent": 0.003535533905932737
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "minimum_noise_percent": 0.003535533905932737,
+    "minimum_location": {
+      "category": 5,
+      "action": 0
+    },
+    "maximum_noise_percent": 4.59619407771256,
+    "maximum_location": {
+      "category": 4,
+      "action": 0
+    }
+  }
+}

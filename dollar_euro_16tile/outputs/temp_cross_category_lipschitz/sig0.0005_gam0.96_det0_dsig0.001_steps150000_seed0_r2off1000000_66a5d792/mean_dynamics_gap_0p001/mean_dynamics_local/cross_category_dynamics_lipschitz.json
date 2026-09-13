@@ -1,0 +1,984 @@
+{
+  "lipschitz_method_version": 3,
+  "source": "scripts/debug/compute_mean_dynamics_lipschitz.py",
+  "gamma": 0.96,
+  "sigma": 0.0005,
+  "deterministic_sigma_scale": 0.001,
+  "estimator": "gap_restricted_cross_category_mean_map_max",
+  "min_pair_distance": 0.001,
+  "max_pairs": 50000,
+  "Lf_grouping": "source_category_action_pair",
+  "interpretation": "Finite-resolution cross-category sensitivity of f_hat, not a global Lipschitz constant. Noise in sampled successors is excluded.",
+  "neighbor_category_pairs": [
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ]
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ]
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ]
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ]
+    }
+  ],
+  "constants": [
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 0,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "n_i_pooled": 955,
+      "n_j_pooled": 1146,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 1.9494742834433023,
+      "Lf1": 1.9494742834433023,
+      "Lf2": 1.9494742834433023,
+      "Lf_sum": 1.9494742834433023,
+      "mean_displacement_jump_norm": 0.0036190198949439378,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 938,
+        "index_j": 1073,
+        "source_state_i": [
+          0.5015818476676941,
+          0.6224352717399597
+        ],
+        "source_state_j": [
+          0.4999682903289795,
+          0.6192117929458618
+        ],
+        "mean_displacement_i": [
+          -1.35e-05,
+          -0.0383873
+        ],
+        "mean_displacement_j": [
+          -1.5e-06,
+          -0.0420063
+        ],
+        "mapped_state_i": [
+          0.5015683476676941,
+          0.5840479717399597
+        ],
+        "mapped_state_j": [
+          0.4999667903289795,
+          0.5772054929458618
+        ],
+        "source_distance": 0.0036047722287709935,
+        "mapped_distance": 0.007027410757659648,
+        "pair_ratio": 1.9494742834433023
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 1,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "n_i_pooled": 3597,
+      "n_j_pooled": 3631,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 4,
+      "pairs_used": 49996,
+      "Lf_pooled": 3.831867572652475,
+      "Lf1": 3.831867572652475,
+      "Lf2": 3.831867572652475,
+      "Lf_sum": 3.831867572652475,
+      "mean_displacement_jump_norm": 0.00357330296084729,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 1155,
+        "index_j": 2909,
+        "source_state_i": [
+          0.5008811354637146,
+          0.7791223526000977
+        ],
+        "source_state_j": [
+          0.49995484948158264,
+          0.7797629237174988
+        ],
+        "mean_displacement_i": [
+          5.7e-06,
+          0.0384056
+        ],
+        "mean_displacement_j": [
+          1.1e-06,
+          0.0419789
+        ],
+        "mapped_state_i": [
+          0.5008868354637146,
+          0.8175279526000977
+        ],
+        "mapped_state_j": [
+          0.4999559494815826,
+          0.8217418237174988
+        ],
+        "source_distance": 0.001126204722571651,
+        "mapped_distance": 0.0043154673565903865,
+        "pair_ratio": 3.831867572652475
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 2,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "n_i_pooled": 1169,
+      "n_j_pooled": 1216,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 1.014869574155953,
+      "Lf1": 1.014869574155953,
+      "Lf2": 1.014869574155953,
+      "Lf_sum": 1.014869574155953,
+      "mean_displacement_jump_norm": 0.00241631639070714,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 1157,
+        "index_j": 298,
+        "source_state_i": [
+          0.5002577900886536,
+          0.6839262843132019
+        ],
+        "source_state_j": [
+          0.4998532831668854,
+          0.6722469925880432
+        ],
+        "mean_displacement_i": [
+          -0.0384109,
+          8.6e-06
+        ],
+        "mean_displacement_j": [
+          -0.0359946,
+          -3e-07
+        ],
+        "mapped_state_i": [
+          0.46184689008865354,
+          0.6839348843132019
+        ],
+        "mapped_state_j": [
+          0.4638586831668854,
+          0.6722466925880433
+        ],
+        "source_distance": 0.011686294581736277,
+        "mapped_distance": 0.011860064805627716,
+        "pair_ratio": 1.014869574155953
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 3,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "n_i_pooled": 950,
+      "n_j_pooled": 1482,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 1.7138134292922758,
+      "Lf1": 1.7138134292922758,
+      "Lf2": 1.7138134292922758,
+      "Lf_sum": 1.7138134292922758,
+      "mean_displacement_jump_norm": 0.002368407348831699,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 199,
+        "index_j": 1232,
+        "source_state_i": [
+          0.500744104385376,
+          0.611803412437439
+        ],
+        "source_state_j": [
+          0.49799156188964844,
+          0.6103747487068176
+        ],
+        "mean_displacement_i": [
+          0.0383805,
+          -7.2e-06
+        ],
+        "mean_displacement_j": [
+          0.0360121,
+          -1.3e-06
+        ],
+        "mapped_state_i": [
+          0.539124604385376,
+          0.611796212437439
+        ],
+        "mapped_state_j": [
+          0.5340036618896484,
+          0.6103734487068176
+        ],
+        "source_distance": 0.0031012207670494643,
+        "mapped_distance": 0.005314913797769464,
+        "pair_ratio": 1.7138134292922758
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 0,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "n_i_pooled": 955,
+      "n_j_pooled": 56747,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 1.124130864795546,
+      "Lf1": 1.124130864795546,
+      "Lf2": 1.124130864795546,
+      "Lf_sum": 1.124130864795546,
+      "mean_displacement_jump_norm": 0.0016158659597875072,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 198,
+        "index_j": 1146,
+        "source_state_i": [
+          0.62663733959198,
+          0.5085875391960144
+        ],
+        "source_state_j": [
+          0.6259754300117493,
+          0.49560779333114624
+        ],
+        "mean_displacement_i": [
+          -1.35e-05,
+          -0.0383873
+        ],
+        "mean_displacement_j": [
+          1.1e-06,
+          -0.0400031
+        ],
+        "mapped_state_i": [
+          0.62662383959198,
+          0.4702002391960144
+        ],
+        "mapped_state_j": [
+          0.6259765300117492,
+          0.4556046933311462
+        ],
+        "source_distance": 0.012996612135820759,
+        "mapped_distance": 0.014609892839652475,
+        "pair_ratio": 1.124130864795546
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 1,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "n_i_pooled": 3597,
+      "n_j_pooled": 7501,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 1.0000214683507214,
+      "Lf1": 1.0000214683507214,
+      "Lf2": 1.0000214683507214,
+      "Lf_sum": 1.0000214683507214,
+      "mean_displacement_jump_norm": 0.001588221687926473,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 1031,
+        "index_j": 145,
+        "source_state_i": [
+          0.5001941323280334,
+          0.5001303553581238
+        ],
+        "source_state_j": [
+          0.5837520360946655,
+          0.4998672902584076
+        ],
+        "mean_displacement_i": [
+          5.7e-06,
+          0.0384056
+        ],
+        "mean_displacement_j": [
+          -2.6e-06,
+          0.0399938
+        ],
+        "mapped_state_i": [
+          0.5001998323280334,
+          0.5385359553581238
+        ],
+        "mapped_state_j": [
+          0.5837494360946656,
+          0.5398610902584076
+        ],
+        "source_distance": 0.08355831786914117,
+        "mapped_distance": 0.08356011172841488,
+        "pair_ratio": 1.0000214683507214
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 2,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "n_i_pooled": 1169,
+      "n_j_pooled": 11548,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 1.055011560199146,
+      "Lf1": 1.055011560199146,
+      "Lf2": 1.055011560199146,
+      "Lf_sum": 1.055011560199146,
+      "mean_displacement_jump_norm": 0.001589640041015576,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 117,
+        "index_j": 1054,
+        "source_state_i": [
+          0.5273197293281555,
+          0.5124627351760864
+        ],
+        "source_state_j": [
+          0.5056605935096741,
+          0.49953505396842957
+        ],
+        "mean_displacement_i": [
+          -0.0384109,
+          8.6e-06
+        ],
+        "mean_displacement_j": [
+          -0.0400004,
+          -1.25e-05
+        ],
+        "mapped_state_i": [
+          0.4889088293281555,
+          0.5124713351760865
+        ],
+        "mapped_state_j": [
+          0.4656601935096741,
+          0.49952255396842954
+        ],
+        "source_distance": 0.025223859851541956,
+        "mapped_distance": 0.02661146373621988,
+        "pair_ratio": 1.055011560199146
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 3,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "n_i_pooled": 950,
+      "n_j_pooled": 77328,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 1.0223527406777997,
+      "Lf1": 1.0223527406777997,
+      "Lf2": 1.0223527406777997,
+      "Lf_sum": 1.0223527406777997,
+      "mean_displacement_jump_norm": 0.0016168001979218103,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 109,
+        "index_j": 2297,
+        "source_state_i": [
+          0.504452645778656,
+          0.5057795643806458
+        ],
+        "source_state_j": [
+          0.5402622222900391,
+          0.4692319631576538
+        ],
+        "mean_displacement_i": [
+          0.0383805,
+          -7.2e-06
+        ],
+        "mean_displacement_j": [
+          0.0399973,
+          -6.4e-06
+        ],
+        "mapped_state_i": [
+          0.542833145778656,
+          0.5057723643806458
+        ],
+        "mapped_state_j": [
+          0.5802595222900391,
+          0.4692255631576538
+        ],
+        "source_distance": 0.051166912405180745,
+        "mapped_distance": 0.05231063312945745,
+        "pair_ratio": 1.0223527406777997
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 0,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "n_i_pooled": 1146,
+      "n_j_pooled": 46443,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 0.9994810825701298,
+      "Lf1": 0.9994810825701298,
+      "Lf2": 0.9994810825701298,
+      "Lf_sum": 0.9994810825701298,
+      "mean_displacement_jump_norm": 0.006808300617628458,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 301,
+        "index_j": 44982,
+        "source_state_i": [
+          0.038884446024894714,
+          0.5139939785003662
+        ],
+        "source_state_j": [
+          0.4983898997306824,
+          0.4946681261062622
+        ],
+        "mean_displacement_i": [
+          -1.5e-06,
+          -0.0420063
+        ],
+        "mean_displacement_j": [
+          -4.4e-06,
+          -0.035198
+        ],
+        "mapped_state_i": [
+          0.03888294602489471,
+          0.4719876785003662
+        ],
+        "mapped_state_j": [
+          0.49838549973068236,
+          0.4594701261062622
+        ],
+        "source_distance": 0.45991167690777374,
+        "mapped_distance": 0.45967302072242544,
+        "pair_ratio": 0.9994810825701298
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 1,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "n_i_pooled": 3631,
+      "n_j_pooled": 7569,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 3.222858296474015,
+      "Lf1": 3.222858296474015,
+      "Lf2": 3.222858296474015,
+      "Lf_sum": 3.222858296474015,
+      "mean_displacement_jump_norm": 0.006787612258371862,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 1038,
+        "index_j": 7079,
+        "source_state_i": [
+          0.4989243745803833,
+          0.5009735226631165
+        ],
+        "source_state_j": [
+          0.49979549646377563,
+          0.498089462518692
+        ],
+        "mean_displacement_i": [
+          1.1e-06,
+          0.0419789
+        ],
+        "mean_displacement_j": [
+          -1.18e-05,
+          0.0351913
+        ],
+        "mapped_state_i": [
+          0.4989254745803833,
+          0.5429524226631165
+        ],
+        "mapped_state_j": [
+          0.49978369646377563,
+          0.533280762518692
+        ],
+        "source_distance": 0.0030127489527643223,
+        "mapped_distance": 0.009709662957609897,
+        "pair_ratio": 3.222858296474015
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 2,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "n_i_pooled": 1216,
+      "n_j_pooled": 69609,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 1.0867561987257213,
+      "Lf1": 1.0867561987257213,
+      "Lf2": 1.0867561987257213,
+      "Lf_sum": 1.0867561987257213,
+      "mean_displacement_jump_norm": 0.0071999014062693895,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 424,
+        "index_j": 66886,
+        "source_state_i": [
+          0.41524121165275574,
+          0.5310513973236084
+        ],
+        "source_state_j": [
+          0.36559250950813293,
+          0.48900023102760315
+        ],
+        "mean_displacement_i": [
+          -0.0359946,
+          -3e-07
+        ],
+        "mean_displacement_j": [
+          -0.0431945,
+          4.2e-06
+        ],
+        "mapped_state_i": [
+          0.37924661165275575,
+          0.5310510973236084
+        ],
+        "mapped_state_j": [
+          0.3223980095081329,
+          0.48900443102760316
+        ],
+        "source_distance": 0.06506377034494512,
+        "mapped_distance": 0.07070845573483588,
+        "pair_ratio": 1.0867561987257213
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 3,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "n_i_pooled": 1482,
+      "n_j_pooled": 7350,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 50000,
+      "Lf_pooled": 1.406660346997916,
+      "Lf1": 1.406660346997916,
+      "Lf2": 1.406660346997916,
+      "Lf_sum": 1.406660346997916,
+      "mean_displacement_jump_norm": 0.0072006000173596655,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 66,
+        "index_j": 5354,
+        "source_state_i": [
+          0.3631712794303894,
+          0.5011783242225647
+        ],
+        "source_state_j": [
+          0.3760627806186676,
+          0.49243244528770447
+        ],
+        "mean_displacement_i": [
+          0.0360121,
+          -1.3e-06
+        ],
+        "mean_displacement_j": [
+          0.0432127,
+          -1.8e-06
+        ],
+        "mapped_state_i": [
+          0.3991833794303894,
+          0.5011770242225647
+        ],
+        "mapped_state_j": [
+          0.4192754806186676,
+          0.49243064528770447
+        ],
+        "source_distance": 0.015578228436847693,
+        "mapped_distance": 0.02191327621858898,
+        "pair_ratio": 1.406660346997916
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 0,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_pooled": 46443,
+      "n_j_pooled": 56747,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 33,
+      "pairs_used": 49967,
+      "Lf_pooled": 5.446660609938539,
+      "Lf1": 5.446660609938539,
+      "Lf2": 5.446660609938539,
+      "Lf_sum": 5.446660609938539,
+      "mean_displacement_jump_norm": 0.0048051031476962075,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 33579,
+        "index_j": 10294,
+        "source_state_i": [
+          0.49978500604629517,
+          0.31050655245780945
+        ],
+        "source_state_j": [
+          0.5005752444267273,
+          0.3098813593387604
+        ],
+        "mean_displacement_i": [
+          -4.4e-06,
+          -0.035198
+        ],
+        "mean_displacement_j": [
+          1.1e-06,
+          -0.0400031
+        ],
+        "mapped_state_i": [
+          0.49978060604629515,
+          0.27530855245780944
+        ],
+        "mapped_state_j": [
+          0.5005763444267273,
+          0.26987825933876036
+        ],
+        "source_distance": 0.001007642364142309,
+        "mapped_distance": 0.00548828597367926,
+        "pair_ratio": 5.446660609938539
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 1,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_pooled": 7569,
+      "n_j_pooled": 7501,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 35,
+      "pairs_used": 49965,
+      "Lf_pooled": 5.430501033081774,
+      "Lf1": 5.430501033081774,
+      "Lf2": 5.430501033081774,
+      "Lf_sum": 5.430501033081774,
+      "mean_displacement_jump_norm": 0.004802508812068959,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 5438,
+        "index_j": 2108,
+        "source_state_i": [
+          0.49922242760658264,
+          0.349347859621048
+        ],
+        "source_state_j": [
+          0.5,
+          0.3499999940395355
+        ],
+        "mean_displacement_i": [
+          -1.18e-05,
+          0.0351913
+        ],
+        "mean_displacement_j": [
+          -2.6e-06,
+          0.0399938
+        ],
+        "mapped_state_i": [
+          0.49921062760658264,
+          0.38453915962104795
+        ],
+        "mapped_state_j": [
+          0.4999974,
+          0.38999379403953555
+        ],
+        "source_distance": 0.0010148389659354298,
+        "mapped_distance": 0.005511084052923991,
+        "pair_ratio": 5.430501033081774
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 2,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_pooled": 69609,
+      "n_j_pooled": 11548,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 29,
+      "pairs_used": 49971,
+      "Lf_pooled": 4.091555827773896,
+      "Lf1": 4.091555827773896,
+      "Lf2": 4.091555827773896,
+      "Lf_sum": 4.091555827773896,
+      "mean_displacement_jump_norm": 0.0031941436567568446,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 33502,
+        "index_j": 7073,
+        "source_state_i": [
+          0.4990990459918976,
+          0.3096791207790375
+        ],
+        "source_state_j": [
+          0.5000957250595093,
+          0.309921532869339
+        ],
+        "mean_displacement_i": [
+          -0.0431945,
+          4.2e-06
+        ],
+        "mean_displacement_j": [
+          -0.0400004,
+          -1.25e-05
+        ],
+        "mapped_state_i": [
+          0.45590454599189756,
+          0.3096833207790375
+        ],
+        "mapped_state_j": [
+          0.4600953250595093,
+          0.30990903286933896
+        ],
+        "source_distance": 0.0010257352413462577,
+        "mapped_distance": 0.004196853004483345,
+        "pair_ratio": 4.091555827773896
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 3,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_pooled": 7350,
+      "n_j_pooled": 77328,
+      "pairs_considered": 50000,
+      "pairs_rejected_below_gap": 22,
+      "pairs_used": 49978,
+      "Lf_pooled": 2.1804177564213156,
+      "Lf1": 2.1804177564213156,
+      "Lf2": 2.1804177564213156,
+      "Lf_sum": 2.1804177564213156,
+      "mean_displacement_jump_norm": 0.0032154032904131947,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 6583,
+        "index_j": 46739,
+        "source_state_i": [
+          0.4995899498462677,
+          0.3513735830783844
+        ],
+        "source_state_j": [
+          0.5,
+          0.3499999940395355
+        ],
+        "mean_displacement_i": [
+          0.0432127,
+          -1.8e-06
+        ],
+        "mean_displacement_j": [
+          0.0399973,
+          -6.4e-06
+        ],
+        "mapped_state_i": [
+          0.5428026498462677,
+          0.3513717830783844
+        ],
+        "mapped_state_j": [
+          0.5399973,
+          0.3499935940395355
+        ],
+        "source_distance": 0.0014334880453710328,
+        "mapped_distance": 0.0031256027877446845,
+        "pair_ratio": 2.1804177564213156
+      }
+    }
+  ]
+}

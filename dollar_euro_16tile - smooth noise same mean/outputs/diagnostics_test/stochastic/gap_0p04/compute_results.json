@@ -1,0 +1,6 @@
+{
+  "local_mean": true,
+  "global_mean": true,
+  "local_max": true,
+  "global_max": true
+}

@@ -113,10 +113,20 @@ def scan_options(argv, valued=(), flags=()):
     return out
 
 
+def gap_dir_name(min_pair_distance):
+    value = format(float(min_pair_distance), ".10g")
+    return "gap_" + value.replace("-", "m").replace(".", "p")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--min-pair-distance", type=float, default=0.04)
+    parser.add_argument("--coverage-bins", type=int, default=40)
     args, _ = parser.parse_known_args()
+
+    if args.min_pair_distance <= 0.0:
+        raise SystemExit("--min-pair-distance must be > 0")
 
     python_exe = sys.executable
     scripts_dir = ROOT / "scripts"
@@ -138,6 +148,14 @@ def main():
     ] + forward_args
     run_cmd(collect_cmd)
 
+    # Coverage is a property of the shared raw transitions, independent of the
+    # Lipschitz estimator and gap. Generate it even when --reuse-data is used.
+    run_cmd([
+        python_exe, "-u", str(debug_scripts_dir / "plot_source_state_counts.py"),
+        "--run-dir", str(run_dir),
+        "--coverage-bins", str(args.coverage_bins),
+    ])
+
     # 2. Compute variants
     # pass all args so compute_lipschitz_variants.py gets --config if provided
     run_cmd([
@@ -145,17 +163,18 @@ def main():
         "--run-dir", str(run_dir),
     ] + forward_args)
     
-    with (shared_dir / "compute_results.json").open("r") as f:
+    gap_dir = run_dir / gap_dir_name(args.min_pair_distance)
+    with (gap_dir / "compute_results.json").open("r") as f:
         compute_results = json.load(f)
         
-    variants = ["local_trimmed", "global_trimmed", "local_max", "global_max"]
+    variants = ["local_mean", "global_mean", "local_max", "global_max"]
     summary = []
     
     for v in variants:
         print(f"\n{'='*50}\nEvaluating variant: {v}\n{'='*50}")
         is_valid = compute_results.get(v, False)
         
-        variant_dir = run_dir / v
+        variant_dir = gap_dir / v
         
         if not is_valid:
             print(f"Variant {v} is INVALID (gamma*Lf >= 1). Skipping training.")
@@ -170,8 +189,9 @@ def main():
         models_dir = variant_dir / "models"
         models_dir.mkdir(parents=True, exist_ok=True)
         
-        # We pass a fixed seed for Q-bounds training to guarantee identical sampling
-        q_bound_seed = args.seed + 999
+        # Match production run_experiment.py so diagnostics use the same
+        # Q-bound initialization and minibatch sampling for a given run seed.
+        q_bound_seed = args.seed
         q_ub_path = models_dir / "q_ub_theoretical.pth"
         q_lb_path = models_dir / "q_lb_theoretical.pth"
         training_options = scan_options(
@@ -218,9 +238,14 @@ def main():
     for row in summary:
         print(f"{row['method']:<20} {row['valid']:<8} {row['heatmap']:<15}")
         
-    summary_out = run_dir / "experiment_summary.json"
+    summary_out = gap_dir / "experiment_summary.json"
     with summary_out.open("w") as f:
         json.dump(summary, f, indent=2)
 
 if __name__ == "__main__":
-    main()
+    # Keep run_diagnostics.cmd unchanged while routing the primary diagnostic
+    # through the debug-only deterministic mean-map comparison. Diagnostics2
+    # continues to import the helpers and main() above without being changed.
+    from run_mean_dynamics_diagnostic import main as run_mean_dynamics
+
+    run_mean_dynamics()

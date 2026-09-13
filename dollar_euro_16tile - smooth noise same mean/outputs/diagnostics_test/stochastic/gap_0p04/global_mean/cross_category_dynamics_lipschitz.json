@@ -1,0 +1,857 @@
+{
+  "lipschitz_method_version": 3,
+  "gamma": 0.96,
+  "sigma": 0.0005,
+  "dynamics_sigma": 0.0005,
+  "deterministic_sigma_scale": 0.001,
+  "deterministic_sigma": 5e-07,
+  "theoretical_global_wasserstein_kernel_lipschitz": 1.00000039999992,
+  "Lf_definition": "data-fitted Gaussian W2 ratio",
+  "estimator": "mean",
+  "min_pair_distance": 0.04,
+  "neighbor_category_pairs": [
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ]
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ]
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ]
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ]
+    }
+  ],
+  "Lf_grouping": "source_category_action_pair",
+  "constants": [
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 0,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "Lf1": 1.000000033482362,
+      "Lf2": 1.0000000305607857,
+      "Lf_sum": 1.000000033482362,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000033482362,
+      "sample_wasserstein_Lf2": 1.0000000305607857,
+      "sample_wasserstein_aggregate": 1.000000033482362,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 141,
+        "index_b": 964,
+        "source_state_a": [
+          0.5430248379707336,
+          0.5454289317131042
+        ],
+        "source_state_b": [
+          0.6220420002937317,
+          0.4384622573852539
+        ],
+        "fitted_mean_next_a": [
+          0.5430327832813433,
+          0.5054119994920632
+        ],
+        "fitted_mean_next_b": [
+          0.6220499456043413,
+          0.3984453251642129
+        ],
+        "fitted_sigma_a": 0.0005515102529456462,
+        "fitted_sigma_b": 0.0006150980719637245,
+        "source_distance": 0.13298714734266398,
+        "wasserstein_distance": 0.1329871777471831,
+        "pair_ratio": 1.0000002286275007
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 1,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "Lf1": 1.0000000327667082,
+      "Lf2": 1.0000000258633894,
+      "Lf_sum": 1.0000000327667082,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.0000000327667082,
+      "sample_wasserstein_Lf2": 1.0000000258633894,
+      "sample_wasserstein_aggregate": 1.0000000327667082,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 751,
+        "index_b": 838,
+        "source_state_a": [
+          0.5802125930786133,
+          0.35849350690841675
+        ],
+        "source_state_b": [
+          0.5392659306526184,
+          0.468500554561615
+        ],
+        "fitted_mean_next_a": [
+          0.5802044358599597,
+          0.3984966928596878
+        ],
+        "fitted_mean_next_b": [
+          0.5392577734339649,
+          0.508503740512886
+        ],
+        "fitted_sigma_a": 0.0006416844785153977,
+        "fitted_sigma_b": 0.0005871473265756473,
+        "source_distance": 0.11738049112693902,
+        "wasserstein_distance": 0.11738051646590797,
+        "pair_ratio": 1.0000002158703607
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 2,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "Lf1": 1.000000032629617,
+      "Lf2": 1.000000024107316,
+      "Lf_sum": 1.000000032629617,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000032629617,
+      "sample_wasserstein_Lf2": 1.000000024107316,
+      "sample_wasserstein_aggregate": 1.000000032629617,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 10,
+        "index_b": 962,
+        "source_state_a": [
+          0.702721357345581,
+          0.6199461221694946
+        ],
+        "source_state_b": [
+          0.6619297862052917,
+          0.4279409646987915
+        ],
+        "fitted_mean_next_a": [
+          0.662711559530067,
+          0.6199427525277725
+        ],
+        "fitted_mean_next_b": [
+          0.6219199883897777,
+          0.4279375950570694
+        ],
+        "fitted_sigma_a": 0.0005057908131492772,
+        "fitted_sigma_b": 0.0006219660821810997,
+        "source_distance": 0.19629042964811808,
+        "wasserstein_distance": 0.19629049840689963,
+        "pair_ratio": 1.0000003502910544
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 3,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "Lf1": 1.000000029245736,
+      "Lf2": 1.000000028356129,
+      "Lf_sum": 1.000000029245736,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000029245736,
+      "sample_wasserstein_Lf2": 1.000000028356129,
+      "sample_wasserstein_aggregate": 1.000000029245736,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 161,
+        "index_b": 781,
+        "source_state_a": [
+          0.7001738548278809,
+          0.5465620756149292
+        ],
+        "source_state_b": [
+          0.7013412714004517,
+          0.3606887757778168
+        ],
+        "fitted_mean_next_a": [
+          0.7401666128279972,
+          0.5465695843198592
+        ],
+        "fitted_mean_next_b": [
+          0.741334029400568,
+          0.3606962844827468
+        ],
+        "fitted_sigma_a": 0.0005501928045511033,
+        "fitted_sigma_b": 0.0006539987155629648,
+        "source_distance": 0.18587696590430727,
+        "wasserstein_distance": 0.18587702387633964,
+        "pair_ratio": 1.0000003118838963
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 0,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "Lf1": 1.000000033482362,
+      "Lf2": 1.0000000305607857,
+      "Lf_sum": 1.000000033482362,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000033482362,
+      "sample_wasserstein_Lf2": 1.0000000305607857,
+      "sample_wasserstein_aggregate": 1.000000033482362,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 141,
+        "index_b": 964,
+        "source_state_a": [
+          0.5430248379707336,
+          0.5454289317131042
+        ],
+        "source_state_b": [
+          0.6220420002937317,
+          0.4384622573852539
+        ],
+        "fitted_mean_next_a": [
+          0.5430327832813433,
+          0.5054119994920632
+        ],
+        "fitted_mean_next_b": [
+          0.6220499456043413,
+          0.3984453251642129
+        ],
+        "fitted_sigma_a": 0.0005515102529456462,
+        "fitted_sigma_b": 0.0006150980719637245,
+        "source_distance": 0.13298714734266398,
+        "wasserstein_distance": 0.1329871777471831,
+        "pair_ratio": 1.0000002286275007
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 1,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "Lf1": 1.0000000327667082,
+      "Lf2": 1.0000000258633894,
+      "Lf_sum": 1.0000000327667082,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.0000000327667082,
+      "sample_wasserstein_Lf2": 1.0000000258633894,
+      "sample_wasserstein_aggregate": 1.0000000327667082,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 751,
+        "index_b": 838,
+        "source_state_a": [
+          0.5802125930786133,
+          0.35849350690841675
+        ],
+        "source_state_b": [
+          0.5392659306526184,
+          0.468500554561615
+        ],
+        "fitted_mean_next_a": [
+          0.5802044358599597,
+          0.3984966928596878
+        ],
+        "fitted_mean_next_b": [
+          0.5392577734339649,
+          0.508503740512886
+        ],
+        "fitted_sigma_a": 0.0006416844785153977,
+        "fitted_sigma_b": 0.0005871473265756473,
+        "source_distance": 0.11738049112693902,
+        "wasserstein_distance": 0.11738051646590797,
+        "pair_ratio": 1.0000002158703607
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 2,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "Lf1": 1.000000032629617,
+      "Lf2": 1.000000024107316,
+      "Lf_sum": 1.000000032629617,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000032629617,
+      "sample_wasserstein_Lf2": 1.000000024107316,
+      "sample_wasserstein_aggregate": 1.000000032629617,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 10,
+        "index_b": 962,
+        "source_state_a": [
+          0.702721357345581,
+          0.6199461221694946
+        ],
+        "source_state_b": [
+          0.6619297862052917,
+          0.4279409646987915
+        ],
+        "fitted_mean_next_a": [
+          0.662711559530067,
+          0.6199427525277725
+        ],
+        "fitted_mean_next_b": [
+          0.6219199883897777,
+          0.4279375950570694
+        ],
+        "fitted_sigma_a": 0.0005057908131492772,
+        "fitted_sigma_b": 0.0006219660821810997,
+        "source_distance": 0.19629042964811808,
+        "wasserstein_distance": 0.19629049840689963,
+        "pair_ratio": 1.0000003502910544
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 3,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "Lf1": 1.000000029245736,
+      "Lf2": 1.000000028356129,
+      "Lf_sum": 1.000000029245736,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000029245736,
+      "sample_wasserstein_Lf2": 1.000000028356129,
+      "sample_wasserstein_aggregate": 1.000000029245736,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 161,
+        "index_b": 781,
+        "source_state_a": [
+          0.7001738548278809,
+          0.5465620756149292
+        ],
+        "source_state_b": [
+          0.7013412714004517,
+          0.3606887757778168
+        ],
+        "fitted_mean_next_a": [
+          0.7401666128279972,
+          0.5465695843198592
+        ],
+        "fitted_mean_next_b": [
+          0.741334029400568,
+          0.3606962844827468
+        ],
+        "fitted_sigma_a": 0.0005501928045511033,
+        "fitted_sigma_b": 0.0006539987155629648,
+        "source_distance": 0.18587696590430727,
+        "wasserstein_distance": 0.18587702387633964,
+        "pair_ratio": 1.0000003118838963
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 0,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "Lf1": 1.000000033482362,
+      "Lf2": 1.0000000305607857,
+      "Lf_sum": 1.000000033482362,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000033482362,
+      "sample_wasserstein_Lf2": 1.0000000305607857,
+      "sample_wasserstein_aggregate": 1.000000033482362,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 141,
+        "index_b": 964,
+        "source_state_a": [
+          0.5430248379707336,
+          0.5454289317131042
+        ],
+        "source_state_b": [
+          0.6220420002937317,
+          0.4384622573852539
+        ],
+        "fitted_mean_next_a": [
+          0.5430327832813433,
+          0.5054119994920632
+        ],
+        "fitted_mean_next_b": [
+          0.6220499456043413,
+          0.3984453251642129
+        ],
+        "fitted_sigma_a": 0.0005515102529456462,
+        "fitted_sigma_b": 0.0006150980719637245,
+        "source_distance": 0.13298714734266398,
+        "wasserstein_distance": 0.1329871777471831,
+        "pair_ratio": 1.0000002286275007
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 1,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "Lf1": 1.0000000327667082,
+      "Lf2": 1.0000000258633894,
+      "Lf_sum": 1.0000000327667082,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.0000000327667082,
+      "sample_wasserstein_Lf2": 1.0000000258633894,
+      "sample_wasserstein_aggregate": 1.0000000327667082,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 751,
+        "index_b": 838,
+        "source_state_a": [
+          0.5802125930786133,
+          0.35849350690841675
+        ],
+        "source_state_b": [
+          0.5392659306526184,
+          0.468500554561615
+        ],
+        "fitted_mean_next_a": [
+          0.5802044358599597,
+          0.3984966928596878
+        ],
+        "fitted_mean_next_b": [
+          0.5392577734339649,
+          0.508503740512886
+        ],
+        "fitted_sigma_a": 0.0006416844785153977,
+        "fitted_sigma_b": 0.0005871473265756473,
+        "source_distance": 0.11738049112693902,
+        "wasserstein_distance": 0.11738051646590797,
+        "pair_ratio": 1.0000002158703607
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 2,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "Lf1": 1.000000032629617,
+      "Lf2": 1.000000024107316,
+      "Lf_sum": 1.000000032629617,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000032629617,
+      "sample_wasserstein_Lf2": 1.000000024107316,
+      "sample_wasserstein_aggregate": 1.000000032629617,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 10,
+        "index_b": 962,
+        "source_state_a": [
+          0.702721357345581,
+          0.6199461221694946
+        ],
+        "source_state_b": [
+          0.6619297862052917,
+          0.4279409646987915
+        ],
+        "fitted_mean_next_a": [
+          0.662711559530067,
+          0.6199427525277725
+        ],
+        "fitted_mean_next_b": [
+          0.6219199883897777,
+          0.4279375950570694
+        ],
+        "fitted_sigma_a": 0.0005057908131492772,
+        "fitted_sigma_b": 0.0006219660821810997,
+        "source_distance": 0.19629042964811808,
+        "wasserstein_distance": 0.19629049840689963,
+        "pair_ratio": 1.0000003502910544
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 3,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "Lf1": 1.000000029245736,
+      "Lf2": 1.000000028356129,
+      "Lf_sum": 1.000000029245736,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000029245736,
+      "sample_wasserstein_Lf2": 1.000000028356129,
+      "sample_wasserstein_aggregate": 1.000000029245736,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 161,
+        "index_b": 781,
+        "source_state_a": [
+          0.7001738548278809,
+          0.5465620756149292
+        ],
+        "source_state_b": [
+          0.7013412714004517,
+          0.3606887757778168
+        ],
+        "fitted_mean_next_a": [
+          0.7401666128279972,
+          0.5465695843198592
+        ],
+        "fitted_mean_next_b": [
+          0.741334029400568,
+          0.3606962844827468
+        ],
+        "fitted_sigma_a": 0.0005501928045511033,
+        "fitted_sigma_b": 0.0006539987155629648,
+        "source_distance": 0.18587696590430727,
+        "wasserstein_distance": 0.18587702387633964,
+        "pair_ratio": 1.0000003118838963
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 0,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "Lf1": 1.000000033482362,
+      "Lf2": 1.0000000305607857,
+      "Lf_sum": 1.000000033482362,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000033482362,
+      "sample_wasserstein_Lf2": 1.0000000305607857,
+      "sample_wasserstein_aggregate": 1.000000033482362,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 141,
+        "index_b": 964,
+        "source_state_a": [
+          0.5430248379707336,
+          0.5454289317131042
+        ],
+        "source_state_b": [
+          0.6220420002937317,
+          0.4384622573852539
+        ],
+        "fitted_mean_next_a": [
+          0.5430327832813433,
+          0.5054119994920632
+        ],
+        "fitted_mean_next_b": [
+          0.6220499456043413,
+          0.3984453251642129
+        ],
+        "fitted_sigma_a": 0.0005515102529456462,
+        "fitted_sigma_b": 0.0006150980719637245,
+        "source_distance": 0.13298714734266398,
+        "wasserstein_distance": 0.1329871777471831,
+        "pair_ratio": 1.0000002286275007
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 1,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "Lf1": 1.0000000327667082,
+      "Lf2": 1.0000000258633894,
+      "Lf_sum": 1.0000000327667082,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.0000000327667082,
+      "sample_wasserstein_Lf2": 1.0000000258633894,
+      "sample_wasserstein_aggregate": 1.0000000327667082,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 751,
+        "index_b": 838,
+        "source_state_a": [
+          0.5802125930786133,
+          0.35849350690841675
+        ],
+        "source_state_b": [
+          0.5392659306526184,
+          0.468500554561615
+        ],
+        "fitted_mean_next_a": [
+          0.5802044358599597,
+          0.3984966928596878
+        ],
+        "fitted_mean_next_b": [
+          0.5392577734339649,
+          0.508503740512886
+        ],
+        "fitted_sigma_a": 0.0006416844785153977,
+        "fitted_sigma_b": 0.0005871473265756473,
+        "source_distance": 0.11738049112693902,
+        "wasserstein_distance": 0.11738051646590797,
+        "pair_ratio": 1.0000002158703607
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 2,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "Lf1": 1.000000032629617,
+      "Lf2": 1.000000024107316,
+      "Lf_sum": 1.000000032629617,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000032629617,
+      "sample_wasserstein_Lf2": 1.000000024107316,
+      "sample_wasserstein_aggregate": 1.000000032629617,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 10,
+        "index_b": 962,
+        "source_state_a": [
+          0.702721357345581,
+          0.6199461221694946
+        ],
+        "source_state_b": [
+          0.6619297862052917,
+          0.4279409646987915
+        ],
+        "fitted_mean_next_a": [
+          0.662711559530067,
+          0.6199427525277725
+        ],
+        "fitted_mean_next_b": [
+          0.6219199883897777,
+          0.4279375950570694
+        ],
+        "fitted_sigma_a": 0.0005057908131492772,
+        "fitted_sigma_b": 0.0006219660821810997,
+        "source_distance": 0.19629042964811808,
+        "wasserstein_distance": 0.19629049840689963,
+        "pair_ratio": 1.0000003502910544
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 3,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "Lf1": 1.000000029245736,
+      "Lf2": 1.000000028356129,
+      "Lf_sum": 1.000000029245736,
+      "mean_map_Lf": 1.0,
+      "sample_wasserstein_Lf1": 1.000000029245736,
+      "sample_wasserstein_Lf2": 1.000000028356129,
+      "sample_wasserstein_aggregate": 1.000000029245736,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 161,
+        "index_b": 781,
+        "source_state_a": [
+          0.7001738548278809,
+          0.5465620756149292
+        ],
+        "source_state_b": [
+          0.7013412714004517,
+          0.3606887757778168
+        ],
+        "fitted_mean_next_a": [
+          0.7401666128279972,
+          0.5465695843198592
+        ],
+        "fitted_mean_next_b": [
+          0.741334029400568,
+          0.3606962844827468
+        ],
+        "fitted_sigma_a": 0.0005501928045511033,
+        "fitted_sigma_b": 0.0006539987155629648,
+        "source_distance": 0.18587696590430727,
+        "wasserstein_distance": 0.18587702387633964,
+        "pair_ratio": 1.0000003118838963
+      }
+    }
+  ]
+}

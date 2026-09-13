@@ -1,0 +1,2766 @@
+{
+  "source": "scripts/debug/compute_mean_dynamics_lipschitz.py",
+  "gamma": 0.96,
+  "dynamics_sigma": 0.0005,
+  "deterministic_sigma_scale": 0.001,
+  "deterministic_sigma": 5e-07,
+  "Lr_definition": "|R(s1')-R(s2')| / ||s1'-s2'||",
+  "Lr_grouping": "next_state_tile",
+  "Lr_action_dependence": false,
+  "Lf_definition": "||f_hat(s1,a)-f_hat(s2,a)|| / ||s1-s2||",
+  "Lf_grouping": "source_category_action",
+  "Lq_definition": "Lr*Lf/(1-gamma*Lf)",
+  "method_notes": {
+    "pair_filter": "Reject pairwise comparisons whose denominator distance is less than min_pair_distance; Lr uses next-state distance while Lf and empirical Lq use source-state distance. No percentile trimming.",
+    "aggregation": "Arithmetic mean over eligible pairwise ratios.",
+    "Lf": "Within each represented category/action, mu_hat is constant in s, so f_hat has Jacobian I and Lf=1 exactly. Lf1/Lf2 are compatibility aliases for the same pooled mean-map constant, not separate noisy estimates."
+  },
+  "lipschitz_method_version": 3,
+  "constants": [
+    {
+      "tile": 0,
+      "region": 3,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 50972,
+      "n_r2": 2468,
+      "Lr1": 8.112285973642592,
+      "Lr2": 0.0,
+      "Lr_sum": 8.112285973642592,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 30.21239267609814,
+      "Lq2": 29.285522586206593,
+      "Lq_empirical_sum": 59.49791526230473,
+      "LQ_bellman_bound": 202.80714934106462,
+      "pairs_r1": 49902,
+      "pairs_r2": 49988,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 0,
+      "region": 3,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 50972,
+      "n_r2": 2468,
+      "Lr1": 8.112285973642592,
+      "Lr2": 0.0,
+      "Lr_sum": 8.112285973642592,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.917041714706624,
+      "Lq2": 25.596704539604087,
+      "Lq_empirical_sum": 57.51374625431071,
+      "LQ_bellman_bound": 202.80714934106462,
+      "pairs_r1": 49902,
+      "pairs_r2": 49988,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 0,
+      "region": 3,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 50972,
+      "n_r2": 2468,
+      "Lr1": 8.112285973642592,
+      "Lr2": 0.0,
+      "Lr_sum": 8.112285973642592,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.22872548500936,
+      "Lq2": 32.00677468786608,
+      "Lq_empirical_sum": 63.23550017287543,
+      "LQ_bellman_bound": 202.80714934106462,
+      "pairs_r1": 49902,
+      "pairs_r2": 49988,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 0,
+      "region": 3,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 50972,
+      "n_r2": 2468,
+      "Lr1": 8.112285973642592,
+      "Lr2": 0.0,
+      "Lr_sum": 8.112285973642592,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 32.40811925278046,
+      "Lq2": 28.966524620566794,
+      "Lq_empirical_sum": 61.37464387334725,
+      "LQ_bellman_bound": 202.80714934106462,
+      "pairs_r1": 49902,
+      "pairs_r2": 49988,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 1,
+      "region": 3,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 12813,
+      "n_r2": 4058,
+      "Lr1": 1.00465922224382,
+      "Lr2": 0.0016741683430523734,
+      "Lr_sum": 1.0063333905868723,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 34.89946722686034,
+      "Lq2": 23.76707531691806,
+      "Lq_empirical_sum": 58.6665425437784,
+      "LQ_bellman_bound": 25.158334764671785,
+      "pairs_r1": 49871,
+      "pairs_r2": 49912,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 1,
+      "region": 3,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 12813,
+      "n_r2": 4058,
+      "Lr1": 1.00465922224382,
+      "Lr2": 0.0016741683430523734,
+      "Lr_sum": 1.0063333905868723,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 34.28724152968094,
+      "Lq2": 28.89435043526645,
+      "Lq_empirical_sum": 63.18159196494739,
+      "LQ_bellman_bound": 25.158334764671785,
+      "pairs_r1": 49871,
+      "pairs_r2": 49912,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 1,
+      "region": 3,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 12813,
+      "n_r2": 4058,
+      "Lr1": 1.00465922224382,
+      "Lr2": 0.0016741683430523734,
+      "Lr_sum": 1.0063333905868723,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 35.8002052608405,
+      "Lq2": 40.213025345967544,
+      "Lq_empirical_sum": 76.01323060680804,
+      "LQ_bellman_bound": 25.158334764671785,
+      "pairs_r1": 49871,
+      "pairs_r2": 49912,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 1,
+      "region": 3,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 12813,
+      "n_r2": 4058,
+      "Lr1": 1.00465922224382,
+      "Lr2": 0.0016741683430523734,
+      "Lr_sum": 1.0063333905868723,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 32.05480709609037,
+      "Lq2": 22.964457453889743,
+      "Lq_empirical_sum": 55.019264549980115,
+      "LQ_bellman_bound": 25.158334764671785,
+      "pairs_r1": 49871,
+      "pairs_r2": 49912,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 2,
+      "region": 4,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 3308,
+      "n_r2": 18407,
+      "Lr1": 0.0017652136576652322,
+      "Lr2": 1.462616774470635,
+      "Lr_sum": 1.4643819881283002,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 24.02466443460591,
+      "Lq2": 34.0318827480207,
+      "Lq_empirical_sum": 58.05654718262661,
+      "LQ_bellman_bound": 36.60954970320747,
+      "pairs_r1": 49854,
+      "pairs_r2": 49789,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 2,
+      "region": 4,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 3308,
+      "n_r2": 18407,
+      "Lr1": 0.0017652136576652322,
+      "Lr2": 1.462616774470635,
+      "Lr_sum": 1.4643819881283002,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.672872070792376,
+      "Lq2": 34.32903926064154,
+      "Lq_empirical_sum": 66.00191133143392,
+      "LQ_bellman_bound": 36.60954970320747,
+      "pairs_r1": 49854,
+      "pairs_r2": 49789,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 2,
+      "region": 4,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 3308,
+      "n_r2": 18407,
+      "Lr1": 0.0017652136576652322,
+      "Lr2": 1.462616774470635,
+      "Lr_sum": 1.4643819881283002,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 26.463240259806568,
+      "Lq2": 30.878018016593874,
+      "Lq_empirical_sum": 57.34125827640044,
+      "LQ_bellman_bound": 36.60954970320747,
+      "pairs_r1": 49854,
+      "pairs_r2": 49789,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 2,
+      "region": 4,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 3308,
+      "n_r2": 18407,
+      "Lr1": 0.0017652136576652322,
+      "Lr2": 1.462616774470635,
+      "Lr_sum": 1.4643819881283002,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 35.97816051949522,
+      "Lq2": 34.83205895867608,
+      "Lq_empirical_sum": 70.81021947817129,
+      "LQ_bellman_bound": 36.60954970320747,
+      "pairs_r1": 49854,
+      "pairs_r2": 49789,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 3,
+      "region": 4,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 2976,
+      "n_r2": 43228,
+      "Lr1": 0.0,
+      "Lr2": 8.325787801145015,
+      "Lr_sum": 8.325787801145015,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 34.17511336856647,
+      "Lq2": 29.426009636166867,
+      "Lq_empirical_sum": 63.60112300473334,
+      "LQ_bellman_bound": 208.1446950286252,
+      "pairs_r1": 49909,
+      "pairs_r2": 49594,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 3,
+      "region": 4,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 2976,
+      "n_r2": 43228,
+      "Lr1": 0.0,
+      "Lr2": 8.325787801145015,
+      "Lr_sum": 8.325787801145015,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 19.459783076858205,
+      "Lq2": 29.17469063289135,
+      "Lq_empirical_sum": 48.63447370974956,
+      "LQ_bellman_bound": 208.1446950286252,
+      "pairs_r1": 49909,
+      "pairs_r2": 49594,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 3,
+      "region": 4,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 2976,
+      "n_r2": 43228,
+      "Lr1": 0.0,
+      "Lr2": 8.325787801145015,
+      "Lr_sum": 8.325787801145015,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 24.088331199744925,
+      "Lq2": 32.46016947419483,
+      "Lq_empirical_sum": 56.548500673939756,
+      "LQ_bellman_bound": 208.1446950286252,
+      "pairs_r1": 49909,
+      "pairs_r2": 49594,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 3,
+      "region": 4,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 2976,
+      "n_r2": 43228,
+      "Lr1": 0.0,
+      "Lr2": 8.325787801145015,
+      "Lr_sum": 8.325787801145015,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 34.65601873708021,
+      "Lq2": 30.614976825668577,
+      "Lq_empirical_sum": 65.2709955627488,
+      "LQ_bellman_bound": 208.1446950286252,
+      "pairs_r1": 49909,
+      "pairs_r2": 49594,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 4,
+      "region": 3,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 15767,
+      "n_r2": 1962,
+      "Lr1": 2.100412883939418,
+      "Lr2": 2.1311950292969178e-06,
+      "Lr_sum": 2.1004150151344474,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 45.0808324361667,
+      "Lq2": 37.6991373018738,
+      "Lq_empirical_sum": 82.7799697380405,
+      "LQ_bellman_bound": 52.51037537836114,
+      "pairs_r1": 49752,
+      "pairs_r2": 49956,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 4,
+      "region": 3,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 15767,
+      "n_r2": 1962,
+      "Lr1": 2.100412883939418,
+      "Lr2": 2.1311950292969178e-06,
+      "Lr_sum": 2.1004150151344474,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 32.267341028523866,
+      "Lq2": 26.156278095976017,
+      "Lq_empirical_sum": 58.42361912449988,
+      "LQ_bellman_bound": 52.51037537836114,
+      "pairs_r1": 49752,
+      "pairs_r2": 49956,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 4,
+      "region": 3,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 15767,
+      "n_r2": 1962,
+      "Lr1": 2.100412883939418,
+      "Lr2": 2.1311950292969178e-06,
+      "Lr_sum": 2.1004150151344474,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 41.39436861009577,
+      "Lq2": 34.674758790320965,
+      "Lq_empirical_sum": 76.06912740041673,
+      "LQ_bellman_bound": 52.51037537836114,
+      "pairs_r1": 49752,
+      "pairs_r2": 49956,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 4,
+      "region": 3,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 15767,
+      "n_r2": 1962,
+      "Lr1": 2.100412883939418,
+      "Lr2": 2.1311950292969178e-06,
+      "Lr_sum": 2.1004150151344474,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 36.6915367840031,
+      "Lq2": 32.96046071090594,
+      "Lq_empirical_sum": 69.65199749490904,
+      "LQ_bellman_bound": 52.51037537836114,
+      "pairs_r1": 49752,
+      "pairs_r2": 49956,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 5,
+      "region": 3,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 44108,
+      "n_r2": 6494,
+      "Lr1": 0.18427204158326146,
+      "Lr2": 0.0005671875074703931,
+      "Lr_sum": 0.18483922909073186,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 35.019709671913674,
+      "Lq2": 26.089330323942423,
+      "Lq_empirical_sum": 61.109039995856094,
+      "LQ_bellman_bound": 4.620980727268292,
+      "pairs_r1": 49638,
+      "pairs_r2": 49194,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 5,
+      "region": 3,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 44108,
+      "n_r2": 6494,
+      "Lr1": 0.18427204158326146,
+      "Lr2": 0.0005671875074703931,
+      "Lr_sum": 0.18483922909073186,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 26.513341923460082,
+      "Lq2": 27.71366011877685,
+      "Lq_empirical_sum": 54.22700204223693,
+      "LQ_bellman_bound": 4.620980727268292,
+      "pairs_r1": 49638,
+      "pairs_r2": 49194,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 5,
+      "region": 3,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 44108,
+      "n_r2": 6494,
+      "Lr1": 0.18427204158326146,
+      "Lr2": 0.0005671875074703931,
+      "Lr_sum": 0.18483922909073186,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 36.88767988037272,
+      "Lq2": 20.377371635930082,
+      "Lq_empirical_sum": 57.265051516302805,
+      "LQ_bellman_bound": 4.620980727268292,
+      "pairs_r1": 49638,
+      "pairs_r2": 49194,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 5,
+      "region": 3,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 44108,
+      "n_r2": 6494,
+      "Lr1": 0.18427204158326146,
+      "Lr2": 0.0005671875074703931,
+      "Lr_sum": 0.18483922909073186,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 28.733909921413503,
+      "Lq2": 23.93547162780532,
+      "Lq_empirical_sum": 52.669381549218826,
+      "LQ_bellman_bound": 4.620980727268292,
+      "pairs_r1": 49638,
+      "pairs_r2": 49194,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 6,
+      "region": 4,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 11029,
+      "n_r2": 57808,
+      "Lr1": 0.0008549686272895262,
+      "Lr2": 0.3276176548930834,
+      "Lr_sum": 0.32847262352037293,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 28.719969985169822,
+      "Lq2": 41.69464632441991,
+      "Lq_empirical_sum": 70.41461630958973,
+      "LQ_bellman_bound": 8.211815588009316,
+      "pairs_r1": 47663,
+      "pairs_r2": 49308,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 6,
+      "region": 4,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 11029,
+      "n_r2": 57808,
+      "Lr1": 0.0008549686272895262,
+      "Lr2": 0.3276176548930834,
+      "Lr_sum": 0.32847262352037293,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 21.55100086357234,
+      "Lq2": 28.560331787581926,
+      "Lq_empirical_sum": 50.11133265115427,
+      "LQ_bellman_bound": 8.211815588009316,
+      "pairs_r1": 47663,
+      "pairs_r2": 49308,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 6,
+      "region": 4,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 11029,
+      "n_r2": 57808,
+      "Lr1": 0.0008549686272895262,
+      "Lr2": 0.3276176548930834,
+      "Lr_sum": 0.32847262352037293,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 35.09561076992215,
+      "Lq2": 33.46158046990534,
+      "Lq_empirical_sum": 68.55719123982749,
+      "LQ_bellman_bound": 8.211815588009316,
+      "pairs_r1": 47663,
+      "pairs_r2": 49308,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 6,
+      "region": 4,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 11029,
+      "n_r2": 57808,
+      "Lr1": 0.0008549686272895262,
+      "Lr2": 0.3276176548930834,
+      "Lr_sum": 0.32847262352037293,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 23.308658917986403,
+      "Lq2": 43.96471622117565,
+      "Lq_empirical_sum": 67.27337513916206,
+      "LQ_bellman_bound": 8.211815588009316,
+      "pairs_r1": 47663,
+      "pairs_r2": 49308,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 7,
+      "region": 4,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 1618,
+      "n_r2": 6460,
+      "Lr1": 1.3116516154449619e-06,
+      "Lr2": 2.506286543246451,
+      "Lr_sum": 2.5062878548980665,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 43.95799470960252,
+      "Lq2": 38.2291565812686,
+      "Lq_empirical_sum": 82.18715129087111,
+      "LQ_bellman_bound": 62.65719637245161,
+      "pairs_r1": 49791,
+      "pairs_r2": 48696,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 7,
+      "region": 4,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 1618,
+      "n_r2": 6460,
+      "Lr1": 1.3116516154449619e-06,
+      "Lr2": 2.506286543246451,
+      "Lr_sum": 2.5062878548980665,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 34.47659860862286,
+      "Lq2": 29.277432342295292,
+      "Lq_empirical_sum": 63.75403095091815,
+      "LQ_bellman_bound": 62.65719637245161,
+      "pairs_r1": 49791,
+      "pairs_r2": 48696,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 7,
+      "region": 4,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 1618,
+      "n_r2": 6460,
+      "Lr1": 1.3116516154449619e-06,
+      "Lr2": 2.506286543246451,
+      "Lr_sum": 2.5062878548980665,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 38.333662385538794,
+      "Lq2": 31.412090794341697,
+      "Lq_empirical_sum": 69.7457531798805,
+      "LQ_bellman_bound": 62.65719637245161,
+      "pairs_r1": 49791,
+      "pairs_r2": 48696,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 7,
+      "region": 4,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 1618,
+      "n_r2": 6460,
+      "Lr1": 1.3116516154449619e-06,
+      "Lr2": 2.506286543246451,
+      "Lr_sum": 2.5062878548980665,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 41.290981262065024,
+      "Lq2": 34.79510721352061,
+      "Lq_empirical_sum": 76.08608847558563,
+      "LQ_bellman_bound": 62.65719637245161,
+      "pairs_r1": 49791,
+      "pairs_r2": 48696,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 8,
+      "region": 2,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 293,
+      "n_r2": 240,
+      "Lr1": 0.0077355518532270864,
+      "Lr2": 0.008637769597448027,
+      "Lr_sum": 0.01637332145067511,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 19.07156763327046,
+      "Lq2": 13.006908314568717,
+      "Lq_empirical_sum": 32.07847594783917,
+      "LQ_bellman_bound": 0.40933303626687745,
+      "pairs_r1": 42744,
+      "pairs_r2": 28623,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 8,
+      "region": 2,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 293,
+      "n_r2": 240,
+      "Lr1": 0.0077355518532270864,
+      "Lr2": 0.008637769597448027,
+      "Lr_sum": 0.01637332145067511,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 14.222865592148834,
+      "Lq2": 17.955887039409486,
+      "Lq_empirical_sum": 32.17875263155832,
+      "LQ_bellman_bound": 0.40933303626687745,
+      "pairs_r1": 42744,
+      "pairs_r2": 28623,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 8,
+      "region": 2,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 293,
+      "n_r2": 240,
+      "Lr1": 0.0077355518532270864,
+      "Lr2": 0.008637769597448027,
+      "Lr_sum": 0.01637332145067511,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 16.33432634010322,
+      "Lq2": 15.800841538648122,
+      "Lq_empirical_sum": 32.135167878751346,
+      "LQ_bellman_bound": 0.40933303626687745,
+      "pairs_r1": 42744,
+      "pairs_r2": 28623,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 8,
+      "region": 2,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 293,
+      "n_r2": 240,
+      "Lr1": 0.0077355518532270864,
+      "Lr2": 0.008637769597448027,
+      "Lr_sum": 0.01637332145067511,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 21.299125822359883,
+      "Lq2": 16.505152758102803,
+      "Lq_empirical_sum": 37.804278580462686,
+      "LQ_bellman_bound": 0.40933303626687745,
+      "pairs_r1": 42744,
+      "pairs_r2": 28623,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 9,
+      "region": 2,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 1735,
+      "n_r2": 2134,
+      "Lr1": 0.583344386583713,
+      "Lr2": 0.7734833128997479,
+      "Lr_sum": 1.356827699483461,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 29.16260997479845,
+      "Lq2": 33.08848256616392,
+      "Lq_empirical_sum": 62.25109254096237,
+      "LQ_bellman_bound": 33.92069248708649,
+      "pairs_r1": 49977,
+      "pairs_r2": 49960,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 9,
+      "region": 2,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 1735,
+      "n_r2": 2134,
+      "Lr1": 0.583344386583713,
+      "Lr2": 0.7734833128997479,
+      "Lr_sum": 1.356827699483461,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.32832146053694,
+      "Lq2": 34.254995632196525,
+      "Lq_empirical_sum": 65.58331709273347,
+      "LQ_bellman_bound": 33.92069248708649,
+      "pairs_r1": 49977,
+      "pairs_r2": 49960,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 9,
+      "region": 2,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 1735,
+      "n_r2": 2134,
+      "Lr1": 0.583344386583713,
+      "Lr2": 0.7734833128997479,
+      "Lr_sum": 1.356827699483461,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 28.61108440568321,
+      "Lq2": 33.724131549734274,
+      "Lq_empirical_sum": 62.33521595541748,
+      "LQ_bellman_bound": 33.92069248708649,
+      "pairs_r1": 49977,
+      "pairs_r2": 49960,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 9,
+      "region": 2,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 1735,
+      "n_r2": 2134,
+      "Lr1": 0.583344386583713,
+      "Lr2": 0.7734833128997479,
+      "Lr_sum": 1.356827699483461,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 30.76812446007821,
+      "Lq2": 35.072005849012825,
+      "Lq_empirical_sum": 65.84013030909104,
+      "LQ_bellman_bound": 33.92069248708649,
+      "pairs_r1": 49977,
+      "pairs_r2": 49960,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 10,
+      "region": 1,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 1658,
+      "n_r2": 2429,
+      "Lr1": 0.61101339406941,
+      "Lr2": 0.7400046319617328,
+      "Lr_sum": 1.3510180260311428,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 33.02700548783817,
+      "Lq2": 28.595990336453404,
+      "Lq_empirical_sum": 61.62299582429157,
+      "LQ_bellman_bound": 33.77545065077854,
+      "pairs_r1": 49956,
+      "pairs_r2": 49917,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 10,
+      "region": 1,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 1658,
+      "n_r2": 2429,
+      "Lr1": 0.61101339406941,
+      "Lr2": 0.7400046319617328,
+      "Lr_sum": 1.3510180260311428,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 38.74927586753388,
+      "Lq2": 34.91149493141364,
+      "Lq_empirical_sum": 73.66077079894752,
+      "LQ_bellman_bound": 33.77545065077854,
+      "pairs_r1": 49956,
+      "pairs_r2": 49917,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 10,
+      "region": 1,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 1658,
+      "n_r2": 2429,
+      "Lr1": 0.61101339406941,
+      "Lr2": 0.7400046319617328,
+      "Lr_sum": 1.3510180260311428,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 36.136252732965396,
+      "Lq2": 30.141277838013025,
+      "Lq_empirical_sum": 66.27753057097843,
+      "LQ_bellman_bound": 33.77545065077854,
+      "pairs_r1": 49956,
+      "pairs_r2": 49917,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 10,
+      "region": 1,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 1658,
+      "n_r2": 2429,
+      "Lr1": 0.61101339406941,
+      "Lr2": 0.7400046319617328,
+      "Lr_sum": 1.3510180260311428,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 35.78575842248978,
+      "Lq2": 29.143328718049542,
+      "Lq_empirical_sum": 64.92908714053932,
+      "LQ_bellman_bound": 33.77545065077854,
+      "pairs_r1": 49956,
+      "pairs_r2": 49917,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 11,
+      "region": 1,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 356,
+      "n_r2": 255,
+      "Lr1": 0.0041422268375420615,
+      "Lr2": 0.008697376942444017,
+      "Lr_sum": 0.012839603779986077,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 11.876573065719967,
+      "Lq2": 10.632889284628016,
+      "Lq_empirical_sum": 22.50946235034798,
+      "LQ_bellman_bound": 0.32099009449965166,
+      "pairs_r1": 49913,
+      "pairs_r2": 32293,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 11,
+      "region": 1,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 356,
+      "n_r2": 255,
+      "Lr1": 0.0041422268375420615,
+      "Lr2": 0.008697376942444017,
+      "Lr_sum": 0.012839603779986077,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 14.912484851728204,
+      "Lq2": 6.976154362641554,
+      "Lq_empirical_sum": 21.888639214369757,
+      "LQ_bellman_bound": 0.32099009449965166,
+      "pairs_r1": 49913,
+      "pairs_r2": 32293,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 11,
+      "region": 1,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 356,
+      "n_r2": 255,
+      "Lr1": 0.0041422268375420615,
+      "Lr2": 0.008697376942444017,
+      "Lr_sum": 0.012839603779986077,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 14.630518972849979,
+      "Lq2": 7.934116989124635,
+      "Lq_empirical_sum": 22.564635961974613,
+      "LQ_bellman_bound": 0.32099009449965166,
+      "pairs_r1": 49913,
+      "pairs_r2": 32293,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 11,
+      "region": 1,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 356,
+      "n_r2": 255,
+      "Lr1": 0.0041422268375420615,
+      "Lr2": 0.008697376942444017,
+      "Lr_sum": 0.012839603779986077,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 11.373718948080672,
+      "Lq2": 8.592915438702232,
+      "Lq_empirical_sum": 19.966634386782903,
+      "LQ_bellman_bound": 0.32099009449965166,
+      "pairs_r1": 49913,
+      "pairs_r2": 32293,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 12,
+      "region": 2,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 367,
+      "n_r2": 405,
+      "Lr1": 0.09776776216053545,
+      "Lr2": 0.15151553866633966,
+      "Lr_sum": 0.2492833008268751,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 28.26650300761558,
+      "Lq2": 23.81531986737874,
+      "Lq_empirical_sum": 52.081822874994316,
+      "LQ_bellman_bound": 6.232082520671872,
+      "pairs_r1": 49921,
+      "pairs_r2": 49933,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 12,
+      "region": 2,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 367,
+      "n_r2": 405,
+      "Lr1": 0.09776776216053545,
+      "Lr2": 0.15151553866633966,
+      "Lr_sum": 0.2492833008268751,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 27.73746334115404,
+      "Lq2": 24.812170617985505,
+      "Lq_empirical_sum": 52.54963395913954,
+      "LQ_bellman_bound": 6.232082520671872,
+      "pairs_r1": 49921,
+      "pairs_r2": 49933,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 12,
+      "region": 2,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 367,
+      "n_r2": 405,
+      "Lr1": 0.09776776216053545,
+      "Lr2": 0.15151553866633966,
+      "Lr_sum": 0.2492833008268751,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 25.761360332823234,
+      "Lq2": 15.347795578473058,
+      "Lq_empirical_sum": 41.10915591129629,
+      "LQ_bellman_bound": 6.232082520671872,
+      "pairs_r1": 49921,
+      "pairs_r2": 49933,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 12,
+      "region": 2,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 367,
+      "n_r2": 405,
+      "Lr1": 0.09776776216053545,
+      "Lr2": 0.15151553866633966,
+      "Lr_sum": 0.2492833008268751,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 32.945183429237765,
+      "Lq2": 27.607899816705515,
+      "Lq_empirical_sum": 60.553083245943284,
+      "LQ_bellman_bound": 6.232082520671872,
+      "pairs_r1": 49921,
+      "pairs_r2": 49933,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 13,
+      "region": 2,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 965,
+      "n_r2": 1649,
+      "Lr1": 3.1209833645928393,
+      "Lr2": 3.370815861824976,
+      "Lr_sum": 6.4917992264178155,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 28.341208367951154,
+      "Lq2": 25.51945320416736,
+      "Lq_empirical_sum": 53.86066157211852,
+      "LQ_bellman_bound": 162.29498066044525,
+      "pairs_r1": 49969,
+      "pairs_r2": 49979,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 13,
+      "region": 2,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 965,
+      "n_r2": 1649,
+      "Lr1": 3.1209833645928393,
+      "Lr2": 3.370815861824976,
+      "Lr_sum": 6.4917992264178155,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 29.37721332484752,
+      "Lq2": 22.541479579026323,
+      "Lq_empirical_sum": 51.91869290387385,
+      "LQ_bellman_bound": 162.29498066044525,
+      "pairs_r1": 49969,
+      "pairs_r2": 49979,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 13,
+      "region": 2,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 965,
+      "n_r2": 1649,
+      "Lr1": 3.1209833645928393,
+      "Lr2": 3.370815861824976,
+      "Lr_sum": 6.4917992264178155,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.759331160613534,
+      "Lq2": 23.021865583639936,
+      "Lq_empirical_sum": 54.78119674425347,
+      "LQ_bellman_bound": 162.29498066044525,
+      "pairs_r1": 49969,
+      "pairs_r2": 49979,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 13,
+      "region": 2,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 965,
+      "n_r2": 1649,
+      "Lr1": 3.1209833645928393,
+      "Lr2": 3.370815861824976,
+      "Lr_sum": 6.4917992264178155,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 26.16412336164829,
+      "Lq2": 24.481148327862485,
+      "Lq_empirical_sum": 50.64527168951078,
+      "LQ_bellman_bound": 162.29498066044525,
+      "pairs_r1": 49969,
+      "pairs_r2": 49979,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 14,
+      "region": 1,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 784,
+      "n_r2": 1261,
+      "Lr1": 3.283094288577135,
+      "Lr2": 3.53225552627324,
+      "Lr_sum": 6.815349814850375,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 24.071445948799322,
+      "Lq2": 19.318502890819303,
+      "Lq_empirical_sum": 43.389948839618626,
+      "LQ_bellman_bound": 170.38374537125924,
+      "pairs_r1": 49953,
+      "pairs_r2": 49934,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 14,
+      "region": 1,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 784,
+      "n_r2": 1261,
+      "Lr1": 3.283094288577135,
+      "Lr2": 3.53225552627324,
+      "Lr_sum": 6.815349814850375,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 28.411744655228777,
+      "Lq2": 20.30989009931145,
+      "Lq_empirical_sum": 48.721634754540226,
+      "LQ_bellman_bound": 170.38374537125924,
+      "pairs_r1": 49953,
+      "pairs_r2": 49934,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 14,
+      "region": 1,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 784,
+      "n_r2": 1261,
+      "Lr1": 3.283094288577135,
+      "Lr2": 3.53225552627324,
+      "Lr_sum": 6.815349814850375,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 21.26552690393831,
+      "Lq2": 14.746501941494648,
+      "Lq_empirical_sum": 36.01202884543296,
+      "LQ_bellman_bound": 170.38374537125924,
+      "pairs_r1": 49953,
+      "pairs_r2": 49934,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 14,
+      "region": 1,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 784,
+      "n_r2": 1261,
+      "Lr1": 3.283094288577135,
+      "Lr2": 3.53225552627324,
+      "Lr_sum": 6.815349814850375,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 29.325553142848996,
+      "Lq2": 25.76524036976624,
+      "Lq_empirical_sum": 55.090793512615235,
+      "LQ_bellman_bound": 170.38374537125924,
+      "pairs_r1": 49953,
+      "pairs_r2": 49934,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 15,
+      "region": 1,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 162,
+      "n_r2": 72,
+      "Lr1": 0.11357105132292604,
+      "Lr2": 0.1823046174235138,
+      "Lr_sum": 0.29587566874643983,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 15.495100144865754,
+      "Lq2": 21.693493906193115,
+      "Lq_empirical_sum": 37.18859405105887,
+      "LQ_bellman_bound": 7.3968917186609895,
+      "pairs_r1": 12973,
+      "pairs_r2": 2541,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 15,
+      "region": 1,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 162,
+      "n_r2": 72,
+      "Lr1": 0.11357105132292604,
+      "Lr2": 0.1823046174235138,
+      "Lr_sum": 0.29587566874643983,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 18.910918264949135,
+      "Lq2": 26.46304468880614,
+      "Lq_empirical_sum": 45.373962953755274,
+      "LQ_bellman_bound": 7.3968917186609895,
+      "pairs_r1": 12973,
+      "pairs_r2": 2541,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 15,
+      "region": 1,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 162,
+      "n_r2": 72,
+      "Lr1": 0.11357105132292604,
+      "Lr2": 0.1823046174235138,
+      "Lr_sum": 0.29587566874643983,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 19.22167644207692,
+      "Lq2": 23.963536126263804,
+      "Lq_empirical_sum": 43.185212568340724,
+      "LQ_bellman_bound": 7.3968917186609895,
+      "pairs_r1": 12973,
+      "pairs_r2": 2541,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 15,
+      "region": 1,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 162,
+      "n_r2": 72,
+      "Lr1": 0.11357105132292604,
+      "Lr2": 0.1823046174235138,
+      "Lr_sum": 0.29587566874643983,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 12.079954194974077,
+      "Lq2": 19.259327721609825,
+      "Lq_empirical_sum": 31.3392819165839,
+      "LQ_bellman_bound": 7.3968917186609895,
+      "pairs_r1": 12973,
+      "pairs_r2": 2541,
+      "Lf_estimator": "analytic_constant_translation"
+    }
+  ],
+  "estimator": "deterministic_mean_map",
+  "pair_method": "gap",
+  "min_pair_distance": 0.001,
+  "Lf_noise_treatment": "Observed successor noise is excluded; f_hat(s,a)=s+mu_hat[c,a].",
+  "transition_stat_decimals": 7,
+  "mean_dynamics_models": {
+    "1": {
+      "0": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 506,
+          "mean": [
+            9e-07,
+            -0.0384009
+          ],
+          "std": [
+            0.000464,
+            0.0004855
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              2e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 449,
+          "mean": [
+            -2.96e-05,
+            -0.038372
+          ],
+          "std": [
+            0.0004805,
+            0.0004998
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              2e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 955,
+          "mean": [
+            -1.35e-05,
+            -0.0383873
+          ],
+          "std": [
+            0.0004719,
+            0.0004922
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              2e-07
+            ]
+          ]
+        }
+      },
+      "1": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 1311,
+          "mean": [
+            2.39e-05,
+            0.0384215
+          ],
+          "std": [
+            0.0004975,
+            0.000516
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 2286,
+          "mean": [
+            -4.7e-06,
+            0.0383966
+          ],
+          "std": [
+            0.0004987,
+            0.0005061
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 3597,
+          "mean": [
+            5.7e-06,
+            0.0384056
+          ],
+          "std": [
+            0.0004984,
+            0.0005098
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        }
+      },
+      "2": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 565,
+          "mean": [
+            -0.0384115,
+            1.91e-05
+          ],
+          "std": [
+            0.0005086,
+            0.0004829
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              2e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 604,
+          "mean": [
+            -0.0384103,
+            -1.3e-06
+          ],
+          "std": [
+            0.0004673,
+            0.0005045
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 1169,
+          "mean": [
+            -0.0384109,
+            8.6e-06
+          ],
+          "std": [
+            0.0004875,
+            0.0004941
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              2e-07
+            ]
+          ]
+        }
+      },
+      "3": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 472,
+          "mean": [
+            0.0384123,
+            -8.8e-06
+          ],
+          "std": [
+            0.0005387,
+            0.0004707
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              2e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 478,
+          "mean": [
+            0.0383492,
+            -5.6e-06
+          ],
+          "std": [
+            0.0005171,
+            0.000532
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 950,
+          "mean": [
+            0.0383805,
+            -7.2e-06
+          ],
+          "std": [
+            0.0005286,
+            0.0005022
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        }
+      }
+    },
+    "2": {
+      "0": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 578,
+          "mean": [
+            -4.2e-06,
+            -0.0419844
+          ],
+          "std": [
+            0.0006007,
+            0.0005079
+          ],
+          "covariance": [
+            [
+              4e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 568,
+          "mean": [
+            1.2e-06,
+            -0.0420287
+          ],
+          "std": [
+            0.0005557,
+            0.0005331
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 1146,
+          "mean": [
+            -1.5e-06,
+            -0.0420063
+          ],
+          "std": [
+            0.0005786,
+            0.0005208
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        }
+      },
+      "1": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 1338,
+          "mean": [
+            1.15e-05,
+            0.0419949
+          ],
+          "std": [
+            0.0005896,
+            0.0005266
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 2293,
+          "mean": [
+            -4.9e-06,
+            0.0419695
+          ],
+          "std": [
+            0.0005909,
+            0.0005254
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 3631,
+          "mean": [
+            1.1e-06,
+            0.0419789
+          ],
+          "std": [
+            0.0005904,
+            0.0005259
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        }
+      },
+      "2": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 610,
+          "mean": [
+            -0.0359751,
+            8.9e-06
+          ],
+          "std": [
+            0.0005739,
+            0.0005277
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 606,
+          "mean": [
+            -0.0360142,
+            -9.5e-06
+          ],
+          "std": [
+            0.0005732,
+            0.0005357
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 1216,
+          "mean": [
+            -0.0359946,
+            -3e-07
+          ],
+          "std": [
+            0.0005736,
+            0.0005315
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        }
+      },
+      "3": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 739,
+          "mean": [
+            0.0360201,
+            9.5e-06
+          ],
+          "std": [
+            0.0006109,
+            0.0005133
+          ],
+          "covariance": [
+            [
+              4e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 743,
+          "mean": [
+            0.0360041,
+            -1.21e-05
+          ],
+          "std": [
+            0.0005835,
+            0.0005269
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 1482,
+          "mean": [
+            0.0360121,
+            -1.3e-06
+          ],
+          "std": [
+            0.0005971,
+            0.0005201
+          ],
+          "covariance": [
+            [
+              4e-07,
+              0.0
+            ],
+            [
+              0.0,
+              3e-07
+            ]
+          ]
+        }
+      }
+    },
+    "3": {
+      "0": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 41255,
+          "mean": [
+            -4.5e-06,
+            -0.0351971
+          ],
+          "std": [
+            0.0005474,
+            0.0006128
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 5188,
+          "mean": [
+            -3.5e-06,
+            -0.0352048
+          ],
+          "std": [
+            0.0005334,
+            0.0006092
+          ],
+          "covariance": [
+            [
+              3e-07,
+              1e-07
+            ],
+            [
+              1e-07,
+              4e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 46443,
+          "mean": [
+            -4.4e-06,
+            -0.035198
+          ],
+          "std": [
+            0.0005459,
+            0.0006124
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        }
+      },
+      "1": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 4760,
+          "mean": [
+            -3.2e-06,
+            0.035191
+          ],
+          "std": [
+            0.0005485,
+            0.0006039
+          ],
+          "covariance": [
+            [
+              3e-07,
+              1e-07
+            ],
+            [
+              1e-07,
+              4e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 2809,
+          "mean": [
+            -2.64e-05,
+            0.0351918
+          ],
+          "std": [
+            0.0005455,
+            0.0006083
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 7569,
+          "mean": [
+            -1.18e-05,
+            0.0351913
+          ],
+          "std": [
+            0.0005475,
+            0.0006055
+          ],
+          "covariance": [
+            [
+              3e-07,
+              1e-07
+            ],
+            [
+              1e-07,
+              4e-07
+            ]
+          ]
+        }
+      },
+      "2": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 65764,
+          "mean": [
+            -0.0431938,
+            5.5e-06
+          ],
+          "std": [
+            0.0005497,
+            0.0006118
+          ],
+          "covariance": [
+            [
+              3e-07,
+              1e-07
+            ],
+            [
+              1e-07,
+              4e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 3845,
+          "mean": [
+            -0.0432065,
+            -1.74e-05
+          ],
+          "std": [
+            0.0005458,
+            0.0006116
+          ],
+          "covariance": [
+            [
+              3e-07,
+              1e-07
+            ],
+            [
+              1e-07,
+              4e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 69609,
+          "mean": [
+            -0.0431945,
+            4.2e-06
+          ],
+          "std": [
+            0.0005495,
+            0.0006118
+          ],
+          "covariance": [
+            [
+              3e-07,
+              1e-07
+            ],
+            [
+              1e-07,
+              4e-07
+            ]
+          ]
+        }
+      },
+      "3": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 4465,
+          "mean": [
+            0.0432165,
+            2.6e-06
+          ],
+          "std": [
+            0.0005439,
+            0.0006112
+          ],
+          "covariance": [
+            [
+              3e-07,
+              1e-07
+            ],
+            [
+              1e-07,
+              4e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 2885,
+          "mean": [
+            0.0432067,
+            -8.5e-06
+          ],
+          "std": [
+            0.0005505,
+            0.0006106
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 7350,
+          "mean": [
+            0.0432127,
+            -1.8e-06
+          ],
+          "std": [
+            0.0005465,
+            0.000611
+          ],
+          "covariance": [
+            [
+              3e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        }
+      }
+    },
+    "4": {
+      "0": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 11719,
+          "mean": [
+            5e-07,
+            -0.0400001
+          ],
+          "std": [
+            0.0004688,
+            0.0006318
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 45028,
+          "mean": [
+            1.2e-06,
+            -0.0400039
+          ],
+          "std": [
+            0.000475,
+            0.0006326
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 56747,
+          "mean": [
+            1.1e-06,
+            -0.0400031
+          ],
+          "std": [
+            0.0004737,
+            0.0006324
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        }
+      },
+      "1": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 2380,
+          "mean": [
+            -2.21e-05,
+            0.0400008
+          ],
+          "std": [
+            0.0004603,
+            0.0006312
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 5121,
+          "mean": [
+            6.4e-06,
+            0.0399906
+          ],
+          "std": [
+            0.0004739,
+            0.0006335
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 7501,
+          "mean": [
+            -2.6e-06,
+            0.0399938
+          ],
+          "std": [
+            0.0004697,
+            0.0006328
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        }
+      },
+      "2": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 7171,
+          "mean": [
+            -0.0400018,
+            -1.9e-05
+          ],
+          "std": [
+            0.0004842,
+            0.0006351
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 4377,
+          "mean": [
+            -0.0399981,
+            -1.8e-06
+          ],
+          "std": [
+            0.000462,
+            0.0006474
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 11548,
+          "mean": [
+            -0.0400004,
+            -1.25e-05
+          ],
+          "std": [
+            0.0004759,
+            0.0006398
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        }
+      },
+      "3": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 5278,
+          "mean": [
+            0.0399903,
+            -9.5e-06
+          ],
+          "std": [
+            0.0004793,
+            0.0006245
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "R2": {
+          "n": 72050,
+          "mean": [
+            0.0399978,
+            -6.2e-06
+          ],
+          "std": [
+            0.0004742,
+            0.000633
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 77328,
+          "mean": [
+            0.0399973,
+            -6.4e-06
+          ],
+          "std": [
+            0.0004746,
+            0.0006324
+          ],
+          "covariance": [
+            [
+              2e-07,
+              0.0
+            ],
+            [
+              0.0,
+              4e-07
+            ]
+          ]
+        }
+      }
+    },
+    "5": {
+      "0": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "1": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "2": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "3": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

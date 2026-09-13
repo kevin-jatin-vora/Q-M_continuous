@@ -1,0 +1,50 @@
+{
+  "sigma": 0.0,
+  "gamma": 0.96,
+  "determinism": 1.0,
+  "deterministic_sigma_scale": 0.001,
+  "steps": 2000,
+  "seed": 0,
+  "r2_seed_offset": 1000000,
+  "include_boundary_transitions": false,
+  "min_cell_samples": 2,
+  "noise_model_version": "smooth_scalar_bilinear_v1",
+  "noise_interpolation": "bilinear_between_tile_centers_constant_edge_extension",
+  "category_noise_multipliers": {
+    "1": 1.0,
+    "2": 1.1,
+    "3": 1.2,
+    "4": 1.3,
+    "5": 0.001
+  },
+  "tile_noise_multiplier_grid_row_major": [
+    [
+      0.001,
+      0.001,
+      0.001,
+      0.001
+    ],
+    [
+      0.001,
+      0.001,
+      0.001,
+      0.001
+    ],
+    [
+      0.001,
+      0.001,
+      0.001,
+      0.001
+    ],
+    [
+      0.001,
+      0.001,
+      0.001,
+      0.001
+    ]
+  ],
+  "noise_multiplier_lipschitz": 0.0,
+  "sigma_lipschitz": 0.0,
+  "wasserstein_kernel_lipschitz": 1.0,
+  "gamma_times_wasserstein_kernel_lipschitz": 0.96
+}

@@ -49,6 +49,8 @@ from dollar_euro_lipschitz.models import QNet
 from dollar_euro_lipschitz.replay import ReplayBuffer
 from dollar_euro_lipschitz.bounds import (
     DEFAULT_CONFIDENCE_LEVEL,
+    TRANSITION_STAT_DECIMALS,
+    quantize_transition_stat,
     require_finite_bellman_lq,
     student_t_half_width,
     student_t_radius_l2,
@@ -410,8 +412,10 @@ def _behavior_delta_stats(states, next_states):
     if n == 0:
         return {"n": 0, "delta_mean": np.zeros(2, dtype=np.float64), "delta_std": np.zeros(2, dtype=np.float64)}
     deltas = (next_states - states).astype(np.float64, copy=False)
-    mean = deltas.mean(axis=0)
-    std = deltas.std(axis=0, ddof=1) if n >= 2 else np.zeros(2, dtype=np.float64)
+    mean = quantize_transition_stat(deltas.mean(axis=0))
+    std = quantize_transition_stat(
+        deltas.std(axis=0, ddof=1) if n >= 2 else np.zeros(2, dtype=np.float64)
+    )
     return {"n": n, "delta_mean": mean, "delta_std": std}
 
 
@@ -432,7 +436,7 @@ def combine_two_behavior_stats(stat_q1, stat_q2, confidence_level=DEFAULT_CONFID
         delta_mean = np.zeros(2, dtype=np.float64)
         delta_std = np.zeros(2, dtype=np.float64)
     else:
-        delta_mean = (n1 * mu1 + n2 * mu2) / n_total
+        delta_mean = quantize_transition_stat((n1 * mu1 + n2 * mu2) / n_total)
         if n_total > 1:
             pooled_var = (
                 (n1 - 1) * (s1 ** 2)
@@ -440,7 +444,9 @@ def combine_two_behavior_stats(stat_q1, stat_q2, confidence_level=DEFAULT_CONFID
                 + n1 * ((mu1 - delta_mean) ** 2)
                 + n2 * ((mu2 - delta_mean) ** 2)
             ) / (n_total - 1)
-            delta_std = np.sqrt(np.maximum(pooled_var, 0.0))
+            delta_std = quantize_transition_stat(
+                np.sqrt(np.maximum(pooled_var, 0.0))
+            )
         else:
             delta_std = np.zeros(2, dtype=np.float64)
     student_t_hw = student_t_half_width(
@@ -466,6 +472,11 @@ def build_bounds(q1_records, q2_records, args, sigma, category_counts=None):
             "sigma_source": "explicit runtime argument/config",
             "deterministic_sigma_scale": float(args.deterministic_sigma_scale),
             "deterministic_sigma": float(args.deterministic_sigma_scale) * float(sigma),
+            "transition_stat_decimals": TRANSITION_STAT_DECIMALS,
+            "transition_stat_quantization": (
+                "Round per-behavior and pooled delta_mean/delta_std to the fixed "
+                "decimal precision before computing Student-t half-width and radius."
+            ),
             "behavior_policies": ["R1 epsilon-greedy DQN", "R2 epsilon-greedy DQN"],
             "seed_r1": args.seed,
             "seed_r2": args.seed + args.r2_seed_offset,

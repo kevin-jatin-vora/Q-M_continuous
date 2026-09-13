@@ -1,0 +1,308 @@
+{
+  "definition": "f_hat(s,a)=s+mu_hat[c,a]",
+  "analytic_Lf": 1.0,
+  "reason": "The same constant displacement cancels when two mapped states are subtracted.",
+  "min_pair_distance_for_numerical_verification": 0.001,
+  "checks": [
+    {
+      "category": 1,
+      "action": 0,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 1,
+      "action": 1,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 1,
+      "action": 2,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 1,
+      "action": 3,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 2,
+      "action": 0,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 2,
+      "action": 1,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 2,
+      "action": 2,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 2,
+      "action": 3,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 3,
+      "action": 0,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 3,
+      "action": 1,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 3,
+      "action": 2,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 3,
+      "action": 3,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 4,
+      "action": 0,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 4,
+      "action": 1,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 4,
+      "action": 2,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 4,
+      "action": 3,
+      "represented": false,
+      "analytic_Lf": 0.0,
+      "sample_pair_verification": {
+        "n": 0,
+        "pairs_considered": 0,
+        "pairs_used": 0,
+        "ratio_min": null,
+        "ratio_mean": null,
+        "ratio_max": null,
+        "max_abs_error_from_one": null
+      }
+    },
+    {
+      "category": 5,
+      "action": 0,
+      "represented": true,
+      "analytic_Lf": 1.0,
+      "sample_pair_verification": {
+        "n": 98945,
+        "pairs_considered": 50000,
+        "pairs_used": 48074,
+        "ratio_min": 0.9999999999999993,
+        "ratio_mean": 1.0,
+        "ratio_max": 1.0000000000000007,
+        "max_abs_error_from_one": 6.661338147750939e-16
+      }
+    },
+    {
+      "category": 5,
+      "action": 1,
+      "represented": true,
+      "analytic_Lf": 1.0,
+      "sample_pair_verification": {
+        "n": 18929,
+        "pairs_considered": 50000,
+        "pairs_used": 49709,
+        "ratio_min": 0.9999999999999993,
+        "ratio_mean": 1.0,
+        "ratio_max": 1.0000000000000013,
+        "max_abs_error_from_one": 1.3322676295501878e-15
+      }
+    },
+    {
+      "category": 5,
+      "action": 2,
+      "represented": true,
+      "analytic_Lf": 1.0,
+      "sample_pair_verification": {
+        "n": 90291,
+        "pairs_considered": 50000,
+        "pairs_used": 48580,
+        "ratio_min": 0.9999999999999987,
+        "ratio_mean": 1.0,
+        "ratio_max": 1.0000000000000007,
+        "max_abs_error_from_one": 1.3322676295501878e-15
+      }
+    },
+    {
+      "category": 5,
+      "action": 3,
+      "represented": true,
+      "analytic_Lf": 1.0,
+      "sample_pair_verification": {
+        "n": 90340,
+        "pairs_considered": 50000,
+        "pairs_used": 48383,
+        "ratio_min": 0.9999999999999993,
+        "ratio_mean": 1.0,
+        "ratio_max": 1.0000000000000013,
+        "max_abs_error_from_one": 1.3322676295501878e-15
+      }
+    }
+  ]
+}

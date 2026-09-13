@@ -1,0 +1,16 @@
+{
+  "lipschitz_method_version": 3,
+  "gamma": 0.96,
+  "sigma": 0.0,
+  "dynamics_sigma": 0.0,
+  "deterministic_sigma_scale": 0.001,
+  "deterministic_sigma": 0.0,
+  "theoretical_global_wasserstein_kernel_lipschitz": 1.0,
+  "Lf_definition": "data-fitted Gaussian W2 ratio",
+  "estimator": "max",
+  "min_pair_distance": 0.0,
+  "min_pair_distance_source": "minimum represented pruning radius",
+  "neighbor_category_pairs": [],
+  "Lf_grouping": "source_category_action_pair",
+  "constants": []
+}

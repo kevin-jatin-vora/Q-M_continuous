@@ -90,3 +90,23 @@ videos/   policy mp4s
 ```
 
 See `algorithm.md`, `RUN_ORDER.md`, `ARTIFACTS.md`.
+
+## Lipschitz diagnostics
+
+The diagnostic runner reuses collected R1/R2 transitions when provenance
+matches, filters pairwise comparisons by denominator distance, and compares
+local/global mean and max estimators. The default minimum pair distance is
+`0.04`; pairs at exactly the threshold are retained. Reward `Lr` uses
+next-state distance, while dynamics `Lf` and empirical `Lq` use source-state
+distance.
+
+```bat
+run_diagnostics.cmd configs\radial_match.json --sigma 0.0005 --gamma 0.96 --determinism 0.0 --deterministic-sigma-scale 0.001 --seed 0 --reuse-data
+```
+
+Use `--min-pair-distance VALUE` to change the threshold. Results are stored in
+a gap-specific directory such as `gap_0p04/`, while raw transitions and four
+combined R1+R2 source-state count heatmaps (one per action) remain in `shared/`.
+If an estimated dynamics constant is non-contractive (`gamma*Lf >= 1`), the
+diagnostic prints the selected R1/R2 pair, source and next states, distances,
+`Lf`, and `gamma*Lf`, and records the same witness in the invalid artifact.

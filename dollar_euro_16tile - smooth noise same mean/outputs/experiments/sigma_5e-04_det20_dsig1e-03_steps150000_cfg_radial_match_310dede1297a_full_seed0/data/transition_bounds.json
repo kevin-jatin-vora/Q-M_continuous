@@ -1,0 +1,400 @@
+{
+  "source_json": "generated directly by scripts/train_reward_components.py",
+  "metadata": {
+    "dynamics_sigma": 0.0005,
+    "sigma_source": "explicit runtime argument/config",
+    "deterministic_sigma_scale": 0.001,
+    "deterministic_sigma": 5e-07,
+    "transition_stat_decimals": 7,
+    "transition_stat_quantization": "Round per-behavior and pooled delta_mean/delta_std to the fixed decimal precision before computing Student-t half-width and radius.",
+    "behavior_policies": [
+      "R1 epsilon-greedy DQN",
+      "R2 epsilon-greedy DQN"
+    ],
+    "seed_r1": 0,
+    "seed_r2": 1000000,
+    "delta_mean_semantics": "Pooled mean free displacement delta = s' - s per (category, action). Q_single trains on s' = clip(s + delta_mean).",
+    "delta_std_semantics": "Pooled per-axis sample std of delta around delta_mean.",
+    "student_t_half_width_semantics": "Student-t interval half-width per axis: t * delta_std * sqrt(1 + 1/n) at confidence_level.",
+    "pruning_radius_semantics": "r = L2 of student_t_half_width; RA-DQN margins use this as the radius of next s' around s + delta_mean.",
+    "delta_estimation": "Free region-action steps only (exclude boundary cancel/clip when configured).",
+    "lc_pair_distance_threshold": 0.0006253693654687684,
+    "lc_pair_distance_source": "minimum pruning_radius over represented category/action cells"
+  },
+  "config": {
+    "confidence_level": 0.95,
+    "exclude_boundary_affected_transitions": true
+  },
+  "by_region_action": {
+    "1": {
+      "0": {
+        "n_total": 25027,
+        "n_q1_behavior": 20141,
+        "n_q2_behavior": 4886,
+        "delta_mean": [
+          4.5e-06,
+          -0.0399969
+        ],
+        "delta_std": [
+          0.0004202,
+          0.0004216
+        ],
+        "student_t_half_width": [
+          0.0008236331543060464,
+          0.0008263772914217733
+        ],
+        "pruning_radius": 0.0011667351887423788
+      },
+      "1": {
+        "n_total": 4776,
+        "n_q1_behavior": 2025,
+        "n_q2_behavior": 2751,
+        "delta_mean": [
+          7.9e-06,
+          0.0400032
+        ],
+        "delta_std": [
+          0.0004828,
+          0.0004709
+        ],
+        "student_t_half_width": [
+          0.0009466096168453776,
+          0.0009232776896696113
+        ],
+        "pruning_radius": 0.0013223129202067896
+      },
+      "2": {
+        "n_total": 19093,
+        "n_q1_behavior": 16755,
+        "n_q2_behavior": 2338,
+        "delta_mean": [
+          -0.040006,
+          2.7e-06
+        ],
+        "delta_std": [
+          0.0004494,
+          0.0004495
+        ],
+        "student_t_half_width": [
+          0.0008808867256164102,
+          0.0008810827395740463
+        ],
+        "pruning_radius": 0.0012459005647893844
+      },
+      "3": {
+        "n_total": 32330,
+        "n_q1_behavior": 1843,
+        "n_q2_behavior": 30487,
+        "delta_mean": [
+          0.0400048,
+          1.8e-06
+        ],
+        "delta_std": [
+          0.0004863,
+          0.0004869
+        ],
+        "student_t_half_width": [
+          0.0009531809123147712,
+          0.0009543569529221923
+        ],
+        "pruning_radius": 0.0013488332162251014
+      }
+    },
+    "2": {
+      "0": {
+        "n_total": 4374,
+        "n_q1_behavior": 1814,
+        "n_q2_behavior": 2560,
+        "delta_mean": [
+          -2.2e-06,
+          -0.0400048
+        ],
+        "delta_std": [
+          0.0005417,
+          0.0005364
+        ],
+        "student_t_half_width": [
+          0.001062127825551854,
+          0.0010517359527893936
+        ],
+        "pruning_radius": 0.001494745474052798
+      },
+      "1": {
+        "n_total": 7429,
+        "n_q1_behavior": 2831,
+        "n_q2_behavior": 4598,
+        "delta_mean": [
+          4.2e-06,
+          0.0399926
+        ],
+        "delta_std": [
+          0.0005367,
+          0.0005505
+        ],
+        "student_t_half_width": [
+          0.0010521549100655882,
+          0.001079208641682702
+        ],
+        "pruning_radius": 0.0015072230249892511
+      },
+      "2": {
+        "n_total": 19641,
+        "n_q1_behavior": 17691,
+        "n_q2_behavior": 1950,
+        "delta_mean": [
+          -0.0399988,
+          6.8e-06
+        ],
+        "delta_std": [
+          0.0005253,
+          0.0005317
+        ],
+        "student_t_half_width": [
+          0.001029658745695808,
+          0.0010422036076269963
+        ],
+        "pruning_radius": 0.0014650547745182058
+      },
+      "3": {
+        "n_total": 4007,
+        "n_q1_behavior": 1536,
+        "n_q2_behavior": 2471,
+        "delta_mean": [
+          0.039994,
+          -7e-07
+        ],
+        "delta_std": [
+          0.0005413,
+          0.0005446
+        ],
+        "student_t_half_width": [
+          0.0010613815629795702,
+          0.0010678522061678812
+        ],
+        "pruning_radius": 0.0015056025891484665
+      }
+    },
+    "3": {
+      "0": {
+        "n_total": 41868,
+        "n_q1_behavior": 19165,
+        "n_q2_behavior": 22703,
+        "delta_mean": [
+          -2.5e-06,
+          -0.0400082
+        ],
+        "delta_std": [
+          0.0005519,
+          0.0005553
+        ],
+        "student_t_half_width": [
+          0.0010817483140832427,
+          0.0010884124638710357
+        ],
+        "pruning_radius": 0.0015345426375737354
+      },
+      "1": {
+        "n_total": 8148,
+        "n_q1_behavior": 3712,
+        "n_q2_behavior": 4436,
+        "delta_mean": [
+          -6.6e-06,
+          0.0399969
+        ],
+        "delta_std": [
+          0.0005656,
+          0.0005628
+        ],
+        "student_t_half_width": [
+          0.0011087883813081097,
+          0.0011032993299154954
+        ],
+        "pruning_radius": 0.001564187036743317
+      },
+      "2": {
+        "n_total": 45242,
+        "n_q1_behavior": 40342,
+        "n_q2_behavior": 4900,
+        "delta_mean": [
+          -0.0399949,
+          -6e-07
+        ],
+        "delta_std": [
+          0.0005427,
+          0.0005413
+        ],
+        "student_t_half_width": [
+          0.0010637126679599203,
+          0.0010609686146429056
+        ],
+        "pruning_radius": 0.001502377795774318
+      },
+      "3": {
+        "n_total": 28255,
+        "n_q1_behavior": 3950,
+        "n_q2_behavior": 24305,
+        "delta_mean": [
+          0.0399948,
+          -4e-06
+        ],
+        "delta_std": [
+          0.0005792,
+          0.0005711
+        ],
+        "student_t_half_width": [
+          0.0011352798622259255,
+          0.001119403192881951
+        ],
+        "pruning_radius": 0.0015943412036982618
+      }
+    },
+    "4": {
+      "0": {
+        "n_total": 3684,
+        "n_q1_behavior": 660,
+        "n_q2_behavior": 3024,
+        "delta_mean": [
+          -6.1e-06,
+          -0.0400032
+        ],
+        "delta_std": [
+          0.0005141,
+          0.0004962
+        ],
+        "student_t_half_width": [
+          0.0010080855219484729,
+          0.0009729858704353866
+        ],
+        "pruning_radius": 0.0014010488655393258
+      },
+      "1": {
+        "n_total": 1803,
+        "n_q1_behavior": 833,
+        "n_q2_behavior": 970,
+        "delta_mean": [
+          1.91e-05,
+          0.039981
+        ],
+        "delta_std": [
+          0.0005638,
+          0.0005686
+        ],
+        "student_t_half_width": [
+          0.0011060770130243425,
+          0.0011154937736886149
+        ],
+        "pruning_radius": 0.0015709018804110325
+      },
+      "2": {
+        "n_total": 1343,
+        "n_q1_behavior": 830,
+        "n_q2_behavior": 513,
+        "delta_mean": [
+          -0.0399976,
+          -1.17e-05
+        ],
+        "delta_std": [
+          0.0005524,
+          0.0005703
+        ],
+        "student_t_half_width": [
+          0.0010840648291672152,
+          0.0011191929255504396
+        ],
+        "pruning_radius": 0.0015581365018635226
+      },
+      "3": {
+        "n_total": 1135,
+        "n_q1_behavior": 728,
+        "n_q2_behavior": 407,
+        "delta_mean": [
+          0.0399991,
+          1.53e-05
+        ],
+        "delta_std": [
+          0.000544,
+          0.0005419
+        ],
+        "student_t_half_width": [
+          0.0010678297222703758,
+          0.0010637075854748469
+        ],
+        "pruning_radius": 0.0015072273030836314
+      }
+    },
+    "5": {
+      "0": {
+        "n_total": 25773,
+        "n_q1_behavior": 9130,
+        "n_q2_behavior": 16643,
+        "delta_mean": [
+          -1.4e-06,
+          -0.0400027
+        ],
+        "delta_std": [
+          0.0002829,
+          0.0002821
+        ],
+        "student_t_half_width": [
+          0.0005545106101940469,
+          0.0005529425349442936
+        ],
+        "pruning_radius": 0.0007830884137620704
+      },
+      "1": {
+        "n_total": 2575,
+        "n_q1_behavior": 1332,
+        "n_q2_behavior": 1243,
+        "delta_mean": [
+          1.5e-06,
+          0.0400021
+        ],
+        "delta_std": [
+          0.0002226,
+          0.0002283
+        ],
+        "student_t_half_width": [
+          0.0004365779800197982,
+          0.0004477572005324345
+        ],
+        "pruning_radius": 0.0006253693654687684
+      },
+      "2": {
+        "n_total": 4126,
+        "n_q1_behavior": 2312,
+        "n_q2_behavior": 1814,
+        "delta_mean": [
+          -0.0400073,
+          -1.09e-05
+        ],
+        "delta_std": [
+          0.0002764,
+          0.0002755
+        ],
+        "student_t_half_width": [
+          0.0005419587118429479,
+          0.0005401940127088716
+        ],
+        "pruning_radius": 0.0007651985472470397
+      },
+      "3": {
+        "n_total": 16601,
+        "n_q1_behavior": 986,
+        "n_q2_behavior": 15615,
+        "delta_mean": [
+          0.0400003,
+          1.3e-06
+        ],
+        "delta_std": [
+          0.0002303,
+          0.0002314
+        ],
+        "student_t_half_width": [
+          0.00045142621543111717,
+          0.00045358239796248594
+        ],
+        "pruning_radius": 0.0006399395438007096
+      }
+    }
+  }
+}

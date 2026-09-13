@@ -1,0 +1,611 @@
+{
+  "sigma": 0.0005,
+  "determinism": 0.0,
+  "deterministic_sigma_scale": 0.001,
+  "deterministic_sigma": 5e-07,
+  "noise_model_version": "smooth_scalar_bilinear_v1",
+  "noise_interpolation": "bilinear_between_tile_centers_constant_edge_extension",
+  "category_noise_multipliers": {
+    "1": 1.0,
+    "2": 1.1,
+    "3": 1.2,
+    "4": 1.3,
+    "5": 0.001
+  },
+  "tile_noise_multiplier_grid_row_major": [
+    [
+      1.2,
+      1.2,
+      1.3,
+      1.3
+    ],
+    [
+      1.2,
+      1.2,
+      1.3,
+      1.3
+    ],
+    [
+      1.1,
+      1.1,
+      1.0,
+      1.0
+    ],
+    [
+      1.1,
+      1.1,
+      1.0,
+      1.0
+    ]
+  ],
+  "noise_multiplier_lipschitz": 1.264911064067352,
+  "sigma_lipschitz": 0.000632455532033676,
+  "wasserstein_kernel_lipschitz": 1.00000039999992,
+  "gamma_times_wasserstein_kernel_lipschitz": 0.9600003839999233,
+  "data_fitted_wasserstein_model": {
+    "method": "data_fitted_common_mean_and_bilinear_isotropic_gaussian_noise",
+    "fit_success": true,
+    "fit_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "category_sigma": {
+      "1": 0.0005133883668046081,
+      "2": 0.0005325287713153557,
+      "3": 0.0005815417130685366,
+      "4": 0.0006427280846607009,
+      "5": 0.0
+    },
+    "action_mean_displacement": [
+      [
+        1.0002143293795093e-06,
+        -0.04001978354771058
+      ],
+      [
+        -2.5043274093438034e-05,
+        0.04001346602607413
+      ],
+      [
+        -0.04000819624483461,
+        -9.551787195838286e-07
+      ],
+      [
+        0.03999656018736385,
+        -1.882079834372309e-05
+      ]
+    ],
+    "sample_estimated_sigma_lipschitz": 0.0005723290617637111,
+    "sample_estimated_global_K_P": 1.0000003275605012,
+    "theoretical_global_K_P_verification": 1.00000039999992
+  },
+  "layout": {
+    "determinism": 0.0,
+    "grid_size": 4,
+    "n_tiles": 16,
+    "n_categories": 5,
+    "layout_mode": "radial_quadrants",
+    "counts": {
+      "5": 0,
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 4
+    },
+    "category_names": {
+      "1": "radial_r1_top_right",
+      "2": "radial_r2_top_left",
+      "3": "radial_r3_bottom_left",
+      "4": "radial_r4_bottom_right",
+      "5": "deterministic"
+    },
+    "tile_map_row_major": [
+      3,
+      3,
+      4,
+      4,
+      3,
+      3,
+      4,
+      4,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1
+    ]
+  },
+  "steps_per_behavior": 2000,
+  "seed_r1": 0,
+  "seed_r2": 1000000,
+  "seconds_r1": 1.553786399992532,
+  "seconds_r2": 1.41597929999989,
+  "device": "cpu",
+  "gamma": 0.96,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "buffer_size": 100000,
+  "target_tau": 0.0005,
+  "update_every": 4,
+  "epsilon_start": 1.0,
+  "epsilon_end": 0.05,
+  "epsilon_decay": 0.998,
+  "max_steps_per_episode": 200,
+  "env_horizon": 200,
+  "cell_counts": {
+    "1:0": {
+      "r1": 103,
+      "r2": 49
+    },
+    "1:1": {
+      "r1": 91,
+      "r2": 62
+    },
+    "1:2": {
+      "r1": 89,
+      "r2": 61
+    },
+    "1:3": {
+      "r1": 90,
+      "r2": 63
+    },
+    "2:0": {
+      "r1": 58,
+      "r2": 17
+    },
+    "2:1": {
+      "r1": 54,
+      "r2": 14
+    },
+    "2:2": {
+      "r1": 49,
+      "r2": 11
+    },
+    "2:3": {
+      "r1": 54,
+      "r2": 19
+    },
+    "3:0": {
+      "r1": 157,
+      "r2": 188
+    },
+    "3:1": {
+      "r1": 180,
+      "r2": 193
+    },
+    "3:2": {
+      "r1": 151,
+      "r2": 169
+    },
+    "3:3": {
+      "r1": 176,
+      "r2": 176
+    },
+    "4:0": {
+      "r1": 168,
+      "r2": 234
+    },
+    "4:1": {
+      "r1": 171,
+      "r2": 230
+    },
+    "4:2": {
+      "r1": 192,
+      "r2": 234
+    },
+    "4:3": {
+      "r1": 162,
+      "r2": 236
+    },
+    "5:0": {
+      "r1": 0,
+      "r2": 0
+    },
+    "5:1": {
+      "r1": 0,
+      "r2": 0
+    },
+    "5:2": {
+      "r1": 0,
+      "r2": 0
+    },
+    "5:3": {
+      "r1": 0,
+      "r2": 0
+    }
+  },
+  "tile_counts": {
+    "0:0": {
+      "r1": 10,
+      "r2": 22
+    },
+    "0:1": {
+      "r1": 13,
+      "r2": 35
+    },
+    "0:2": {
+      "r1": 7,
+      "r2": 21
+    },
+    "0:3": {
+      "r1": 7,
+      "r2": 19
+    },
+    "1:0": {
+      "r1": 27,
+      "r2": 28
+    },
+    "1:1": {
+      "r1": 39,
+      "r2": 26
+    },
+    "1:2": {
+      "r1": 38,
+      "r2": 35
+    },
+    "1:3": {
+      "r1": 37,
+      "r2": 34
+    },
+    "2:0": {
+      "r1": 45,
+      "r2": 106
+    },
+    "2:1": {
+      "r1": 51,
+      "r2": 109
+    },
+    "2:2": {
+      "r1": 58,
+      "r2": 109
+    },
+    "2:3": {
+      "r1": 47,
+      "r2": 126
+    },
+    "3:0": {
+      "r1": 6,
+      "r2": 15
+    },
+    "3:1": {
+      "r1": 2,
+      "r2": 20
+    },
+    "3:2": {
+      "r1": 0,
+      "r2": 18
+    },
+    "3:3": {
+      "r1": 4,
+      "r2": 10
+    },
+    "4:0": {
+      "r1": 32,
+      "r2": 39
+    },
+    "4:1": {
+      "r1": 27,
+      "r2": 23
+    },
+    "4:2": {
+      "r1": 19,
+      "r2": 23
+    },
+    "4:3": {
+      "r1": 24,
+      "r2": 31
+    },
+    "5:0": {
+      "r1": 88,
+      "r2": 99
+    },
+    "5:1": {
+      "r1": 101,
+      "r2": 109
+    },
+    "5:2": {
+      "r1": 87,
+      "r2": 90
+    },
+    "5:3": {
+      "r1": 108,
+      "r2": 92
+    },
+    "6:0": {
+      "r1": 108,
+      "r2": 101
+    },
+    "6:1": {
+      "r1": 111,
+      "r2": 84
+    },
+    "6:2": {
+      "r1": 124,
+      "r2": 89
+    },
+    "6:3": {
+      "r1": 104,
+      "r2": 87
+    },
+    "7:0": {
+      "r1": 9,
+      "r2": 12
+    },
+    "7:1": {
+      "r1": 7,
+      "r2": 17
+    },
+    "7:2": {
+      "r1": 10,
+      "r2": 18
+    },
+    "7:3": {
+      "r1": 7,
+      "r2": 13
+    },
+    "8:0": {
+      "r1": 12,
+      "r2": 0
+    },
+    "8:1": {
+      "r1": 7,
+      "r2": 1
+    },
+    "8:2": {
+      "r1": 9,
+      "r2": 0
+    },
+    "8:3": {
+      "r1": 11,
+      "r2": 1
+    },
+    "9:0": {
+      "r1": 39,
+      "r2": 17
+    },
+    "9:1": {
+      "r1": 38,
+      "r2": 13
+    },
+    "9:2": {
+      "r1": 37,
+      "r2": 11
+    },
+    "9:3": {
+      "r1": 37,
+      "r2": 18
+    },
+    "10:0": {
+      "r1": 60,
+      "r2": 26
+    },
+    "10:1": {
+      "r1": 60,
+      "r2": 36
+    },
+    "10:2": {
+      "r1": 43,
+      "r2": 27
+    },
+    "10:3": {
+      "r1": 52,
+      "r2": 33
+    },
+    "11:0": {
+      "r1": 2,
+      "r2": 19
+    },
+    "11:1": {
+      "r1": 2,
+      "r2": 21
+    },
+    "11:2": {
+      "r1": 3,
+      "r2": 27
+    },
+    "11:3": {
+      "r1": 0,
+      "r2": 27
+    },
+    "12:0": {
+      "r1": 0,
+      "r2": 0
+    },
+    "12:1": {
+      "r1": 0,
+      "r2": 0
+    },
+    "12:2": {
+      "r1": 0,
+      "r2": 0
+    },
+    "12:3": {
+      "r1": 0,
+      "r2": 0
+    },
+    "13:0": {
+      "r1": 7,
+      "r2": 0
+    },
+    "13:1": {
+      "r1": 9,
+      "r2": 0
+    },
+    "13:2": {
+      "r1": 3,
+      "r2": 0
+    },
+    "13:3": {
+      "r1": 6,
+      "r2": 0
+    },
+    "14:0": {
+      "r1": 14,
+      "r2": 4
+    },
+    "14:1": {
+      "r1": 8,
+      "r2": 5
+    },
+    "14:2": {
+      "r1": 14,
+      "r2": 7
+    },
+    "14:3": {
+      "r1": 15,
+      "r2": 3
+    },
+    "15:0": {
+      "r1": 27,
+      "r2": 0
+    },
+    "15:1": {
+      "r1": 21,
+      "r2": 0
+    },
+    "15:2": {
+      "r1": 29,
+      "r2": 0
+    },
+    "15:3": {
+      "r1": 23,
+      "r2": 0
+    }
+  },
+  "cross_tile_reward_lipschitz": {
+    "artifact": "cross_tile_reward_lipschitz.json",
+    "lipschitz_method_version": 3,
+    "tile_neighbor_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        11
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        14,
+        15
+      ]
+    ],
+    "n_pairs": 24,
+    "methodology": "10% trimmed pairwise NEXT-state-tile reward ratios |R(s1')-R(s2')|/||s1'-s2'|| across physically neighboring tiles; Lr_sum=Lr1+Lr2"
+  },
+  "cross_category_dynamics_lipschitz": {
+    "artifact": "cross_category_dynamics_lipschitz.json",
+    "lipschitz_method_version": 3,
+    "neighbor_pairs": [
+      {
+        "category_i": 1,
+        "category_j": 2,
+        "n_edges": 2
+      },
+      {
+        "category_i": 1,
+        "category_j": 4,
+        "n_edges": 2
+      },
+      {
+        "category_i": 2,
+        "category_j": 3,
+        "n_edges": 2
+      },
+      {
+        "category_i": 3,
+        "category_j": 4,
+        "n_edges": 2
+      }
+    ],
+    "n_pairs": 4,
+    "methodology": "10% trimmed data-fitted Gaussian W2 ratios across neighboring source categories; theoretical global K_P is verification only."
+  },
+  "noise_action_ratio": {
+    "artifact": "category_noise_action_ratio.json",
+    "minimum_noise_percent": 0.0017677669529663684,
+    "maximum_noise_percent": 2.29809703885628
+  }
+}

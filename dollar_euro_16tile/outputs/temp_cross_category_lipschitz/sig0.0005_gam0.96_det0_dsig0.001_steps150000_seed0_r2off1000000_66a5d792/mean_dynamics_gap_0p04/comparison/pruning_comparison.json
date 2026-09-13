@@ -1,0 +1,56 @@
+{
+  "reference_arm": "raw_local_mean_gap",
+  "difference_heatmaps": [
+    {
+      "file": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\temp_cross_category_lipschitz\\sig0.0005_gam0.96_det0_dsig0.001_steps150000_seed0_r2off1000000_66a5d792\\mean_dynamics_gap_0p04\\comparison\\pruning_difference_1_minus_0.png",
+      "arm": "mean_dynamics_local",
+      "reference": "raw_local_mean_gap"
+    }
+  ],
+  "valid_arms": [
+    {
+      "name": "raw_local_mean_gap",
+      "analysis_dir": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\temp_cross_category_lipschitz\\sig0.0005_gam0.96_det0_dsig0.001_steps150000_seed0_r2off1000000_66a5d792\\mean_dynamics_gap_0p04\\raw_local_mean_gap\\local_mean\\analysis",
+      "grid_size": 201,
+      "states": 40401,
+      "action_values": 161604,
+      "ordering_violations": 77534,
+      "ordering_violation_percent": 47.97777282740526,
+      "width_min": -0.0031127333641052246,
+      "width_mean": 1.892634099931456e-05,
+      "width_max": 0.0027723312377929688,
+      "surviving_action_histogram": {
+        "0": 0,
+        "1": 3889,
+        "2": 0,
+        "3": 0,
+        "4": 36512
+      },
+      "mean_surviving_actions": 3.711220019306453,
+      "empty_action_states": 0,
+      "mean_surviving_difference_from_reference": 0.0
+    },
+    {
+      "name": "mean_dynamics_local",
+      "analysis_dir": "D:\\dollar_euro_lipschitz_clean\\dollar_euro_16tile\\outputs\\temp_cross_category_lipschitz\\sig0.0005_gam0.96_det0_dsig0.001_steps150000_seed0_r2off1000000_66a5d792\\mean_dynamics_gap_0p04\\mean_dynamics_local\\analysis",
+      "grid_size": 201,
+      "states": 40401,
+      "action_values": 161604,
+      "ordering_violations": 78990,
+      "ordering_violation_percent": 48.87874062523205,
+      "width_min": -0.003017781302332878,
+      "width_mean": 1.4850427760393359e-05,
+      "width_max": 0.002705782651901245,
+      "surviving_action_histogram": {
+        "0": 0,
+        "1": 3063,
+        "2": 0,
+        "3": 0,
+        "4": 37338
+      },
+      "mean_surviving_actions": 3.7725551347738917,
+      "empty_action_states": 0,
+      "mean_surviving_difference_from_reference": 0.06133511546743892
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "method": "data_fitted_common_mean_and_bilinear_isotropic_gaussian_noise",
+  "boundary_affected_transitions_excluded": true,
+  "mean_map_Lf": 1.0,
+  "theoretical_sigma_lipschitz": 0.000632455532033676,
+  "theoretical_wasserstein_kernel_lipschitz": 1.00000039999992,
+  "fit_success": true,
+  "fit_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+  "sample_fitted_category_sigma": {
+    "1": 0.00050326650416839,
+    "2": 0.0005460688062518169,
+    "3": 0.000599306954606574,
+    "4": 0.000649972911827558,
+    "5": 0.0
+  },
+  "sample_estimated_sigma_lipschitz": 0.0006208356854353855,
+  "sample_estimated_wasserstein_kernel_lipschitz": 1.000000385436874,
+  "normalized_residual_mean": [
+    -5.712716514006666e-05,
+    -6.37305026174547e-05
+  ],
+  "normalized_residual_covariance": [
+    [
+      1.0000733537088944,
+      -0.002291715195122697
+    ],
+    [
+      -0.002291715195122697,
+      0.9999434664425096
+    ]
+  ],
+  "by_action": [
+    {
+      "action": 0,
+      "n": 98722,
+      "sample_mean_displacement": [
+        3.5750007291761457e-06,
+        -0.040003228382123494
+      ]
+    },
+    {
+      "action": 1,
+      "n": 30220,
+      "sample_mean_displacement": [
+        4.1602953355711665e-06,
+        0.03999864961286805
+      ]
+    },
+    {
+      "action": 2,
+      "n": 89133,
+      "sample_mean_displacement": [
+        -0.03999814785961597,
+        5.690227763877718e-07
+      ]
+    },
+    {
+      "action": 3,
+      "n": 78318,
+      "sample_mean_displacement": [
+        0.03999597616332115,
+        -1.618810713267137e-06
+      ]
+    }
+  ],
+  "interpretation": "The fitted model supplies the per-pair Wasserstein ratios used by all four diagnostic variants. The theoretical global value is verification only."
+}

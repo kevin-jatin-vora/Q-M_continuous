@@ -1,0 +1,38 @@
+[
+  {
+    "variant": "local_max",
+    "ordinary_min": 1.0000001632094966,
+    "ordinary_mean": 1.000000260195232,
+    "ordinary_max": 1.000000355260511,
+    "cross_min": 1.0000001596698473,
+    "cross_mean": 1.0000002186025472,
+    "cross_max": 1.0000003443642516
+  },
+  {
+    "variant": "global_max",
+    "ordinary_min": 1.0000003410268463,
+    "ordinary_mean": 1.0000003431661644,
+    "ordinary_max": 1.0000003443635053,
+    "cross_min": 1.0000003317994233,
+    "cross_mean": 1.000000339996382,
+    "cross_max": 1.000000344363758
+  },
+  {
+    "variant": "local_mean",
+    "ordinary_min": 1.0000000051670583,
+    "ordinary_mean": 1.000000015658411,
+    "ordinary_max": 1.0000000339850155,
+    "cross_min": 1.000000011411958,
+    "cross_mean": 1.0000000333730028,
+    "cross_max": 1.0000000876967892
+  },
+  {
+    "variant": "global_mean",
+    "ordinary_min": 1.0000000093195045,
+    "ordinary_mean": 1.0000000198381465,
+    "ordinary_max": 1.000000038757813,
+    "cross_min": 1.0000000093851442,
+    "cross_mean": 1.00000001989029,
+    "cross_max": 1.0000000389293495
+  }
+]

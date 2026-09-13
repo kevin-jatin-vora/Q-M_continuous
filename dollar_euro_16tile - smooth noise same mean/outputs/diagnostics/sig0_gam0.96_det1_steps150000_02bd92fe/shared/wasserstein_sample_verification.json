@@ -1,0 +1,67 @@
+{
+  "method": "data_fitted_common_mean_and_bilinear_isotropic_gaussian_noise",
+  "boundary_affected_transitions_excluded": true,
+  "mean_map_Lf": 1.0,
+  "theoretical_sigma_lipschitz": 0.0,
+  "theoretical_wasserstein_kernel_lipschitz": 1.0,
+  "fit_success": true,
+  "fit_message": "zero-noise numerical-floor branch",
+  "sample_fitted_category_sigma": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0
+  },
+  "sample_estimated_sigma_lipschitz": 0.0,
+  "sample_estimated_wasserstein_kernel_lipschitz": 1.0,
+  "normalized_residual_mean": [
+    0.0,
+    0.0
+  ],
+  "normalized_residual_covariance": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0
+    ]
+  ],
+  "by_action": [
+    {
+      "action": 0,
+      "n": 95565,
+      "sample_mean_displacement": [
+        0.0,
+        -0.03999999270894829
+      ]
+    },
+    {
+      "action": 1,
+      "n": 28169,
+      "sample_mean_displacement": [
+        0.0,
+        0.04000000607063225
+      ]
+    },
+    {
+      "action": 2,
+      "n": 87137,
+      "sample_mean_displacement": [
+        -0.0399999940416013,
+        0.0
+      ]
+    },
+    {
+      "action": 3,
+      "n": 87497,
+      "sample_mean_displacement": [
+        0.04000001879257193,
+        0.0
+      ]
+    }
+  ],
+  "interpretation": "The fitted model supplies the per-pair Wasserstein ratios used by all four diagnostic variants. The theoretical global value is verification only."
+}

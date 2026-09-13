@@ -1,0 +1,12 @@
+[
+  {
+    "experiment": "exp1_trimmed",
+    "valid": true,
+    "analysis": "generated"
+  },
+  {
+    "experiment": "exp2_gap",
+    "valid": true,
+    "analysis": "generated"
+  }
+]

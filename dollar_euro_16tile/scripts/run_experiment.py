@@ -35,6 +35,7 @@ from dollar_euro_lipschitz.config import (
     resolved_training_values,
 )
 from dollar_euro_lipschitz.env import ContinuousDollarEuroEnv
+from dollar_euro_lipschitz.bounds import TRANSITION_STAT_DECIMALS
 
 
 def parse_args():
@@ -71,10 +72,11 @@ def parse_args():
         type=int,
         default=None,
         help=(
-            "Explicit step budget for R1/R2 component collection and (if "
-            "trained) agent training, overriding profile/config defaults "
-            "(smoke: 10000/2000, full: 150000/300000). When set, the "
-            "effective value also namespaces the experiment directory."
+            "Explicit step budget for R1/R2 Lipschitz/data collection, "
+            "overriding profile/config defaults (smoke=10000, full=150000 "
+            "or config['component_steps']). Does NOT change agent training "
+            "steps. When set, the effective value also namespaces the "
+            "experiment directory."
         ),
     )
     parser.add_argument("--seed", type=int, default=0)
@@ -380,10 +382,10 @@ def main():
         if args.steps <= 0:
             raise SystemExit("error: --steps must be >= 1")
         component_steps = int(args.steps)
-        agent_steps = int(args.steps)
     else:
         component_steps = int(config.get("component_steps", default_component_steps))
-        agent_steps = int(config.get("agent_steps", default_agent_steps))
+
+    agent_steps = int(config.get("agent_steps", default_agent_steps))
 
     center_iters = int(config.get("center_q_iters", center_iters))
     eval_every = int(config.get("eval_every", eval_every))
@@ -403,11 +405,13 @@ def main():
         + det_arg.encode("ascii")
         + b"\0effective_deterministic_sigma_scale="
         + det_sigma_scale_arg.encode("ascii")
+        + b"\0transition_stat_decimals="
+        + str(TRANSITION_STAT_DECIMALS).encode("ascii")
     )
     if args.steps is not None:
         identity += (
             b"\0effective_steps="
-            + str(int(agent_steps)).encode("ascii")
+            + str(int(component_steps)).encode("ascii")
         )
     config_hash = hashlib.sha256(identity).hexdigest()[:12]
     stem = re.sub(r"[^A-Za-z0-9_.-]+", "_", config_path.stem)
@@ -415,7 +419,7 @@ def main():
     det_tag = f"_det{int(round(determinism * 100)):02d}"
     if det_sigma_scale > 0.0:
         det_tag += f"_dsig{artifact_sigma_tag(det_sigma_scale)}"
-    steps_tag = f"_steps{int(agent_steps)}" if args.steps is not None else ""
+    steps_tag = f"_steps{int(component_steps)}" if args.steps is not None else ""
     output_dir = (
         Path(args.output_root)
         / f"sigma_{artifact_sigma_tag(sigma)}{det_tag}{steps_tag}_cfg_{stem}_{config_hash}_{args.profile}{source_tag}_seed{args.seed}"
@@ -559,6 +563,7 @@ def main():
                         "from_source_json": bool(args.from_source_json),
                         "confidence_level": conf_level,
                         "pruning_radius": "student_t_l2",
+                        "transition_stat_decimals": TRANSITION_STAT_DECIMALS,
                         "q_single": "delta_mean",
                         "bounds_sigma_policy": config.get("bounds_sigma_policy", "error"),
                         "runtime_check": runtime,

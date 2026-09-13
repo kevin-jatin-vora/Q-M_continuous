@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+outputs/*.pth
+outputs/*.npy
+outputs/*.png
+outputs/*.npz

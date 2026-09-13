@@ -1,0 +1,38 @@
+[
+  {
+    "variant": "local_max",
+    "ordinary_min": 1.0,
+    "ordinary_mean": 1.0,
+    "ordinary_max": 1.0,
+    "cross_min": null,
+    "cross_mean": null,
+    "cross_max": null
+  },
+  {
+    "variant": "global_max",
+    "ordinary_min": 1.0,
+    "ordinary_mean": 1.0,
+    "ordinary_max": 1.0,
+    "cross_min": null,
+    "cross_mean": null,
+    "cross_max": null
+  },
+  {
+    "variant": "local_mean",
+    "ordinary_min": 1.0,
+    "ordinary_mean": 1.0,
+    "ordinary_max": 1.0,
+    "cross_min": null,
+    "cross_mean": null,
+    "cross_max": null
+  },
+  {
+    "variant": "global_mean",
+    "ordinary_min": 1.0,
+    "ordinary_mean": 1.0,
+    "ordinary_max": 1.0,
+    "cross_min": null,
+    "cross_mean": null,
+    "cross_max": null
+  }
+]

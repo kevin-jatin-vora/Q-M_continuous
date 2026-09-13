@@ -1,0 +1,19 @@
+{
+  "grid_size": 201,
+  "states": 40401,
+  "action_values": 161604,
+  "ordering_violations": 0,
+  "ordering_violation_percent": 0.0,
+  "width_min": 0.0,
+  "width_mean": 0.0,
+  "width_max": 0.0,
+  "surviving_action_histogram": {
+    "0": 0,
+    "1": 40397,
+    "2": 4,
+    "3": 0,
+    "4": 0
+  },
+  "mean_surviving_actions": 1.0000990074503107,
+  "empty_action_states": 0
+}

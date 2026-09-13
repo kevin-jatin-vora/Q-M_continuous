@@ -87,6 +87,7 @@ from dollar_euro_lipschitz.config import (
 )
 
 from dollar_euro_lipschitz.models import QNet
+from dollar_euro_lipschitz.bounds import TRANSITION_STAT_DECIMALS
 
 from dollar_euro_lipschitz.q_bounds import (
     learned_bound_allowed_mask,
@@ -355,9 +356,11 @@ def parse_args():
         type=int,
         default=None,
         help=(
-            "Explicit agent training steps per run, overriding the "
-            "profile/config default (smoke=2000, full=300000 or "
-            "config['agent_steps']). Also namespaces the experiment "
+            "Step budget for R1/R2 Lipschitz data collection, overriding "
+            "profile/config component defaults (smoke=10000, full=150000 "
+            "or config['component_steps']). DQN/RA-DQN agent training "
+            "always keeps its full profile/config budget (smoke=2000, "
+            "full=300000). The effective value namespaces the experiment "
             "directory so different step counts do not collide."
         ),
     )
@@ -485,6 +488,8 @@ def experiment_identity(
         + det_arg.encode("ascii")
         + b"\0effective_deterministic_sigma_scale="
         + det_sigma_scale_arg.encode("ascii")
+        + b"\0transition_stat_decimals="
+        + str(TRANSITION_STAT_DECIMALS).encode("ascii")
     )
     if steps is not None:
         identity += (
@@ -1200,12 +1205,14 @@ def main():
     # ------------------------------------------------------------
 
     if args.profile == "smoke":
-        default_steps = 2_000
+        default_agent_steps = 2_000
+        default_component_steps = 10_000
         eval_every = 500
         default_runs = 2
 
     else:
-        default_steps = 300_000
+        default_agent_steps = 300_000
+        default_component_steps = 150_000
         eval_every = 20_000
 
         default_runs = int(
@@ -1216,19 +1223,31 @@ def main():
         )
 
     if args.steps is not None:
-        agent_steps = int(args.steps)
+        component_steps = int(args.steps)
+
+        if component_steps <= 0:
+            raise SystemExit(
+                "--steps (R1/R2 component steps) must be >= 1"
+            )
 
     else:
-        agent_steps = int(
+        component_steps = int(
             config.get(
-                "agent_steps",
-                default_steps,
+                "component_steps",
+                default_component_steps,
             )
         )
 
+    agent_steps = int(
+        config.get(
+            "agent_steps",
+            default_agent_steps,
+        )
+    )
+
     if agent_steps <= 0:
         raise SystemExit(
-            "--steps (effective agent steps) must be >= 1"
+            "agent steps must be >= 1"
         )
 
     eval_every = int(
@@ -1383,6 +1402,11 @@ def main():
     print(
         f"Q-bound source:            "
         f"{args.lq_source}"
+    )
+
+    print(
+        f"R1/R2 steps/run:           "
+        f"{component_steps}"
     )
 
     print(

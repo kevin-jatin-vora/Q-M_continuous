@@ -1,0 +1,14 @@
+{
+  "lipschitz_method_version": 3,
+  "source": "scripts/debug/compute_mean_dynamics_lipschitz.py",
+  "gamma": 0.96,
+  "sigma": 0.0,
+  "deterministic_sigma_scale": 0.001,
+  "estimator": "gap_restricted_cross_category_mean_map_max",
+  "min_pair_distance": 0.04,
+  "max_pairs": 100,
+  "Lf_grouping": "source_category_action_pair",
+  "interpretation": "Finite-resolution cross-category sensitivity of f_hat, not a global Lipschitz constant. Noise in sampled successors is excluded.",
+  "neighbor_category_pairs": [],
+  "constants": []
+}

@@ -109,7 +109,34 @@ def main():
         with prov_out.open("r") as f:
             old_prov = json.load(f)
         if all(abs(float(old_prov.get(k, -1)) - float(v)) < 1e-9 if isinstance(v, (int, float)) else old_prov.get(k) == v for k, v in provenance.items()):
-            print(f"Reusing existing transitions and bounds in {shared_dir.resolve()}")
+            with bounds_out.open("r", encoding="utf-8") as handle:
+                old_bounds = json.load(handle)
+            old_decimals = old_bounds.get("metadata", {}).get("transition_stat_decimals")
+            if old_decimals != trc.TRANSITION_STAT_DECIMALS:
+                print(
+                    "Reusing existing transitions but rebuilding bounds with "
+                    f"transition_stat_decimals={trc.TRANSITION_STAT_DECIMALS}"
+                )
+                npz = np.load(npz_out, allow_pickle=True)
+                records1 = {}
+                records2 = {}
+                for region in range(1, 6):
+                    for action in range(4):
+                        for behavior, records in ((1, records1), (2, records2)):
+                            prefix = f"r{behavior}_c{region}_a{action}"
+                            records[(region, action)] = (
+                                npz[f"{prefix}_states"],
+                                npz[f"{prefix}_next"],
+                                npz[f"{prefix}_rewards"],
+                            )
+                layout = layout_summary(determinism)
+                cat_counts = {int(k): int(v) for k, v in layout["counts"].items()}
+                bounds = trc.build_bounds(
+                    records1, records2, args, sigma, category_counts=cat_counts
+                )
+                json_dump(bounds, bounds_out)
+            else:
+                print(f"Reusing existing transitions and bounds in {shared_dir.resolve()}")
             return
         print("Provenance mismatch. Re-collecting data.")
     

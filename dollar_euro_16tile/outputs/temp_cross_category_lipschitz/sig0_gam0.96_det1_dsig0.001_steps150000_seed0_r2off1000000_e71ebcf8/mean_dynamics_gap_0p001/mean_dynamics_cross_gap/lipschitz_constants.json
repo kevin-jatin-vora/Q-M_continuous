@@ -1,0 +1,2766 @@
+{
+  "source": "scripts/debug/compute_mean_dynamics_lipschitz.py",
+  "gamma": 0.96,
+  "dynamics_sigma": 0.0,
+  "deterministic_sigma_scale": 0.001,
+  "deterministic_sigma": 0.0,
+  "Lr_definition": "|R(s1')-R(s2')| / ||s1'-s2'||",
+  "Lr_grouping": "next_state_tile",
+  "Lr_action_dependence": false,
+  "Lf_definition": "||f_hat(s1,a)-f_hat(s2,a)|| / ||s1-s2||",
+  "Lf_grouping": "source_category_action",
+  "Lq_definition": "Lr*Lf/(1-gamma*Lf)",
+  "method_notes": {
+    "pair_filter": "Reject pairwise comparisons whose denominator distance is less than min_pair_distance; Lr uses next-state distance while Lf and empirical Lq use source-state distance. No percentile trimming.",
+    "aggregation": "Arithmetic mean over eligible pairwise ratios.",
+    "Lf": "Within each represented category/action, mu_hat is constant in s, so f_hat has Jacobian I and Lf=1 exactly. Lf1/Lf2 are compatibility aliases for the same pooled mean-map constant, not separate noisy estimates."
+  },
+  "lipschitz_method_version": 3,
+  "constants": [
+    {
+      "tile": 0,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 43499,
+      "n_r2": 1385,
+      "Lr1": 8.52296977370975,
+      "Lr2": 0.0,
+      "Lr_sum": 8.52296977370975,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 32.80357880595758,
+      "Lq2": 32.34008741343393,
+      "Lq_empirical_sum": 65.1436662193915,
+      "LQ_bellman_bound": 213.07424434274355,
+      "pairs_r1": 42387,
+      "pairs_r2": 47299,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 0,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 43499,
+      "n_r2": 1385,
+      "Lr1": 8.52296977370975,
+      "Lr2": 0.0,
+      "Lr_sum": 8.52296977370975,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 32.610254024041176,
+      "Lq2": 25.728136600548602,
+      "Lq_empirical_sum": 58.33839062458978,
+      "LQ_bellman_bound": 213.07424434274355,
+      "pairs_r1": 42387,
+      "pairs_r2": 47299,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 0,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 43499,
+      "n_r2": 1385,
+      "Lr1": 8.52296977370975,
+      "Lr2": 0.0,
+      "Lr_sum": 8.52296977370975,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 33.242749648614534,
+      "Lq2": 23.210239259865272,
+      "Lq_empirical_sum": 56.45298890847981,
+      "LQ_bellman_bound": 213.07424434274355,
+      "pairs_r1": 42387,
+      "pairs_r2": 47299,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 0,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 43499,
+      "n_r2": 1385,
+      "Lr1": 8.52296977370975,
+      "Lr2": 0.0,
+      "Lr_sum": 8.52296977370975,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.908517339455436,
+      "Lq2": 25.76753363467285,
+      "Lq_empirical_sum": 57.67605097412829,
+      "LQ_bellman_bound": 213.07424434274355,
+      "pairs_r1": 42387,
+      "pairs_r2": 47299,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 1,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 12258,
+      "n_r2": 2586,
+      "Lr1": 1.698147553673139,
+      "Lr2": 0.00036312261492182625,
+      "Lr_sum": 1.6985106762880608,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 32.91235601944599,
+      "Lq2": 25.85953868611737,
+      "Lq_empirical_sum": 58.771894705563355,
+      "LQ_bellman_bound": 42.462766907201484,
+      "pairs_r1": 42873,
+      "pairs_r2": 48188,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 1,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 12258,
+      "n_r2": 2586,
+      "Lr1": 1.698147553673139,
+      "Lr2": 0.00036312261492182625,
+      "Lr_sum": 1.6985106762880608,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 32.87205713199822,
+      "Lq2": 38.213851010430126,
+      "Lq_empirical_sum": 71.08590814242834,
+      "LQ_bellman_bound": 42.462766907201484,
+      "pairs_r1": 42873,
+      "pairs_r2": 48188,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 1,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 12258,
+      "n_r2": 2586,
+      "Lr1": 1.698147553673139,
+      "Lr2": 0.00036312261492182625,
+      "Lr_sum": 1.6985106762880608,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 37.930190398893174,
+      "Lq2": 42.101566589271584,
+      "Lq_empirical_sum": 80.03175698816476,
+      "LQ_bellman_bound": 42.462766907201484,
+      "pairs_r1": 42873,
+      "pairs_r2": 48188,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 1,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 12258,
+      "n_r2": 2586,
+      "Lr1": 1.698147553673139,
+      "Lr2": 0.00036312261492182625,
+      "Lr_sum": 1.6985106762880608,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 29.902999568380956,
+      "Lq2": 20.874410097466935,
+      "Lq_empirical_sum": 50.77740966584789,
+      "LQ_bellman_bound": 42.462766907201484,
+      "pairs_r1": 42873,
+      "pairs_r2": 48188,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 2,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 2373,
+      "n_r2": 29127,
+      "Lr1": 0.002169942883649924,
+      "Lr2": 1.3902944702080033,
+      "Lr_sum": 1.3924644130916533,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 28.104518800933118,
+      "Lq2": 33.702240664910036,
+      "Lq_empirical_sum": 61.80675946584316,
+      "LQ_bellman_bound": 34.8116103272913,
+      "pairs_r1": 47518,
+      "pairs_r2": 44170,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 2,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 2373,
+      "n_r2": 29127,
+      "Lr1": 0.002169942883649924,
+      "Lr2": 1.3902944702080033,
+      "Lr_sum": 1.3924644130916533,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 28.163643209578726,
+      "Lq2": 34.90870302257367,
+      "Lq_empirical_sum": 63.0723462321524,
+      "LQ_bellman_bound": 34.8116103272913,
+      "pairs_r1": 47518,
+      "pairs_r2": 44170,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 2,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 2373,
+      "n_r2": 29127,
+      "Lr1": 0.002169942883649924,
+      "Lr2": 1.3902944702080033,
+      "Lr_sum": 1.3924644130916533,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 25.365095181165866,
+      "Lq2": 30.41486166373296,
+      "Lq_empirical_sum": 55.77995684489883,
+      "LQ_bellman_bound": 34.8116103272913,
+      "pairs_r1": 47518,
+      "pairs_r2": 44170,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 2,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 2373,
+      "n_r2": 29127,
+      "Lr1": 0.002169942883649924,
+      "Lr2": 1.3902944702080033,
+      "Lr_sum": 1.3924644130916533,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 37.61156848509365,
+      "Lq2": 38.98703401528537,
+      "Lq_empirical_sum": 76.59860250037902,
+      "LQ_bellman_bound": 34.8116103272913,
+      "pairs_r1": 47518,
+      "pairs_r2": 44170,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 3,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 1125,
+      "n_r2": 42576,
+      "Lr1": 0.0,
+      "Lr2": 8.643245253014133,
+      "Lr_sum": 8.643245253014133,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.130347388800732,
+      "Lq2": 38.68410457353206,
+      "Lq_empirical_sum": 69.8144519623328,
+      "LQ_bellman_bound": 216.0811313253531,
+      "pairs_r1": 47707,
+      "pairs_r2": 41646,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 3,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 1125,
+      "n_r2": 42576,
+      "Lr1": 0.0,
+      "Lr2": 8.643245253014133,
+      "Lr_sum": 8.643245253014133,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 17.568264552758915,
+      "Lq2": 32.67495744306639,
+      "Lq_empirical_sum": 50.24322199582531,
+      "LQ_bellman_bound": 216.0811313253531,
+      "pairs_r1": 47707,
+      "pairs_r2": 41646,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 3,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 1125,
+      "n_r2": 42576,
+      "Lr1": 0.0,
+      "Lr2": 8.643245253014133,
+      "Lr_sum": 8.643245253014133,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 19.703593048710683,
+      "Lq2": 31.77784338652353,
+      "Lq_empirical_sum": 51.481436435234215,
+      "LQ_bellman_bound": 216.0811313253531,
+      "pairs_r1": 47707,
+      "pairs_r2": 41646,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 3,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 1125,
+      "n_r2": 42576,
+      "Lr1": 0.0,
+      "Lr2": 8.643245253014133,
+      "Lr_sum": 8.643245253014133,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 26.116798584418422,
+      "Lq2": 29.862551162216814,
+      "Lq_empirical_sum": 55.979349746635236,
+      "LQ_bellman_bound": 216.0811313253531,
+      "pairs_r1": 47707,
+      "pairs_r2": 41646,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 4,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 9484,
+      "n_r2": 1332,
+      "Lr1": 2.2910530627812173,
+      "Lr2": 1.2786247035755835e-06,
+      "Lr_sum": 2.291054341405921,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 37.629891695589265,
+      "Lq2": 34.26099655911765,
+      "Lq_empirical_sum": 71.89088825470691,
+      "LQ_bellman_bound": 57.27635853514797,
+      "pairs_r1": 33442,
+      "pairs_r2": 48024,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 4,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 9484,
+      "n_r2": 1332,
+      "Lr1": 2.2910530627812173,
+      "Lr2": 1.2786247035755835e-06,
+      "Lr_sum": 2.291054341405921,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 29.37576156026047,
+      "Lq2": 25.81514156781383,
+      "Lq_empirical_sum": 55.1909031280743,
+      "LQ_bellman_bound": 57.27635853514797,
+      "pairs_r1": 33442,
+      "pairs_r2": 48024,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 4,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 9484,
+      "n_r2": 1332,
+      "Lr1": 2.2910530627812173,
+      "Lr2": 1.2786247035755835e-06,
+      "Lr_sum": 2.291054341405921,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 29.888419246739378,
+      "Lq2": 28.047515866503826,
+      "Lq_empirical_sum": 57.935935113243204,
+      "LQ_bellman_bound": 57.27635853514797,
+      "pairs_r1": 33442,
+      "pairs_r2": 48024,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 4,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 9484,
+      "n_r2": 1332,
+      "Lr1": 2.2910530627812173,
+      "Lr2": 1.2786247035755835e-06,
+      "Lr_sum": 2.291054341405921,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 33.90827273593411,
+      "Lq2": 35.022381531613064,
+      "Lq_empirical_sum": 68.93065426754717,
+      "LQ_bellman_bound": 57.27635853514797,
+      "pairs_r1": 33442,
+      "pairs_r2": 48024,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 5,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 60580,
+      "n_r2": 4160,
+      "Lr1": 0.33458880348900755,
+      "Lr2": 0.0001389285427702254,
+      "Lr_sum": 0.33472773203177775,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 38.857031958308276,
+      "Lq2": 19.816886058220845,
+      "Lq_empirical_sum": 58.67391801652912,
+      "LQ_bellman_bound": 8.368193300794436,
+      "pairs_r1": 47421,
+      "pairs_r2": 47836,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 5,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 60580,
+      "n_r2": 4160,
+      "Lr1": 0.33458880348900755,
+      "Lr2": 0.0001389285427702254,
+      "Lr_sum": 0.33472773203177775,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.752255658037527,
+      "Lq2": 17.710642410432325,
+      "Lq_empirical_sum": 49.462898068469855,
+      "LQ_bellman_bound": 8.368193300794436,
+      "pairs_r1": 47421,
+      "pairs_r2": 47836,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 5,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 60580,
+      "n_r2": 4160,
+      "Lr1": 0.33458880348900755,
+      "Lr2": 0.0001389285427702254,
+      "Lr_sum": 0.33472773203177775,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 38.9706234453789,
+      "Lq2": 31.80769794763435,
+      "Lq_empirical_sum": 70.77832139301324,
+      "LQ_bellman_bound": 8.368193300794436,
+      "pairs_r1": 47421,
+      "pairs_r2": 47836,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 5,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 60580,
+      "n_r2": 4160,
+      "Lr1": 0.33458880348900755,
+      "Lr2": 0.0001389285427702254,
+      "Lr_sum": 0.33472773203177775,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 33.4426254764255,
+      "Lq2": 17.802072370334947,
+      "Lq_empirical_sum": 51.244697846760445,
+      "LQ_bellman_bound": 8.368193300794436,
+      "pairs_r1": 47421,
+      "pairs_r2": 47836,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 6,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 11838,
+      "n_r2": 59648,
+      "Lr1": 0.0009549243835607352,
+      "Lr2": 0.2903875280431976,
+      "Lr_sum": 0.2913424524267584,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.164341771364164,
+      "Lq2": 41.961191419195934,
+      "Lq_empirical_sum": 73.1255331905601,
+      "LQ_bellman_bound": 7.283561310668953,
+      "pairs_r1": 40366,
+      "pairs_r2": 47093,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 6,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 11838,
+      "n_r2": 59648,
+      "Lr1": 0.0009549243835607352,
+      "Lr2": 0.2903875280431976,
+      "Lr_sum": 0.2913424524267584,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 16.006587611070817,
+      "Lq2": 29.300519155567056,
+      "Lq_empirical_sum": 45.30710676663787,
+      "LQ_bellman_bound": 7.283561310668953,
+      "pairs_r1": 40366,
+      "pairs_r2": 47093,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 6,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 11838,
+      "n_r2": 59648,
+      "Lr1": 0.0009549243835607352,
+      "Lr2": 0.2903875280431976,
+      "Lr_sum": 0.2913424524267584,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 34.96888647945769,
+      "Lq2": 32.17494989523166,
+      "Lq_empirical_sum": 67.14383637468936,
+      "LQ_bellman_bound": 7.283561310668953,
+      "pairs_r1": 40366,
+      "pairs_r2": 47093,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 6,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 11838,
+      "n_r2": 59648,
+      "Lr1": 0.0009549243835607352,
+      "Lr2": 0.2903875280431976,
+      "Lr_sum": 0.2913424524267584,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 19.42269135533479,
+      "Lq2": 38.900712281992945,
+      "Lq_empirical_sum": 58.323403637327736,
+      "LQ_bellman_bound": 7.283561310668953,
+      "pairs_r1": 40366,
+      "pairs_r2": 47093,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 7,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 1109,
+      "n_r2": 1894,
+      "Lr1": 8.772526488541683e-07,
+      "Lr2": 1.790594088254813,
+      "Lr_sum": 1.7905949655074618,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 48.27156230746417,
+      "Lq2": 31.02612910673368,
+      "Lq_empirical_sum": 79.29769141419786,
+      "LQ_bellman_bound": 44.764874137686505,
+      "pairs_r1": 47390,
+      "pairs_r2": 36009,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 7,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 1109,
+      "n_r2": 1894,
+      "Lr1": 8.772526488541683e-07,
+      "Lr2": 1.790594088254813,
+      "Lr_sum": 1.7905949655074618,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 32.22940885767464,
+      "Lq2": 31.823315347874725,
+      "Lq_empirical_sum": 64.05272420554937,
+      "LQ_bellman_bound": 44.764874137686505,
+      "pairs_r1": 47390,
+      "pairs_r2": 36009,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 7,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 1109,
+      "n_r2": 1894,
+      "Lr1": 8.772526488541683e-07,
+      "Lr2": 1.790594088254813,
+      "Lr_sum": 1.7905949655074618,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 36.281871860128014,
+      "Lq2": 32.831060357480325,
+      "Lq_empirical_sum": 69.11293221760835,
+      "LQ_bellman_bound": 44.764874137686505,
+      "pairs_r1": 47390,
+      "pairs_r2": 36009,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 7,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 1109,
+      "n_r2": 1894,
+      "Lr1": 8.772526488541683e-07,
+      "Lr2": 1.790594088254813,
+      "Lr_sum": 1.7905949655074618,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 44.36613980052477,
+      "Lq2": 31.42327815231796,
+      "Lq_empirical_sum": 75.78941795284273,
+      "LQ_bellman_bound": 44.764874137686505,
+      "pairs_r1": 47390,
+      "pairs_r2": 36009,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 8,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 264,
+      "n_r2": 402,
+      "Lr1": 0.007999359782018906,
+      "Lr2": 0.004271293706255553,
+      "Lr_sum": 0.012270653488274458,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 15.300899733971564,
+      "Lq2": 9.351647509064568,
+      "Lq_empirical_sum": 24.652547243036132,
+      "LQ_bellman_bound": 0.3067663372068612,
+      "pairs_r1": 33172,
+      "pairs_r2": 48425,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 8,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 264,
+      "n_r2": 402,
+      "Lr1": 0.007999359782018906,
+      "Lr2": 0.004271293706255553,
+      "Lr_sum": 0.012270653488274458,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 7.968393009390453,
+      "Lq2": 10.915240666203168,
+      "Lq_empirical_sum": 18.88363367559362,
+      "LQ_bellman_bound": 0.3067663372068612,
+      "pairs_r1": 33172,
+      "pairs_r2": 48425,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 8,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 264,
+      "n_r2": 402,
+      "Lr1": 0.007999359782018906,
+      "Lr2": 0.004271293706255553,
+      "Lr_sum": 0.012270653488274458,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 15.745638716624793,
+      "Lq2": 12.04385094824624,
+      "Lq_empirical_sum": 27.789489664871034,
+      "LQ_bellman_bound": 0.3067663372068612,
+      "pairs_r1": 33172,
+      "pairs_r2": 48425,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 8,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 264,
+      "n_r2": 402,
+      "Lr1": 0.007999359782018906,
+      "Lr2": 0.004271293706255553,
+      "Lr_sum": 0.012270653488274458,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 10.311418393524049,
+      "Lq2": 13.162906210686028,
+      "Lq_empirical_sum": 23.474324604210075,
+      "LQ_bellman_bound": 0.3067663372068612,
+      "pairs_r1": 33172,
+      "pairs_r2": 48425,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 9,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 1621,
+      "n_r2": 1149,
+      "Lr1": 0.2929789152201634,
+      "Lr2": 0.3930728097775241,
+      "Lr_sum": 0.6860517249976875,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 18.914998957892855,
+      "Lq2": 24.741116729306015,
+      "Lq_empirical_sum": 43.65611568719887,
+      "LQ_bellman_bound": 17.15129312494217,
+      "pairs_r1": 48452,
+      "pairs_r2": 48455,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 9,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 1621,
+      "n_r2": 1149,
+      "Lr1": 0.2929789152201634,
+      "Lr2": 0.3930728097775241,
+      "Lr_sum": 0.6860517249976875,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.486496374625606,
+      "Lq2": 37.56611674243032,
+      "Lq_empirical_sum": 69.05261311705593,
+      "LQ_bellman_bound": 17.15129312494217,
+      "pairs_r1": 48452,
+      "pairs_r2": 48455,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 9,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 1621,
+      "n_r2": 1149,
+      "Lr1": 0.2929789152201634,
+      "Lr2": 0.3930728097775241,
+      "Lr_sum": 0.6860517249976875,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 16.736217069658004,
+      "Lq2": 27.41445788700189,
+      "Lq_empirical_sum": 44.1506749566599,
+      "LQ_bellman_bound": 17.15129312494217,
+      "pairs_r1": 48452,
+      "pairs_r2": 48455,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 9,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 1621,
+      "n_r2": 1149,
+      "Lr1": 0.2929789152201634,
+      "Lr2": 0.3930728097775241,
+      "Lr_sum": 0.6860517249976875,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 26.853386284765474,
+      "Lq2": 34.86939438979717,
+      "Lq_empirical_sum": 61.72278067456264,
+      "LQ_bellman_bound": 17.15129312494217,
+      "pairs_r1": 48452,
+      "pairs_r2": 48455,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 10,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 1897,
+      "n_r2": 1842,
+      "Lr1": 0.4066140609925834,
+      "Lr2": 0.4644212605541982,
+      "Lr_sum": 0.8710353215467816,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 27.88957746429537,
+      "Lq2": 23.176556112902183,
+      "Lq_empirical_sum": 51.066133577197554,
+      "LQ_bellman_bound": 21.775883038669523,
+      "pairs_r1": 48302,
+      "pairs_r2": 47977,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 10,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 1897,
+      "n_r2": 1842,
+      "Lr1": 0.4066140609925834,
+      "Lr2": 0.4644212605541982,
+      "Lr_sum": 0.8710353215467816,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 37.664016925391415,
+      "Lq2": 37.070794909233626,
+      "Lq_empirical_sum": 74.73481183462505,
+      "LQ_bellman_bound": 21.775883038669523,
+      "pairs_r1": 48302,
+      "pairs_r2": 47977,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 10,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 1897,
+      "n_r2": 1842,
+      "Lr1": 0.4066140609925834,
+      "Lr2": 0.4644212605541982,
+      "Lr_sum": 0.8710353215467816,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 32.96551142995245,
+      "Lq2": 29.42540600205025,
+      "Lq_empirical_sum": 62.390917432002695,
+      "LQ_bellman_bound": 21.775883038669523,
+      "pairs_r1": 48302,
+      "pairs_r2": 47977,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 10,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 1897,
+      "n_r2": 1842,
+      "Lr1": 0.4066140609925834,
+      "Lr2": 0.4644212605541982,
+      "Lr_sum": 0.8710353215467816,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 31.98707240200624,
+      "Lq2": 21.940732943504592,
+      "Lq_empirical_sum": 53.92780534551083,
+      "LQ_bellman_bound": 21.775883038669523,
+      "pairs_r1": 48302,
+      "pairs_r2": 47977,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 11,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 90,
+      "n_r2": 287,
+      "Lr1": 0.005667439336014188,
+      "Lr2": 0.005036759053537999,
+      "Lr_sum": 0.010704198389552187,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 21.623403955567415,
+      "Lq2": 11.216250389572616,
+      "Lq_empirical_sum": 32.83965434514003,
+      "LQ_bellman_bound": 0.26760495973880444,
+      "pairs_r1": 3789,
+      "pairs_r2": 39512,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 11,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 90,
+      "n_r2": 287,
+      "Lr1": 0.005667439336014188,
+      "Lr2": 0.005036759053537999,
+      "Lr_sum": 0.010704198389552187,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 20.294418746507787,
+      "Lq2": 9.296091494142543,
+      "Lq_empirical_sum": 29.59051024065033,
+      "LQ_bellman_bound": 0.26760495973880444,
+      "pairs_r1": 3789,
+      "pairs_r2": 39512,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 11,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 90,
+      "n_r2": 287,
+      "Lr1": 0.005667439336014188,
+      "Lr2": 0.005036759053537999,
+      "Lr_sum": 0.010704198389552187,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 20.062165390810748,
+      "Lq2": 8.326351431437054,
+      "Lq_empirical_sum": 28.3885168222478,
+      "LQ_bellman_bound": 0.26760495973880444,
+      "pairs_r1": 3789,
+      "pairs_r2": 39512,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 11,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 90,
+      "n_r2": 287,
+      "Lr1": 0.005667439336014188,
+      "Lr2": 0.005036759053537999,
+      "Lr_sum": 0.010704198389552187,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 15.091081768573256,
+      "Lq2": 9.233186211524462,
+      "Lq_empirical_sum": 24.324267980097716,
+      "LQ_bellman_bound": 0.26760495973880444,
+      "pairs_r1": 3789,
+      "pairs_r2": 39512,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 12,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 229,
+      "n_r2": 326,
+      "Lr1": 0.11251794724894794,
+      "Lr2": 0.050741791461647485,
+      "Lr_sum": 0.16325973871059543,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 17.712675203646864,
+      "Lq2": 12.877599835542341,
+      "Lq_empirical_sum": 30.590275039189205,
+      "LQ_bellman_bound": 4.081493467764882,
+      "pairs_r1": 24736,
+      "pairs_r2": 48814,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 12,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 229,
+      "n_r2": 326,
+      "Lr1": 0.11251794724894794,
+      "Lr2": 0.050741791461647485,
+      "Lr_sum": 0.16325973871059543,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 18.626594175920935,
+      "Lq2": 20.72730048790753,
+      "Lq_empirical_sum": 39.35389466382847,
+      "LQ_bellman_bound": 4.081493467764882,
+      "pairs_r1": 24736,
+      "pairs_r2": 48814,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 12,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 229,
+      "n_r2": 326,
+      "Lr1": 0.11251794724894794,
+      "Lr2": 0.050741791461647485,
+      "Lr_sum": 0.16325973871059543,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 23.90066995964147,
+      "Lq2": 16.0013028843013,
+      "Lq_empirical_sum": 39.90197284394277,
+      "LQ_bellman_bound": 4.081493467764882,
+      "pairs_r1": 24736,
+      "pairs_r2": 48814,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 12,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 229,
+      "n_r2": 326,
+      "Lr1": 0.11251794724894794,
+      "Lr2": 0.050741791461647485,
+      "Lr_sum": 0.16325973871059543,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 15.827165384687532,
+      "Lq2": 15.879179092761888,
+      "Lq_empirical_sum": 31.70634447744942,
+      "LQ_bellman_bound": 4.081493467764882,
+      "pairs_r1": 24736,
+      "pairs_r2": 48814,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 13,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 1253,
+      "n_r2": 1064,
+      "Lr1": 2.6286044631944727,
+      "Lr2": 3.1380963798055754,
+      "Lr_sum": 5.766700843000049,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 19.804930270927024,
+      "Lq2": 26.308463338543827,
+      "Lq_empirical_sum": 46.11339360947085,
+      "LQ_bellman_bound": 144.16752107500108,
+      "pairs_r1": 48748,
+      "pairs_r2": 48284,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 13,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 1253,
+      "n_r2": 1064,
+      "Lr1": 2.6286044631944727,
+      "Lr2": 3.1380963798055754,
+      "Lr_sum": 5.766700843000049,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 29.852447158344493,
+      "Lq2": 32.20186666342417,
+      "Lq_empirical_sum": 62.05431382176866,
+      "LQ_bellman_bound": 144.16752107500108,
+      "pairs_r1": 48748,
+      "pairs_r2": 48284,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 13,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 1253,
+      "n_r2": 1064,
+      "Lr1": 2.6286044631944727,
+      "Lr2": 3.1380963798055754,
+      "Lr_sum": 5.766700843000049,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 24.171832598783034,
+      "Lq2": 23.47897234157114,
+      "Lq_empirical_sum": 47.65080494035418,
+      "LQ_bellman_bound": 144.16752107500108,
+      "pairs_r1": 48748,
+      "pairs_r2": 48284,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 13,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 1253,
+      "n_r2": 1064,
+      "Lr1": 2.6286044631944727,
+      "Lr2": 3.1380963798055754,
+      "Lr_sum": 5.766700843000049,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 15.389630019543056,
+      "Lq2": 25.610948702224615,
+      "Lq_empirical_sum": 41.00057872176767,
+      "LQ_bellman_bound": 144.16752107500108,
+      "pairs_r1": 48748,
+      "pairs_r2": 48284,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 14,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 1463,
+      "n_r2": 1440,
+      "Lr1": 3.0998758158038466,
+      "Lr2": 2.982614125549647,
+      "Lr_sum": 6.082489941353494,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 18.650913577797635,
+      "Lq2": 21.44996290589003,
+      "Lq_empirical_sum": 40.100876483687664,
+      "LQ_bellman_bound": 152.0622485338372,
+      "pairs_r1": 47959,
+      "pairs_r2": 48254,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 14,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 1463,
+      "n_r2": 1440,
+      "Lr1": 3.0998758158038466,
+      "Lr2": 2.982614125549647,
+      "Lr_sum": 6.082489941353494,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 28.81438710284267,
+      "Lq2": 22.83478643249931,
+      "Lq_empirical_sum": 51.64917353534198,
+      "LQ_bellman_bound": 152.0622485338372,
+      "pairs_r1": 47959,
+      "pairs_r2": 48254,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 14,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 1463,
+      "n_r2": 1440,
+      "Lr1": 3.0998758158038466,
+      "Lr2": 2.982614125549647,
+      "Lr_sum": 6.082489941353494,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 29.42489735856331,
+      "Lq2": 17.575008435256333,
+      "Lq_empirical_sum": 46.99990579381964,
+      "LQ_bellman_bound": 152.0622485338372,
+      "pairs_r1": 47959,
+      "pairs_r2": 48254,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 14,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 1463,
+      "n_r2": 1440,
+      "Lr1": 3.0998758158038466,
+      "Lr2": 2.982614125549647,
+      "Lr_sum": 6.082489941353494,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 22.34394378688421,
+      "Lq2": 21.53406010773071,
+      "Lq_empirical_sum": 43.87800389461492,
+      "LQ_bellman_bound": 152.0622485338372,
+      "pairs_r1": 47959,
+      "pairs_r2": 48254,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 15,
+      "region": 5,
+      "action": 0,
+      "lr_source": "next_tile",
+      "n_r1": 148,
+      "n_r2": 56,
+      "Lr1": 0.07040092553828337,
+      "Lr2": 0.10342910169936664,
+      "Lr_sum": 0.17383002723765,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 22.09076473525776,
+      "Lq2": 10.214911618736267,
+      "Lq_empirical_sum": 32.30567635399403,
+      "LQ_bellman_bound": 4.345750680941246,
+      "pairs_r1": 10541,
+      "pairs_r2": 1405,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 15,
+      "region": 5,
+      "action": 1,
+      "lr_source": "next_tile",
+      "n_r1": 148,
+      "n_r2": 56,
+      "Lr1": 0.07040092553828337,
+      "Lr2": 0.10342910169936664,
+      "Lr_sum": 0.17383002723765,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 23.5478774095041,
+      "Lq2": 15.469827606317718,
+      "Lq_empirical_sum": 39.01770501582182,
+      "LQ_bellman_bound": 4.345750680941246,
+      "pairs_r1": 10541,
+      "pairs_r2": 1405,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 15,
+      "region": 5,
+      "action": 2,
+      "lr_source": "next_tile",
+      "n_r1": 148,
+      "n_r2": 56,
+      "Lr1": 0.07040092553828337,
+      "Lr2": 0.10342910169936664,
+      "Lr_sum": 0.17383002723765,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 25.658908355611626,
+      "Lq2": 21.835061964852017,
+      "Lq_empirical_sum": 47.493970320463646,
+      "LQ_bellman_bound": 4.345750680941246,
+      "pairs_r1": 10541,
+      "pairs_r2": 1405,
+      "Lf_estimator": "analytic_constant_translation"
+    },
+    {
+      "tile": 15,
+      "region": 5,
+      "action": 3,
+      "lr_source": "next_tile",
+      "n_r1": 148,
+      "n_r2": 56,
+      "Lr1": 0.07040092553828337,
+      "Lr2": 0.10342910169936664,
+      "Lr_sum": 0.17383002723765,
+      "Lr_action_dependence": false,
+      "Lf1": 1.0,
+      "Lf2": 1.0,
+      "Lf_sum": 1.0,
+      "Lq1": 17.849259866873787,
+      "Lq2": 5.721870599140415,
+      "Lq_empirical_sum": 23.571130466014203,
+      "LQ_bellman_bound": 4.345750680941246,
+      "pairs_r1": 10541,
+      "pairs_r2": 1405,
+      "Lf_estimator": "analytic_constant_translation"
+    }
+  ],
+  "estimator": "deterministic_mean_map",
+  "pair_method": "gap",
+  "min_pair_distance": 0.001,
+  "Lf_noise_treatment": "Observed successor noise is excluded; f_hat(s,a)=s+mu_hat[c,a].",
+  "transition_stat_decimals": 7,
+  "mean_dynamics_models": {
+    "1": {
+      "0": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "1": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "2": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "3": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      }
+    },
+    "2": {
+      "0": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "1": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "2": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "3": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      }
+    },
+    "3": {
+      "0": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "1": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "2": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "3": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      }
+    },
+    "4": {
+      "0": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "1": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "2": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "3": {
+        "represented_in_layout": false,
+        "R1": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 0,
+          "mean": [
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      }
+    },
+    "5": {
+      "0": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 49286,
+          "mean": [
+            0.0,
+            -0.04
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 49659,
+          "mean": [
+            0.0,
+            -0.04
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 98945,
+          "mean": [
+            0.0,
+            -0.04
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "1": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 9306,
+          "mean": [
+            0.0,
+            0.04
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 9623,
+          "mean": [
+            0.0,
+            0.04
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 18929,
+          "mean": [
+            0.0,
+            0.04
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "2": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 81515,
+          "mean": [
+            -0.04,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 8776,
+          "mean": [
+            -0.04,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 90291,
+          "mean": [
+            -0.04,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      },
+      "3": {
+        "represented_in_layout": true,
+        "R1": {
+          "n": 9124,
+          "mean": [
+            0.04,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "R2": {
+          "n": 81216,
+          "mean": [
+            0.04,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "pooled": {
+          "n": 90340,
+          "mean": [
+            0.04,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0
+          ],
+          "covariance": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

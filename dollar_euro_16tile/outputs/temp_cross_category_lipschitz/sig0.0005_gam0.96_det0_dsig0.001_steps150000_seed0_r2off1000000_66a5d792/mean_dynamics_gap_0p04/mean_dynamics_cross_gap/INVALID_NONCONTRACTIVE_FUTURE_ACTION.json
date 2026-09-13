@@ -1,0 +1,305 @@
+{
+  "error": "INVALID_NONCONTRACTIVE_FUTURE_ACTION",
+  "offenders": [
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 1,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "n_i_pooled": 3597,
+      "n_j_pooled": 3631,
+      "pairs_considered": 100,
+      "pairs_rejected_below_gap": 2,
+      "pairs_used": 98,
+      "Lf_pooled": 1.0626527085816249,
+      "Lf1": 1.0626527085816249,
+      "Lf2": 1.0626527085816249,
+      "Lf_sum": 1.0626527085816249,
+      "mean_displacement_jump_norm": 0.00357330296084729,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 1645,
+        "index_j": 1270,
+        "source_state_i": [
+          0.5055280923843384,
+          0.7407232522964478
+        ],
+        "source_state_j": [
+          0.496990829706192,
+          0.7964999079704285
+        ],
+        "mean_displacement_i": [
+          5.7e-06,
+          0.0384056
+        ],
+        "mean_displacement_j": [
+          1.1e-06,
+          0.0419789
+        ],
+        "mapped_state_i": [
+          0.5055337923843384,
+          0.7791288522964478
+        ],
+        "mapped_state_j": [
+          0.496991929706192,
+          0.8384788079704285
+        ],
+        "source_distance": 0.056426236558975607,
+        "mapped_distance": 0.05996149311446294,
+        "pair_ratio": 1.0626527085816249
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 1,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "n_i_pooled": 3631,
+      "n_j_pooled": 7569,
+      "pairs_considered": 100,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 100,
+      "Lf_pooled": 1.0670194262225445,
+      "Lf1": 1.0670194262225445,
+      "Lf2": 1.0670194262225445,
+      "Lf_sum": 1.0670194262225445,
+      "mean_displacement_jump_norm": 0.006787612258371862,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 2233,
+        "index_j": 7453,
+        "source_state_i": [
+          0.41367000341415405,
+          0.5310431718826294
+        ],
+        "source_state_j": [
+          0.4606825113296509,
+          0.4593663811683655
+        ],
+        "mean_displacement_i": [
+          1.1e-06,
+          0.0419789
+        ],
+        "mean_displacement_j": [
+          -1.18e-05,
+          0.0351913
+        ],
+        "mapped_state_i": [
+          0.41367110341415403,
+          0.5730220718826294
+        ],
+        "mapped_state_j": [
+          0.4606707113296509,
+          0.49455768116836546
+        ],
+        "source_distance": 0.08571894905795942,
+        "mapped_distance": 0.09146378384022338,
+        "pair_ratio": 1.0670194262225445
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 0,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_pooled": 46443,
+      "n_j_pooled": 56747,
+      "pairs_considered": 100,
+      "pairs_rejected_below_gap": 1,
+      "pairs_used": 99,
+      "Lf_pooled": 1.0606859593620275,
+      "Lf1": 1.0606859593620275,
+      "Lf2": 1.0606859593620275,
+      "Lf_sum": 1.0606859593620275,
+      "mean_displacement_jump_norm": 0.0048051031476962075,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 46328,
+        "index_j": 4685,
+        "source_state_i": [
+          0.49992793798446655,
+          0.31060856580734253
+        ],
+        "source_state_j": [
+          0.5002079606056213,
+          0.23142945766448975
+        ],
+        "mean_displacement_i": [
+          -4.4e-06,
+          -0.035198
+        ],
+        "mean_displacement_j": [
+          1.1e-06,
+          -0.0400031
+        ],
+        "mapped_state_i": [
+          0.49992353798446654,
+          0.2754105658073425
+        ],
+        "mapped_state_j": [
+          0.5002090606056213,
+          0.19142635766448973
+        ],
+        "source_distance": 0.0791796033013928,
+        "mapped_distance": 0.08398469348964258,
+        "pair_ratio": 1.0606859593620275
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 1,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_pooled": 7569,
+      "n_j_pooled": 7501,
+      "pairs_considered": 100,
+      "pairs_rejected_below_gap": 1,
+      "pairs_used": 99,
+      "Lf_pooled": 1.0558488059799749,
+      "Lf1": 1.0558488059799749,
+      "Lf2": 1.0558488059799749,
+      "Lf_sum": 1.0558488059799749,
+      "mean_displacement_jump_norm": 0.004802508812068959,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 7059,
+        "index_j": 913,
+        "source_state_i": [
+          0.49929308891296387,
+          0.4588037133216858
+        ],
+        "source_state_j": [
+          0.5430231094360352,
+          0.49391457438468933
+        ],
+        "mean_displacement_i": [
+          -1.18e-05,
+          0.0351913
+        ],
+        "mean_displacement_j": [
+          -2.6e-06,
+          0.0399938
+        ],
+        "mapped_state_i": [
+          0.49928128891296386,
+          0.49399501332168577
+        ],
+        "mapped_state_j": [
+          0.5430205094360352,
+          0.5339083743846893
+        ],
+        "source_distance": 0.05608107755325119,
+        "mapped_distance": 0.059213138772670634,
+        "pair_ratio": 1.0558488059799749
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 2,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_pooled": 69609,
+      "n_j_pooled": 11548,
+      "pairs_considered": 100,
+      "pairs_rejected_below_gap": 0,
+      "pairs_used": 100,
+      "Lf_pooled": 1.0637641700464622,
+      "Lf1": 1.0637641700464622,
+      "Lf2": 1.0637641700464622,
+      "Lf_sum": 1.0637641700464622,
+      "mean_displacement_jump_norm": 0.0031941436567568446,
+      "unrestricted_global_mean_map_lipschitz": "infinite",
+      "Lf_witness": {
+        "index_i": 65134,
+        "index_j": 849,
+        "source_state_i": [
+          0.46044057607650757,
+          0.26884034276008606
+        ],
+        "source_state_j": [
+          0.509452223777771,
+          0.27610668540000916
+        ],
+        "mean_displacement_i": [
+          -0.0431945,
+          4.2e-06
+        ],
+        "mean_displacement_j": [
+          -0.0400004,
+          -1.25e-05
+        ],
+        "mapped_state_i": [
+          0.41724607607650754,
+          0.26884454276008607
+        ],
+        "mapped_state_j": [
+          0.469451823777771,
+          0.27609418540000913
+        ],
+        "source_distance": 0.04954736467011667,
+        "mapped_distance": 0.05270671125629606,
+        "pair_ratio": 1.0637641700464622
+      }
+    }
+  ],
+  "mean_dynamics_local": true,
+  "mean_dynamics_cross_gap": false,
+  "gamma": 0.96,
+  "worst_cross_aware_Lf_by_action": {
+    "0": 1.0606859593620275,
+    "1": 1.0670194262225445,
+    "2": 1.0637641700464622,
+    "3": 1.0371005081920353
+  },
+  "gamma_times_worst_cross_aware_Lf": {
+    "0": 1.0182585209875463,
+    "1": 1.0243386491736428,
+    "2": 1.0212136032446038,
+    "3": 0.9956164878643539
+  }
+}

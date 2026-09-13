@@ -1,0 +1,17 @@
+{
+  "mean_dynamics_local": true,
+  "mean_dynamics_cross_gap": true,
+  "gamma": 0.96,
+  "worst_cross_aware_Lf_by_action": {
+    "0": 1.0,
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0
+  },
+  "gamma_times_worst_cross_aware_Lf": {
+    "0": 0.96,
+    "1": 0.96,
+    "2": 0.96,
+    "3": 0.96
+  }
+}

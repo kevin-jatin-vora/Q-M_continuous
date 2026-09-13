@@ -1,0 +1,646 @@
+{
+  "sigma": 0.001,
+  "determinism": 0.2,
+  "deterministic_sigma_scale": 0.001,
+  "deterministic_sigma": 1e-06,
+  "noise_model_version": "smooth_scalar_bilinear_v1",
+  "noise_interpolation": "bilinear_between_tile_centers_constant_edge_extension",
+  "category_noise_multipliers": {
+    "1": 1.0,
+    "2": 1.1,
+    "3": 1.2,
+    "4": 1.3,
+    "5": 0.001
+  },
+  "tile_noise_multiplier_grid_row_major": [
+    [
+      1.0,
+      1.1,
+      1.0,
+      0.001
+    ],
+    [
+      0.001,
+      1.2,
+      1.2,
+      1.3
+    ],
+    [
+      1.0,
+      1.1,
+      1.1,
+      0.001
+    ],
+    [
+      1.2,
+      1.0,
+      1.3,
+      1.3
+    ]
+  ],
+  "noise_multiplier_lipschitz": 6.806117248475816,
+  "sigma_lipschitz": 0.006806117248475817,
+  "wasserstein_kernel_lipschitz": 1.000046322159129,
+  "gamma_times_wasserstein_kernel_lipschitz": 0.9600444692727638,
+  "data_fitted_wasserstein_model": {
+    "method": "data_fitted_common_mean_and_bilinear_isotropic_gaussian_noise",
+    "fit_success": true,
+    "fit_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "category_sigma": {
+      "1": 0.0009952518418301522,
+      "2": 0.0010964384828013002,
+      "3": 0.0012018965174878146,
+      "4": 0.0012939899813272098,
+      "5": 5.3989218815968806e-06
+    },
+    "action_mean_displacement": [
+      [
+        -3.0791765076727857e-06,
+        -0.040000171626719455
+      ],
+      [
+        1.1228310800592475e-05,
+        0.04000055686966224
+      ],
+      [
+        -0.03999912079548217,
+        5.381226551478413e-07
+      ],
+      [
+        0.040004406343711774,
+        -6.516664244135609e-06
+      ]
+    ],
+    "sample_estimated_sigma_lipschitz": 0.0067537654587348835,
+    "sample_estimated_global_K_P": 1.0000456123076302,
+    "theoretical_global_K_P_verification": 1.000046322159129
+  },
+  "lf_estimator": "local_max",
+  "lr_estimator": "local_max",
+  "lc_estimator_version": "reward_and_wasserstein_local_max_min_radius_v3",
+  "min_pair_distance": 0.0013080532347522424,
+  "min_pair_distance_source": "minimum represented pruning radius",
+  "layout": {
+    "determinism": 0.2,
+    "grid_size": 4,
+    "n_tiles": 16,
+    "n_categories": 5,
+    "layout_mode": "shuffled",
+    "counts": {
+      "5": 3,
+      "1": 4,
+      "2": 3,
+      "3": 3,
+      "4": 3
+    },
+    "category_names": {
+      "1": "radial_r1_top_right",
+      "2": "radial_r2_top_left",
+      "3": "radial_r3_bottom_left",
+      "4": "radial_r4_bottom_right",
+      "5": "deterministic"
+    },
+    "tile_map_row_major": [
+      1,
+      2,
+      1,
+      5,
+      5,
+      3,
+      3,
+      4,
+      1,
+      2,
+      2,
+      5,
+      3,
+      1,
+      4,
+      4
+    ]
+  },
+  "steps_per_behavior": 150000,
+  "seed_r1": 0,
+  "seed_r2": 1000000,
+  "seconds_r1": 696.2380228000002,
+  "seconds_r2": 657.3895064999997,
+  "device": "cpu",
+  "gamma": 0.96,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "buffer_size": 100000,
+  "target_tau": 0.0005,
+  "update_every": 4,
+  "epsilon_start": 1.0,
+  "epsilon_end": 0.05,
+  "epsilon_decay": 0.998,
+  "max_steps_per_episode": 200,
+  "env_horizon": 200,
+  "cell_counts": {
+    "1:0": {
+      "r1": 19307,
+      "r2": 4251
+    },
+    "1:1": {
+      "r1": 2577,
+      "r2": 2291
+    },
+    "1:2": {
+      "r1": 17144,
+      "r2": 1930
+    },
+    "1:3": {
+      "r1": 2086,
+      "r2": 18438
+    },
+    "2:0": {
+      "r1": 2989,
+      "r2": 1997
+    },
+    "2:1": {
+      "r1": 4668,
+      "r2": 3612
+    },
+    "2:2": {
+      "r1": 20238,
+      "r2": 1573
+    },
+    "2:3": {
+      "r1": 1651,
+      "r2": 1870
+    },
+    "3:0": {
+      "r1": 20730,
+      "r2": 23786
+    },
+    "3:1": {
+      "r1": 4484,
+      "r2": 4132
+    },
+    "3:2": {
+      "r1": 36734,
+      "r2": 4110
+    },
+    "3:3": {
+      "r1": 3907,
+      "r2": 39052
+    },
+    "4:0": {
+      "r1": 848,
+      "r2": 2934
+    },
+    "4:1": {
+      "r1": 1051,
+      "r2": 855
+    },
+    "4:2": {
+      "r1": 629,
+      "r2": 516
+    },
+    "4:3": {
+      "r1": 708,
+      "r2": 412
+    },
+    "5:0": {
+      "r1": 6240,
+      "r2": 17475
+    },
+    "5:1": {
+      "r1": 766,
+      "r2": 1356
+    },
+    "5:2": {
+      "r1": 988,
+      "r2": 1603
+    },
+    "5:3": {
+      "r1": 800,
+      "r2": 16348
+    }
+  },
+  "tile_counts": {
+    "0:0": {
+      "r1": 17675,
+      "r2": 784
+    },
+    "0:1": {
+      "r1": 1129,
+      "r2": 346
+    },
+    "0:2": {
+      "r1": 15611,
+      "r2": 524
+    },
+    "0:3": {
+      "r1": 1054,
+      "r2": 348
+    },
+    "1:0": {
+      "r1": 2295,
+      "r2": 1454
+    },
+    "1:1": {
+      "r1": 1054,
+      "r2": 738
+    },
+    "1:2": {
+      "r1": 19563,
+      "r2": 952
+    },
+    "1:3": {
+      "r1": 991,
+      "r2": 1261
+    },
+    "2:0": {
+      "r1": 1256,
+      "r2": 3092
+    },
+    "2:1": {
+      "r1": 538,
+      "r2": 1091
+    },
+    "2:2": {
+      "r1": 1236,
+      "r2": 1063
+    },
+    "2:3": {
+      "r1": 623,
+      "r2": 17536
+    },
+    "3:0": {
+      "r1": 521,
+      "r2": 16778
+    },
+    "3:1": {
+      "r1": 223,
+      "r2": 1016
+    },
+    "3:2": {
+      "r1": 218,
+      "r2": 942
+    },
+    "3:3": {
+      "r1": 306,
+      "r2": 15928
+    },
+    "4:0": {
+      "r1": 5683,
+      "r2": 655
+    },
+    "4:1": {
+      "r1": 493,
+      "r2": 305
+    },
+    "4:2": {
+      "r1": 713,
+      "r2": 604
+    },
+    "4:3": {
+      "r1": 463,
+      "r2": 379
+    },
+    "5:0": {
+      "r1": 15125,
+      "r2": 2319
+    },
+    "5:1": {
+      "r1": 2281,
+      "r2": 1487
+    },
+    "5:2": {
+      "r1": 29869,
+      "r2": 2051
+    },
+    "5:3": {
+      "r1": 1720,
+      "r2": 1335
+    },
+    "6:0": {
+      "r1": 5554,
+      "r2": 21412
+    },
+    "6:1": {
+      "r1": 2162,
+      "r2": 2586
+    },
+    "6:2": {
+      "r1": 6819,
+      "r2": 2025
+    },
+    "6:3": {
+      "r1": 2127,
+      "r2": 37635
+    },
+    "7:0": {
+      "r1": 536,
+      "r2": 2768
+    },
+    "7:1": {
+      "r1": 188,
+      "r2": 251
+    },
+    "7:2": {
+      "r1": 205,
+      "r2": 262
+    },
+    "7:3": {
+      "r1": 445,
+      "r2": 256
+    },
+    "8:0": {
+      "r1": 149,
+      "r2": 176
+    },
+    "8:1": {
+      "r1": 110,
+      "r2": 215
+    },
+    "8:2": {
+      "r1": 121,
+      "r2": 162
+    },
+    "8:3": {
+      "r1": 137,
+      "r2": 203
+    },
+    "9:0": {
+      "r1": 367,
+      "r2": 309
+    },
+    "9:1": {
+      "r1": 1784,
+      "r2": 1516
+    },
+    "9:2": {
+      "r1": 349,
+      "r2": 361
+    },
+    "9:3": {
+      "r1": 363,
+      "r2": 350
+    },
+    "10:0": {
+      "r1": 327,
+      "r2": 234
+    },
+    "10:1": {
+      "r1": 1830,
+      "r2": 1358
+    },
+    "10:2": {
+      "r1": 326,
+      "r2": 260
+    },
+    "10:3": {
+      "r1": 297,
+      "r2": 259
+    },
+    "11:0": {
+      "r1": 36,
+      "r2": 42
+    },
+    "11:1": {
+      "r1": 50,
+      "r2": 35
+    },
+    "11:2": {
+      "r1": 57,
+      "r2": 57
+    },
+    "11:3": {
+      "r1": 31,
+      "r2": 41
+    },
+    "12:0": {
+      "r1": 51,
+      "r2": 55
+    },
+    "12:1": {
+      "r1": 41,
+      "r2": 59
+    },
+    "12:2": {
+      "r1": 46,
+      "r2": 34
+    },
+    "12:3": {
+      "r1": 60,
+      "r2": 82
+    },
+    "13:0": {
+      "r1": 227,
+      "r2": 199
+    },
+    "13:1": {
+      "r1": 800,
+      "r2": 639
+    },
+    "13:2": {
+      "r1": 176,
+      "r2": 181
+    },
+    "13:3": {
+      "r1": 272,
+      "r2": 351
+    },
+    "14:0": {
+      "r1": 263,
+      "r2": 163
+    },
+    "14:1": {
+      "r1": 817,
+      "r2": 604
+    },
+    "14:2": {
+      "r1": 352,
+      "r2": 248
+    },
+    "14:3": {
+      "r1": 218,
+      "r2": 156
+    },
+    "15:0": {
+      "r1": 49,
+      "r2": 3
+    },
+    "15:1": {
+      "r1": 46,
+      "r2": 0
+    },
+    "15:2": {
+      "r1": 72,
+      "r2": 6
+    },
+    "15:3": {
+      "r1": 45,
+      "r2": 0
+    }
+  },
+  "cross_tile_reward_lipschitz": {
+    "artifact": "cross_tile_reward_lipschitz.json",
+    "lipschitz_method_version": 3,
+    "tile_neighbor_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        11
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        14,
+        15
+      ]
+    ],
+    "n_pairs": 24,
+    "methodology": "Maximum pairwise NEXT-state-tile reward ratios |R(s1')-R(s2')|/||s1'-s2'|| across physically neighboring tiles; Lr_sum=Lr1+Lr2"
+  },
+  "cross_category_dynamics_lipschitz": {
+    "artifact": "cross_category_dynamics_lipschitz.json",
+    "lipschitz_method_version": 3,
+    "neighbor_pairs": [
+      {
+        "category_i": 1,
+        "category_j": 2,
+        "n_edges": 4
+      },
+      {
+        "category_i": 1,
+        "category_j": 3,
+        "n_edges": 3
+      },
+      {
+        "category_i": 1,
+        "category_j": 4,
+        "n_edges": 1
+      },
+      {
+        "category_i": 1,
+        "category_j": 5,
+        "n_edges": 3
+      },
+      {
+        "category_i": 2,
+        "category_j": 3,
+        "n_edges": 3
+      },
+      {
+        "category_i": 2,
+        "category_j": 4,
+        "n_edges": 1
+      },
+      {
+        "category_i": 2,
+        "category_j": 5,
+        "n_edges": 1
+      },
+      {
+        "category_i": 3,
+        "category_j": 4,
+        "n_edges": 1
+      },
+      {
+        "category_i": 3,
+        "category_j": 5,
+        "n_edges": 1
+      },
+      {
+        "category_i": 4,
+        "category_j": 5,
+        "n_edges": 3
+      }
+    ],
+    "n_pairs": 10,
+    "methodology": "Maximum data-fitted Gaussian W2 ratio across sampled pairs from neighboring source categories; theoretical global K_P is verification only."
+  },
+  "noise_action_ratio": {
+    "artifact": "category_noise_action_ratio.json",
+    "minimum_noise_percent": 0.003535533905932737,
+    "maximum_noise_percent": 4.59619407771256
+  }
+}

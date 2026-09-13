@@ -1,0 +1,414 @@
+{
+  "source_json": "generated directly by scripts/train_reward_components.py",
+  "metadata": {
+    "dynamics_sigma": 0.0,
+    "sigma_source": "explicit runtime argument/config",
+    "deterministic_sigma_scale": 0.001,
+    "deterministic_sigma": 0.0,
+    "transition_stat_decimals": 7,
+    "transition_stat_quantization": "Round per-behavior and pooled delta_mean/delta_std to the fixed decimal precision before computing Student-t half-width and radius.",
+    "behavior_policies": [
+      "R1 epsilon-greedy DQN",
+      "R2 epsilon-greedy DQN"
+    ],
+    "seed_r1": 0,
+    "seed_r2": 1000000,
+    "delta_mean_semantics": "Pooled mean free displacement delta = s' - s per (category, action). Q_single trains on s' = clip(s + delta_mean).",
+    "delta_std_semantics": "Pooled per-axis sample std of delta around delta_mean.",
+    "student_t_half_width_semantics": "Student-t interval half-width per axis: t * delta_std * sqrt(1 + 1/n) at confidence_level.",
+    "pruning_radius_semantics": "r = L2 of student_t_half_width; RA-DQN margins use this as the radius of next s' around s + delta_mean.",
+    "delta_estimation": "Free region-action steps only (exclude boundary cancel/clip when configured)."
+  },
+  "config": {
+    "confidence_level": 0.95,
+    "exclude_boundary_affected_transitions": true
+  },
+  "by_region_action": {
+    "1": {
+      "0": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "1": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "2": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "3": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      }
+    },
+    "2": {
+      "0": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "1": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "2": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "3": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      }
+    },
+    "3": {
+      "0": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "1": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "2": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "3": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      }
+    },
+    "4": {
+      "0": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "1": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "2": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      },
+      "3": {
+        "n_total": 0,
+        "n_q1_behavior": 0,
+        "n_q2_behavior": 0,
+        "delta_mean": [
+          0.0,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0,
+        "unused_category": true
+      }
+    },
+    "5": {
+      "0": {
+        "n_total": 98945,
+        "n_q1_behavior": 49286,
+        "n_q2_behavior": 49659,
+        "delta_mean": [
+          0.0,
+          -0.04
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0
+      },
+      "1": {
+        "n_total": 18929,
+        "n_q1_behavior": 9306,
+        "n_q2_behavior": 9623,
+        "delta_mean": [
+          0.0,
+          0.04
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0
+      },
+      "2": {
+        "n_total": 90291,
+        "n_q1_behavior": 81515,
+        "n_q2_behavior": 8776,
+        "delta_mean": [
+          -0.04,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0
+      },
+      "3": {
+        "n_total": 90340,
+        "n_q1_behavior": 9124,
+        "n_q2_behavior": 81216,
+        "delta_mean": [
+          0.04,
+          0.0
+        ],
+        "delta_std": [
+          0.0,
+          0.0
+        ],
+        "student_t_half_width": [
+          0.0,
+          0.0
+        ],
+        "pruning_radius": 0.0
+      }
+    }
+  }
+}

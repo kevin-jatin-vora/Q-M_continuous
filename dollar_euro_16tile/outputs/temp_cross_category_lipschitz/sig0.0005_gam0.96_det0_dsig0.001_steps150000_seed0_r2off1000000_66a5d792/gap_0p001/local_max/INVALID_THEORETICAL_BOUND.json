@@ -1,0 +1,2501 @@
+{
+  "error": "INVALID_THEORETICAL_BOUND",
+  "bad_rows": [
+    {
+      "tile": 0,
+      "region": 3,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 12.109264449124852,
+      "Lr2": 0.0,
+      "Lr_sum": 12.109264449124852,
+      "Lr_action_dependence": false,
+      "Lf1": 3.0363443197433604,
+      "Lf2": 2.7425292098107894,
+      "Lf_sum": 3.0363443197433604,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 34498,
+        "index_b": 35916,
+        "source_state_a": [
+          0.49957144260406494,
+          0.31001201272010803
+        ],
+        "source_state_b": [
+          0.4989415109157562,
+          0.30917420983314514
+        ],
+        "next_state_a": [
+          0.5003114938735962,
+          0.27582690119743347
+        ],
+        "next_state_b": [
+          0.49885129928588867,
+          0.2729989290237427
+        ],
+        "denominator_distance": 0.001048202084208395,
+        "numerator": 0.003182702444329312,
+        "pair_ratio": 3.0363443197433604
+      }
+    },
+    {
+      "tile": 0,
+      "region": 3,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 12.109264449124852,
+      "Lr2": 0.0,
+      "Lr_sum": 12.109264449124852,
+      "Lr_action_dependence": false,
+      "Lf1": 2.7518108091113715,
+      "Lf2": 2.821887780455406,
+      "Lf_sum": 2.821887780455406,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2222,
+        "index_b": 2412,
+        "source_state_a": [
+          0.49924784898757935,
+          0.4611316919326782
+        ],
+        "source_state_b": [
+          0.49959632754325867,
+          0.45969659090042114
+        ],
+        "next_state_a": [
+          0.49964332580566406,
+          0.4976799488067627
+        ],
+        "next_state_b": [
+          0.4993816316127777,
+          0.4935207962989807
+        ],
+        "denominator_distance": 0.001476804752346661,
+        "numerator": 0.004167377284765515,
+        "pair_ratio": 2.821887780455406
+      }
+    },
+    {
+      "tile": 0,
+      "region": 3,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 12.109264449124852,
+      "Lr2": 0.0,
+      "Lr_sum": 12.109264449124852,
+      "Lr_action_dependence": false,
+      "Lf1": 2.774376057327132,
+      "Lf2": 2.784158155776937,
+      "Lf_sum": 2.784158155776937,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 1814,
+        "index_b": 3672,
+        "source_state_a": [
+          0.4592002034187317,
+          0.35054951906204224
+        ],
+        "source_state_b": [
+          0.4599969983100891,
+          0.34983158111572266
+        ],
+        "next_state_a": [
+          0.41695353388786316,
+          0.35133445262908936
+        ],
+        "next_state_b": [
+          0.41758355498313904,
+          0.3484155833721161
+        ],
+        "denominator_distance": 0.0010725283183482205,
+        "numerator": 0.002986088464830921,
+        "pair_ratio": 2.784158155776937
+      }
+    },
+    {
+      "tile": 0,
+      "region": 3,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 12.109264449124852,
+      "Lr2": 0.0,
+      "Lr_sum": 12.109264449124852,
+      "Lr_action_dependence": false,
+      "Lf1": 2.6057619316477556,
+      "Lf2": 3.117138675363639,
+      "Lf_sum": 3.117138675363639,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2145,
+        "index_b": 2570,
+        "source_state_a": [
+          0.49936679005622864,
+          0.3104158043861389
+        ],
+        "source_state_b": [
+          0.49945515394210815,
+          0.30939099192619324
+        ],
+        "next_state_a": [
+          0.5419279336929321,
+          0.31195777654647827
+        ],
+        "next_state_b": [
+          0.5436949729919434,
+          0.3092823028564453
+        ],
+        "denominator_distance": 0.0010286149689692648,
+        "numerator": 0.003206335501832065,
+        "pair_ratio": 3.117138675363639
+      }
+    },
+    {
+      "tile": 1,
+      "region": 3,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 7.448878989173255,
+      "Lr2": 0.023654804548241155,
+      "Lr_sum": 7.472533793721496,
+      "Lr_action_dependence": false,
+      "Lf1": 3.0363443197433604,
+      "Lf2": 2.7425292098107894,
+      "Lf_sum": 3.0363443197433604,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 34498,
+        "index_b": 35916,
+        "source_state_a": [
+          0.49957144260406494,
+          0.31001201272010803
+        ],
+        "source_state_b": [
+          0.4989415109157562,
+          0.30917420983314514
+        ],
+        "next_state_a": [
+          0.5003114938735962,
+          0.27582690119743347
+        ],
+        "next_state_b": [
+          0.49885129928588867,
+          0.2729989290237427
+        ],
+        "denominator_distance": 0.001048202084208395,
+        "numerator": 0.003182702444329312,
+        "pair_ratio": 3.0363443197433604
+      }
+    },
+    {
+      "tile": 1,
+      "region": 3,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 7.448878989173255,
+      "Lr2": 0.023654804548241155,
+      "Lr_sum": 7.472533793721496,
+      "Lr_action_dependence": false,
+      "Lf1": 2.7518108091113715,
+      "Lf2": 2.821887780455406,
+      "Lf_sum": 2.821887780455406,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2222,
+        "index_b": 2412,
+        "source_state_a": [
+          0.49924784898757935,
+          0.4611316919326782
+        ],
+        "source_state_b": [
+          0.49959632754325867,
+          0.45969659090042114
+        ],
+        "next_state_a": [
+          0.49964332580566406,
+          0.4976799488067627
+        ],
+        "next_state_b": [
+          0.4993816316127777,
+          0.4935207962989807
+        ],
+        "denominator_distance": 0.001476804752346661,
+        "numerator": 0.004167377284765515,
+        "pair_ratio": 2.821887780455406
+      }
+    },
+    {
+      "tile": 1,
+      "region": 3,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 7.448878989173255,
+      "Lr2": 0.023654804548241155,
+      "Lr_sum": 7.472533793721496,
+      "Lr_action_dependence": false,
+      "Lf1": 2.774376057327132,
+      "Lf2": 2.784158155776937,
+      "Lf_sum": 2.784158155776937,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 1814,
+        "index_b": 3672,
+        "source_state_a": [
+          0.4592002034187317,
+          0.35054951906204224
+        ],
+        "source_state_b": [
+          0.4599969983100891,
+          0.34983158111572266
+        ],
+        "next_state_a": [
+          0.41695353388786316,
+          0.35133445262908936
+        ],
+        "next_state_b": [
+          0.41758355498313904,
+          0.3484155833721161
+        ],
+        "denominator_distance": 0.0010725283183482205,
+        "numerator": 0.002986088464830921,
+        "pair_ratio": 2.784158155776937
+      }
+    },
+    {
+      "tile": 1,
+      "region": 3,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 7.448878989173255,
+      "Lr2": 0.023654804548241155,
+      "Lr_sum": 7.472533793721496,
+      "Lr_action_dependence": false,
+      "Lf1": 2.6057619316477556,
+      "Lf2": 3.117138675363639,
+      "Lf_sum": 3.117138675363639,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2145,
+        "index_b": 2570,
+        "source_state_a": [
+          0.49936679005622864,
+          0.3104158043861389
+        ],
+        "source_state_b": [
+          0.49945515394210815,
+          0.30939099192619324
+        ],
+        "next_state_a": [
+          0.5419279336929321,
+          0.31195777654647827
+        ],
+        "next_state_b": [
+          0.5436949729919434,
+          0.3092823028564453
+        ],
+        "denominator_distance": 0.0010286149689692648,
+        "numerator": 0.003206335501832065,
+        "pair_ratio": 3.117138675363639
+      }
+    },
+    {
+      "tile": 2,
+      "region": 4,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 0.021860211795483548,
+      "Lr2": 8.966687223129737,
+      "Lr_sum": 8.98854743492522,
+      "Lr_action_dependence": false,
+      "Lf1": 3.3544893890099017,
+      "Lf2": 2.5516120149192933,
+      "Lf_sum": 3.3544893890099017,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 9049,
+        "index_b": 10501,
+        "source_state_a": [
+          0.5000545382499695,
+          0.3110162913799286
+        ],
+        "source_state_b": [
+          0.5004452466964722,
+          0.30997616052627563
+        ],
+        "next_state_a": [
+          0.4999714493751526,
+          0.27137717604637146
+        ],
+        "next_state_b": [
+          0.500913679599762,
+          0.2677710950374603
+        ],
+        "denominator_distance": 0.0011110919326902545,
+        "numerator": 0.0037271460984239627,
+        "pair_ratio": 3.3544893890099017
+      }
+    },
+    {
+      "tile": 2,
+      "region": 4,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 0.021860211795483548,
+      "Lr2": 8.966687223129737,
+      "Lr_sum": 8.98854743492522,
+      "Lr_action_dependence": false,
+      "Lf1": 2.557318250082558,
+      "Lf2": 2.886433655285852,
+      "Lf_sum": 2.886433655285852,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2457,
+        "index_b": 4120,
+        "source_state_a": [
+          0.5399404764175415,
+          0.3499373495578766
+        ],
+        "source_state_b": [
+          0.5399512052536011,
+          0.34873345494270325
+        ],
+        "next_state_a": [
+          0.5407395958900452,
+          0.3908773958683014
+        ],
+        "next_state_b": [
+          0.5399863719940186,
+          0.38748490810394287
+        ],
+        "denominator_distance": 0.001203942420702318,
+        "numerator": 0.0034750999221414888,
+        "pair_ratio": 2.886433655285852
+      }
+    },
+    {
+      "tile": 2,
+      "region": 4,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 0.021860211795483548,
+      "Lr2": 8.966687223129737,
+      "Lr_sum": 8.98854743492522,
+      "Lr_action_dependence": false,
+      "Lf1": 3.316231947188646,
+      "Lf2": 3.5305540336306356,
+      "Lf_sum": 3.5305540336306356,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 787,
+        "index_b": 1622,
+        "source_state_a": [
+          0.5,
+          0.3499999940395355
+        ],
+        "source_state_b": [
+          0.5009276270866394,
+          0.3507480025291443
+        ],
+        "next_state_a": [
+          0.4597151279449463,
+          0.34859296679496765
+        ],
+        "next_state_b": [
+          0.46109575033187866,
+          0.3525671362876892
+        ],
+        "denominator_distance": 0.0011916411844149623,
+        "numerator": 0.004207153590276633,
+        "pair_ratio": 3.5305540336306356
+      }
+    },
+    {
+      "tile": 2,
+      "region": 4,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 0.021860211795483548,
+      "Lr2": 8.966687223129737,
+      "Lr_sum": 8.98854743492522,
+      "Lr_action_dependence": false,
+      "Lf1": 2.9221394991919443,
+      "Lf2": 3.122910502761268,
+      "Lf_sum": 3.122910502761268,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 12422,
+        "index_b": 59455,
+        "source_state_a": [
+          0.7012593150138855,
+          0.26802337169647217
+        ],
+        "source_state_b": [
+          0.7014675140380859,
+          0.26934176683425903
+        ],
+        "next_state_a": [
+          0.7410219311714172,
+          0.26776188611984253
+        ],
+        "next_state_b": [
+          0.7419431209564209,
+          0.2718270719051361
+        ],
+        "denominator_distance": 0.0013347331467443455,
+        "numerator": 0.004168252162351513,
+        "pair_ratio": 3.122910502761268
+      }
+    },
+    {
+      "tile": 3,
+      "region": 4,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 0.0,
+      "Lr2": 12.115838373682568,
+      "Lr_sum": 12.115838373682568,
+      "Lr_action_dependence": false,
+      "Lf1": 3.3544893890099017,
+      "Lf2": 2.5516120149192933,
+      "Lf_sum": 3.3544893890099017,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 9049,
+        "index_b": 10501,
+        "source_state_a": [
+          0.5000545382499695,
+          0.3110162913799286
+        ],
+        "source_state_b": [
+          0.5004452466964722,
+          0.30997616052627563
+        ],
+        "next_state_a": [
+          0.4999714493751526,
+          0.27137717604637146
+        ],
+        "next_state_b": [
+          0.500913679599762,
+          0.2677710950374603
+        ],
+        "denominator_distance": 0.0011110919326902545,
+        "numerator": 0.0037271460984239627,
+        "pair_ratio": 3.3544893890099017
+      }
+    },
+    {
+      "tile": 3,
+      "region": 4,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 0.0,
+      "Lr2": 12.115838373682568,
+      "Lr_sum": 12.115838373682568,
+      "Lr_action_dependence": false,
+      "Lf1": 2.557318250082558,
+      "Lf2": 2.886433655285852,
+      "Lf_sum": 2.886433655285852,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2457,
+        "index_b": 4120,
+        "source_state_a": [
+          0.5399404764175415,
+          0.3499373495578766
+        ],
+        "source_state_b": [
+          0.5399512052536011,
+          0.34873345494270325
+        ],
+        "next_state_a": [
+          0.5407395958900452,
+          0.3908773958683014
+        ],
+        "next_state_b": [
+          0.5399863719940186,
+          0.38748490810394287
+        ],
+        "denominator_distance": 0.001203942420702318,
+        "numerator": 0.0034750999221414888,
+        "pair_ratio": 2.886433655285852
+      }
+    },
+    {
+      "tile": 3,
+      "region": 4,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 0.0,
+      "Lr2": 12.115838373682568,
+      "Lr_sum": 12.115838373682568,
+      "Lr_action_dependence": false,
+      "Lf1": 3.316231947188646,
+      "Lf2": 3.5305540336306356,
+      "Lf_sum": 3.5305540336306356,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 787,
+        "index_b": 1622,
+        "source_state_a": [
+          0.5,
+          0.3499999940395355
+        ],
+        "source_state_b": [
+          0.5009276270866394,
+          0.3507480025291443
+        ],
+        "next_state_a": [
+          0.4597151279449463,
+          0.34859296679496765
+        ],
+        "next_state_b": [
+          0.46109575033187866,
+          0.3525671362876892
+        ],
+        "denominator_distance": 0.0011916411844149623,
+        "numerator": 0.004207153590276633,
+        "pair_ratio": 3.5305540336306356
+      }
+    },
+    {
+      "tile": 3,
+      "region": 4,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 0.0,
+      "Lr2": 12.115838373682568,
+      "Lr_sum": 12.115838373682568,
+      "Lr_action_dependence": false,
+      "Lf1": 2.9221394991919443,
+      "Lf2": 3.122910502761268,
+      "Lf_sum": 3.122910502761268,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 12422,
+        "index_b": 59455,
+        "source_state_a": [
+          0.7012593150138855,
+          0.26802337169647217
+        ],
+        "source_state_b": [
+          0.7014675140380859,
+          0.26934176683425903
+        ],
+        "next_state_a": [
+          0.7410219311714172,
+          0.26776188611984253
+        ],
+        "next_state_b": [
+          0.7419431209564209,
+          0.2718270719051361
+        ],
+        "denominator_distance": 0.0013347331467443455,
+        "numerator": 0.004168252162351513,
+        "pair_ratio": 3.122910502761268
+      }
+    },
+    {
+      "tile": 4,
+      "region": 3,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 8.204728848421787,
+      "Lr2": 0.00022708012058502124,
+      "Lr_sum": 8.204955928542372,
+      "Lr_action_dependence": false,
+      "Lf1": 3.0363443197433604,
+      "Lf2": 2.7425292098107894,
+      "Lf_sum": 3.0363443197433604,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 34498,
+        "index_b": 35916,
+        "source_state_a": [
+          0.49957144260406494,
+          0.31001201272010803
+        ],
+        "source_state_b": [
+          0.4989415109157562,
+          0.30917420983314514
+        ],
+        "next_state_a": [
+          0.5003114938735962,
+          0.27582690119743347
+        ],
+        "next_state_b": [
+          0.49885129928588867,
+          0.2729989290237427
+        ],
+        "denominator_distance": 0.001048202084208395,
+        "numerator": 0.003182702444329312,
+        "pair_ratio": 3.0363443197433604
+      }
+    },
+    {
+      "tile": 4,
+      "region": 3,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 8.204728848421787,
+      "Lr2": 0.00022708012058502124,
+      "Lr_sum": 8.204955928542372,
+      "Lr_action_dependence": false,
+      "Lf1": 2.7518108091113715,
+      "Lf2": 2.821887780455406,
+      "Lf_sum": 2.821887780455406,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2222,
+        "index_b": 2412,
+        "source_state_a": [
+          0.49924784898757935,
+          0.4611316919326782
+        ],
+        "source_state_b": [
+          0.49959632754325867,
+          0.45969659090042114
+        ],
+        "next_state_a": [
+          0.49964332580566406,
+          0.4976799488067627
+        ],
+        "next_state_b": [
+          0.4993816316127777,
+          0.4935207962989807
+        ],
+        "denominator_distance": 0.001476804752346661,
+        "numerator": 0.004167377284765515,
+        "pair_ratio": 2.821887780455406
+      }
+    },
+    {
+      "tile": 4,
+      "region": 3,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 8.204728848421787,
+      "Lr2": 0.00022708012058502124,
+      "Lr_sum": 8.204955928542372,
+      "Lr_action_dependence": false,
+      "Lf1": 2.774376057327132,
+      "Lf2": 2.784158155776937,
+      "Lf_sum": 2.784158155776937,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 1814,
+        "index_b": 3672,
+        "source_state_a": [
+          0.4592002034187317,
+          0.35054951906204224
+        ],
+        "source_state_b": [
+          0.4599969983100891,
+          0.34983158111572266
+        ],
+        "next_state_a": [
+          0.41695353388786316,
+          0.35133445262908936
+        ],
+        "next_state_b": [
+          0.41758355498313904,
+          0.3484155833721161
+        ],
+        "denominator_distance": 0.0010725283183482205,
+        "numerator": 0.002986088464830921,
+        "pair_ratio": 2.784158155776937
+      }
+    },
+    {
+      "tile": 4,
+      "region": 3,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 8.204728848421787,
+      "Lr2": 0.00022708012058502124,
+      "Lr_sum": 8.204955928542372,
+      "Lr_action_dependence": false,
+      "Lf1": 2.6057619316477556,
+      "Lf2": 3.117138675363639,
+      "Lf_sum": 3.117138675363639,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2145,
+        "index_b": 2570,
+        "source_state_a": [
+          0.49936679005622864,
+          0.3104158043861389
+        ],
+        "source_state_b": [
+          0.49945515394210815,
+          0.30939099192619324
+        ],
+        "next_state_a": [
+          0.5419279336929321,
+          0.31195777654647827
+        ],
+        "next_state_b": [
+          0.5436949729919434,
+          0.3092823028564453
+        ],
+        "denominator_distance": 0.0010286149689692648,
+        "numerator": 0.003206335501832065,
+        "pair_ratio": 3.117138675363639
+      }
+    },
+    {
+      "tile": 5,
+      "region": 3,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 2.884017270978668,
+      "Lr2": 0.014666691299290545,
+      "Lr_sum": 2.8986839622779583,
+      "Lr_action_dependence": false,
+      "Lf1": 3.0363443197433604,
+      "Lf2": 2.7425292098107894,
+      "Lf_sum": 3.0363443197433604,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 34498,
+        "index_b": 35916,
+        "source_state_a": [
+          0.49957144260406494,
+          0.31001201272010803
+        ],
+        "source_state_b": [
+          0.4989415109157562,
+          0.30917420983314514
+        ],
+        "next_state_a": [
+          0.5003114938735962,
+          0.27582690119743347
+        ],
+        "next_state_b": [
+          0.49885129928588867,
+          0.2729989290237427
+        ],
+        "denominator_distance": 0.001048202084208395,
+        "numerator": 0.003182702444329312,
+        "pair_ratio": 3.0363443197433604
+      }
+    },
+    {
+      "tile": 5,
+      "region": 3,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 2.884017270978668,
+      "Lr2": 0.014666691299290545,
+      "Lr_sum": 2.8986839622779583,
+      "Lr_action_dependence": false,
+      "Lf1": 2.7518108091113715,
+      "Lf2": 2.821887780455406,
+      "Lf_sum": 2.821887780455406,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2222,
+        "index_b": 2412,
+        "source_state_a": [
+          0.49924784898757935,
+          0.4611316919326782
+        ],
+        "source_state_b": [
+          0.49959632754325867,
+          0.45969659090042114
+        ],
+        "next_state_a": [
+          0.49964332580566406,
+          0.4976799488067627
+        ],
+        "next_state_b": [
+          0.4993816316127777,
+          0.4935207962989807
+        ],
+        "denominator_distance": 0.001476804752346661,
+        "numerator": 0.004167377284765515,
+        "pair_ratio": 2.821887780455406
+      }
+    },
+    {
+      "tile": 5,
+      "region": 3,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 2.884017270978668,
+      "Lr2": 0.014666691299290545,
+      "Lr_sum": 2.8986839622779583,
+      "Lr_action_dependence": false,
+      "Lf1": 2.774376057327132,
+      "Lf2": 2.784158155776937,
+      "Lf_sum": 2.784158155776937,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 1814,
+        "index_b": 3672,
+        "source_state_a": [
+          0.4592002034187317,
+          0.35054951906204224
+        ],
+        "source_state_b": [
+          0.4599969983100891,
+          0.34983158111572266
+        ],
+        "next_state_a": [
+          0.41695353388786316,
+          0.35133445262908936
+        ],
+        "next_state_b": [
+          0.41758355498313904,
+          0.3484155833721161
+        ],
+        "denominator_distance": 0.0010725283183482205,
+        "numerator": 0.002986088464830921,
+        "pair_ratio": 2.784158155776937
+      }
+    },
+    {
+      "tile": 5,
+      "region": 3,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 2.884017270978668,
+      "Lr2": 0.014666691299290545,
+      "Lr_sum": 2.8986839622779583,
+      "Lr_action_dependence": false,
+      "Lf1": 2.6057619316477556,
+      "Lf2": 3.117138675363639,
+      "Lf_sum": 3.117138675363639,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2145,
+        "index_b": 2570,
+        "source_state_a": [
+          0.49936679005622864,
+          0.3104158043861389
+        ],
+        "source_state_b": [
+          0.49945515394210815,
+          0.30939099192619324
+        ],
+        "next_state_a": [
+          0.5419279336929321,
+          0.31195777654647827
+        ],
+        "next_state_b": [
+          0.5436949729919434,
+          0.3092823028564453
+        ],
+        "denominator_distance": 0.0010286149689692648,
+        "numerator": 0.003206335501832065,
+        "pair_ratio": 3.117138675363639
+      }
+    },
+    {
+      "tile": 6,
+      "region": 4,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 0.009500115731958877,
+      "Lr2": 3.283935778150754,
+      "Lr_sum": 3.293435893882713,
+      "Lr_action_dependence": false,
+      "Lf1": 3.3544893890099017,
+      "Lf2": 2.5516120149192933,
+      "Lf_sum": 3.3544893890099017,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 9049,
+        "index_b": 10501,
+        "source_state_a": [
+          0.5000545382499695,
+          0.3110162913799286
+        ],
+        "source_state_b": [
+          0.5004452466964722,
+          0.30997616052627563
+        ],
+        "next_state_a": [
+          0.4999714493751526,
+          0.27137717604637146
+        ],
+        "next_state_b": [
+          0.500913679599762,
+          0.2677710950374603
+        ],
+        "denominator_distance": 0.0011110919326902545,
+        "numerator": 0.0037271460984239627,
+        "pair_ratio": 3.3544893890099017
+      }
+    },
+    {
+      "tile": 6,
+      "region": 4,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 0.009500115731958877,
+      "Lr2": 3.283935778150754,
+      "Lr_sum": 3.293435893882713,
+      "Lr_action_dependence": false,
+      "Lf1": 2.557318250082558,
+      "Lf2": 2.886433655285852,
+      "Lf_sum": 2.886433655285852,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2457,
+        "index_b": 4120,
+        "source_state_a": [
+          0.5399404764175415,
+          0.3499373495578766
+        ],
+        "source_state_b": [
+          0.5399512052536011,
+          0.34873345494270325
+        ],
+        "next_state_a": [
+          0.5407395958900452,
+          0.3908773958683014
+        ],
+        "next_state_b": [
+          0.5399863719940186,
+          0.38748490810394287
+        ],
+        "denominator_distance": 0.001203942420702318,
+        "numerator": 0.0034750999221414888,
+        "pair_ratio": 2.886433655285852
+      }
+    },
+    {
+      "tile": 6,
+      "region": 4,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 0.009500115731958877,
+      "Lr2": 3.283935778150754,
+      "Lr_sum": 3.293435893882713,
+      "Lr_action_dependence": false,
+      "Lf1": 3.316231947188646,
+      "Lf2": 3.5305540336306356,
+      "Lf_sum": 3.5305540336306356,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 787,
+        "index_b": 1622,
+        "source_state_a": [
+          0.5,
+          0.3499999940395355
+        ],
+        "source_state_b": [
+          0.5009276270866394,
+          0.3507480025291443
+        ],
+        "next_state_a": [
+          0.4597151279449463,
+          0.34859296679496765
+        ],
+        "next_state_b": [
+          0.46109575033187866,
+          0.3525671362876892
+        ],
+        "denominator_distance": 0.0011916411844149623,
+        "numerator": 0.004207153590276633,
+        "pair_ratio": 3.5305540336306356
+      }
+    },
+    {
+      "tile": 6,
+      "region": 4,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 0.009500115731958877,
+      "Lr2": 3.283935778150754,
+      "Lr_sum": 3.293435893882713,
+      "Lr_action_dependence": false,
+      "Lf1": 2.9221394991919443,
+      "Lf2": 3.122910502761268,
+      "Lf_sum": 3.122910502761268,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 12422,
+        "index_b": 59455,
+        "source_state_a": [
+          0.7012593150138855,
+          0.26802337169647217
+        ],
+        "source_state_b": [
+          0.7014675140380859,
+          0.26934176683425903
+        ],
+        "next_state_a": [
+          0.7410219311714172,
+          0.26776188611984253
+        ],
+        "next_state_b": [
+          0.7419431209564209,
+          0.2718270719051361
+        ],
+        "denominator_distance": 0.0013347331467443455,
+        "numerator": 0.004168252162351513,
+        "pair_ratio": 3.122910502761268
+      }
+    },
+    {
+      "tile": 7,
+      "region": 4,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 0.00017623806270544473,
+      "Lr2": 7.843271209754958,
+      "Lr_sum": 7.843447447817663,
+      "Lr_action_dependence": false,
+      "Lf1": 3.3544893890099017,
+      "Lf2": 2.5516120149192933,
+      "Lf_sum": 3.3544893890099017,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 9049,
+        "index_b": 10501,
+        "source_state_a": [
+          0.5000545382499695,
+          0.3110162913799286
+        ],
+        "source_state_b": [
+          0.5004452466964722,
+          0.30997616052627563
+        ],
+        "next_state_a": [
+          0.4999714493751526,
+          0.27137717604637146
+        ],
+        "next_state_b": [
+          0.500913679599762,
+          0.2677710950374603
+        ],
+        "denominator_distance": 0.0011110919326902545,
+        "numerator": 0.0037271460984239627,
+        "pair_ratio": 3.3544893890099017
+      }
+    },
+    {
+      "tile": 7,
+      "region": 4,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 0.00017623806270544473,
+      "Lr2": 7.843271209754958,
+      "Lr_sum": 7.843447447817663,
+      "Lr_action_dependence": false,
+      "Lf1": 2.557318250082558,
+      "Lf2": 2.886433655285852,
+      "Lf_sum": 2.886433655285852,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 2457,
+        "index_b": 4120,
+        "source_state_a": [
+          0.5399404764175415,
+          0.3499373495578766
+        ],
+        "source_state_b": [
+          0.5399512052536011,
+          0.34873345494270325
+        ],
+        "next_state_a": [
+          0.5407395958900452,
+          0.3908773958683014
+        ],
+        "next_state_b": [
+          0.5399863719940186,
+          0.38748490810394287
+        ],
+        "denominator_distance": 0.001203942420702318,
+        "numerator": 0.0034750999221414888,
+        "pair_ratio": 2.886433655285852
+      }
+    },
+    {
+      "tile": 7,
+      "region": 4,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 0.00017623806270544473,
+      "Lr2": 7.843271209754958,
+      "Lr_sum": 7.843447447817663,
+      "Lr_action_dependence": false,
+      "Lf1": 3.316231947188646,
+      "Lf2": 3.5305540336306356,
+      "Lf_sum": 3.5305540336306356,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 787,
+        "index_b": 1622,
+        "source_state_a": [
+          0.5,
+          0.3499999940395355
+        ],
+        "source_state_b": [
+          0.5009276270866394,
+          0.3507480025291443
+        ],
+        "next_state_a": [
+          0.4597151279449463,
+          0.34859296679496765
+        ],
+        "next_state_b": [
+          0.46109575033187866,
+          0.3525671362876892
+        ],
+        "denominator_distance": 0.0011916411844149623,
+        "numerator": 0.004207153590276633,
+        "pair_ratio": 3.5305540336306356
+      }
+    },
+    {
+      "tile": 7,
+      "region": 4,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 0.00017623806270544473,
+      "Lr2": 7.843271209754958,
+      "Lr_sum": 7.843447447817663,
+      "Lr_action_dependence": false,
+      "Lf1": 2.9221394991919443,
+      "Lf2": 3.122910502761268,
+      "Lf_sum": 3.122910502761268,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 12422,
+        "index_b": 59455,
+        "source_state_a": [
+          0.7012593150138855,
+          0.26802337169647217
+        ],
+        "source_state_b": [
+          0.7014675140380859,
+          0.26934176683425903
+        ],
+        "next_state_a": [
+          0.7410219311714172,
+          0.26776188611984253
+        ],
+        "next_state_b": [
+          0.7419431209564209,
+          0.2718270719051361
+        ],
+        "denominator_distance": 0.0013347331467443455,
+        "numerator": 0.004168252162351513,
+        "pair_ratio": 3.122910502761268
+      }
+    },
+    {
+      "tile": 8,
+      "region": 2,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 0.28843872356020644,
+      "Lr2": 0.271419255451003,
+      "Lr_sum": 0.5598579790112095,
+      "Lr_action_dependence": false,
+      "Lf1": 1.7941261953328742,
+      "Lf2": 1.7044751815825085,
+      "Lf_sum": 1.7941261953328742,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 435,
+        "index_b": 559,
+        "source_state_a": [
+          0.49673086404800415,
+          0.7925352454185486
+        ],
+        "source_state_b": [
+          0.4979384243488312,
+          0.7942838072776794
+        ],
+        "next_state_a": [
+          0.49766021966934204,
+          0.749187171459198
+        ],
+        "next_state_b": [
+          0.4971235990524292,
+          0.7529617547988892
+        ],
+        "denominator_distance": 0.0021250106953473497,
+        "numerator": 0.003812537353885206,
+        "pair_ratio": 1.7941261953328742
+      }
+    },
+    {
+      "tile": 8,
+      "region": 2,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 0.28843872356020644,
+      "Lr2": 0.271419255451003,
+      "Lr_sum": 0.5598579790112095,
+      "Lr_action_dependence": false,
+      "Lf1": 2.8151790082384998,
+      "Lf2": 2.3887441721101905,
+      "Lf_sum": 2.8151790082384998,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 544,
+        "index_b": 1051,
+        "source_state_a": [
+          0.49750518798828125,
+          0.6671041250228882
+        ],
+        "source_state_b": [
+          0.49865996837615967,
+          0.6670198440551758
+        ],
+        "next_state_a": [
+          0.4960673749446869,
+          0.7085948586463928
+        ],
+        "next_state_b": [
+          0.49862349033355713,
+          0.7106174826622009
+        ],
+        "denominator_distance": 0.0011578519014740912,
+        "numerator": 0.0032595603676788933,
+        "pair_ratio": 2.8151790082384998
+      }
+    },
+    {
+      "tile": 8,
+      "region": 2,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 0.28843872356020644,
+      "Lr2": 0.271419255451003,
+      "Lr_sum": 0.5598579790112095,
+      "Lr_action_dependence": false,
+      "Lf1": 1.9981737214134017,
+      "Lf2": 2.2565258648977506,
+      "Lf_sum": 2.2565258648977506,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 62,
+        "index_b": 82,
+        "source_state_a": [
+          0.369637131690979,
+          0.743735134601593
+        ],
+        "source_state_b": [
+          0.3692483603954315,
+          0.7452812194824219
+        ],
+        "next_state_a": [
+          0.33469659090042114,
+          0.743004560470581
+        ],
+        "next_state_b": [
+          0.3319980502128601,
+          0.7453834414482117
+        ],
+        "denominator_distance": 0.0015942150353604285,
+        "numerator": 0.003597387461499689,
+        "pair_ratio": 2.2565258648977506
+      }
+    },
+    {
+      "tile": 8,
+      "region": 2,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 0.28843872356020644,
+      "Lr2": 0.271419255451003,
+      "Lr_sum": 0.5598579790112095,
+      "Lr_action_dependence": false,
+      "Lf1": 2.324614232296834,
+      "Lf2": 1.6724113508306022,
+      "Lf_sum": 2.324614232296834,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 570,
+        "index_b": 572,
+        "source_state_a": [
+          0.009291814640164375,
+          0.9143996834754944
+        ],
+        "source_state_b": [
+          0.008267594501376152,
+          0.9145792722702026
+        ],
+        "next_state_a": [
+          0.04477544128894806,
+          0.9144750237464905
+        ],
+        "next_state_b": [
+          0.04245666787028313,
+          0.9137921333312988
+        ],
+        "denominator_distance": 0.0010398456750326608,
+        "numerator": 0.002417240055573232,
+        "pair_ratio": 2.324614232296834
+      }
+    },
+    {
+      "tile": 9,
+      "region": 2,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 5.68724908245012,
+      "Lr2": 5.777490291900606,
+      "Lr_sum": 11.464739374350726,
+      "Lr_action_dependence": false,
+      "Lf1": 1.7941261953328742,
+      "Lf2": 1.7044751815825085,
+      "Lf_sum": 1.7941261953328742,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 435,
+        "index_b": 559,
+        "source_state_a": [
+          0.49673086404800415,
+          0.7925352454185486
+        ],
+        "source_state_b": [
+          0.4979384243488312,
+          0.7942838072776794
+        ],
+        "next_state_a": [
+          0.49766021966934204,
+          0.749187171459198
+        ],
+        "next_state_b": [
+          0.4971235990524292,
+          0.7529617547988892
+        ],
+        "denominator_distance": 0.0021250106953473497,
+        "numerator": 0.003812537353885206,
+        "pair_ratio": 1.7941261953328742
+      }
+    },
+    {
+      "tile": 9,
+      "region": 2,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 5.68724908245012,
+      "Lr2": 5.777490291900606,
+      "Lr_sum": 11.464739374350726,
+      "Lr_action_dependence": false,
+      "Lf1": 2.8151790082384998,
+      "Lf2": 2.3887441721101905,
+      "Lf_sum": 2.8151790082384998,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 544,
+        "index_b": 1051,
+        "source_state_a": [
+          0.49750518798828125,
+          0.6671041250228882
+        ],
+        "source_state_b": [
+          0.49865996837615967,
+          0.6670198440551758
+        ],
+        "next_state_a": [
+          0.4960673749446869,
+          0.7085948586463928
+        ],
+        "next_state_b": [
+          0.49862349033355713,
+          0.7106174826622009
+        ],
+        "denominator_distance": 0.0011578519014740912,
+        "numerator": 0.0032595603676788933,
+        "pair_ratio": 2.8151790082384998
+      }
+    },
+    {
+      "tile": 9,
+      "region": 2,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 5.68724908245012,
+      "Lr2": 5.777490291900606,
+      "Lr_sum": 11.464739374350726,
+      "Lr_action_dependence": false,
+      "Lf1": 1.9981737214134017,
+      "Lf2": 2.2565258648977506,
+      "Lf_sum": 2.2565258648977506,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 62,
+        "index_b": 82,
+        "source_state_a": [
+          0.369637131690979,
+          0.743735134601593
+        ],
+        "source_state_b": [
+          0.3692483603954315,
+          0.7452812194824219
+        ],
+        "next_state_a": [
+          0.33469659090042114,
+          0.743004560470581
+        ],
+        "next_state_b": [
+          0.3319980502128601,
+          0.7453834414482117
+        ],
+        "denominator_distance": 0.0015942150353604285,
+        "numerator": 0.003597387461499689,
+        "pair_ratio": 2.2565258648977506
+      }
+    },
+    {
+      "tile": 9,
+      "region": 2,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 5.68724908245012,
+      "Lr2": 5.777490291900606,
+      "Lr_sum": 11.464739374350726,
+      "Lr_action_dependence": false,
+      "Lf1": 2.324614232296834,
+      "Lf2": 1.6724113508306022,
+      "Lf_sum": 2.324614232296834,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 570,
+        "index_b": 572,
+        "source_state_a": [
+          0.009291814640164375,
+          0.9143996834754944
+        ],
+        "source_state_b": [
+          0.008267594501376152,
+          0.9145792722702026
+        ],
+        "next_state_a": [
+          0.04477544128894806,
+          0.9144750237464905
+        ],
+        "next_state_b": [
+          0.04245666787028313,
+          0.9137921333312988
+        ],
+        "denominator_distance": 0.0010398456750326608,
+        "numerator": 0.002417240055573232,
+        "pair_ratio": 2.324614232296834
+      }
+    },
+    {
+      "tile": 10,
+      "region": 1,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 5.519025012244162,
+      "Lr2": 5.617467651194802,
+      "Lr_sum": 11.136492663438965,
+      "Lr_action_dependence": false,
+      "Lf1": 2.617313369661479,
+      "Lf2": 1.9104446222093512,
+      "Lf_sum": 2.617313369661479,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 233,
+        "index_b": 235,
+        "source_state_a": [
+          0.8400619626045227,
+          0.5865099430084229
+        ],
+        "source_state_b": [
+          0.841088056564331,
+          0.5866743326187134
+        ],
+        "next_state_a": [
+          0.8392703533172607,
+          0.547612726688385
+        ],
+        "next_state_b": [
+          0.8419362306594849,
+          0.5481519103050232
+        ],
+        "denominator_distance": 0.0010391788865862558,
+        "numerator": 0.002719856793332137,
+        "pair_ratio": 2.617313369661479
+      }
+    },
+    {
+      "tile": 10,
+      "region": 1,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 5.519025012244162,
+      "Lr2": 5.617467651194802,
+      "Lr_sum": 11.136492663438965,
+      "Lr_action_dependence": false,
+      "Lf1": 2.147014634059483,
+      "Lf2": 2.2860421973157923,
+      "Lf_sum": 2.2860421973157923,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 841,
+        "index_b": 1599,
+        "source_state_a": [
+          0.5018453598022461,
+          0.6255841255187988
+        ],
+        "source_state_b": [
+          0.500619113445282,
+          0.6247009038925171
+        ],
+        "next_state_a": [
+          0.5021869540214539,
+          0.6647686958312988
+        ],
+        "next_state_b": [
+          0.4994770884513855,
+          0.6626259088516235
+        ],
+        "denominator_distance": 0.0015112116228707061,
+        "numerator": 0.0034546935389565135,
+        "pair_ratio": 2.2860421973157923
+      }
+    },
+    {
+      "tile": 10,
+      "region": 1,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 5.519025012244162,
+      "Lr2": 5.617467651194802,
+      "Lr_sum": 11.136492663438965,
+      "Lr_action_dependence": false,
+      "Lf1": 1.9704712467100238,
+      "Lf2": 1.7088371097358661,
+      "Lf_sum": 1.9704712467100238,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 319,
+        "index_b": 434,
+        "source_state_a": [
+          0.8962470293045044,
+          0.5839425325393677
+        ],
+        "source_state_b": [
+          0.8948439955711365,
+          0.5843165516853333
+        ],
+        "next_state_a": [
+          0.8585759997367859,
+          0.5839880704879761
+        ],
+        "next_state_b": [
+          0.855931282043457,
+          0.5850797891616821
+        ],
+        "denominator_distance": 0.0014520309840072773,
+        "numerator": 0.0028611853033184025,
+        "pair_ratio": 1.9704712467100238
+      }
+    },
+    {
+      "tile": 10,
+      "region": 1,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 5.519025012244162,
+      "Lr2": 5.617467651194802,
+      "Lr_sum": 11.136492663438965,
+      "Lr_action_dependence": false,
+      "Lf1": 1.849106063204636,
+      "Lf2": 1.8590461164629142,
+      "Lf_sum": 1.8590461164629142,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 209,
+        "index_b": 212,
+        "source_state_a": [
+          0.7150079011917114,
+          0.6489708423614502
+        ],
+        "source_state_b": [
+          0.7152359485626221,
+          0.6502073407173157
+        ],
+        "next_state_a": [
+          0.7523737549781799,
+          0.650019109249115
+        ],
+        "next_state_b": [
+          0.7546682357788086,
+          0.6504653692245483
+        ],
+        "denominator_distance": 0.001257351894831868,
+        "numerator": 0.0023374751571144706,
+        "pair_ratio": 1.8590461164629142
+      }
+    },
+    {
+      "tile": 11,
+      "region": 1,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 0.3398845928732036,
+      "Lr2": 0.28667036171197174,
+      "Lr_sum": 0.6265549545851754,
+      "Lr_action_dependence": false,
+      "Lf1": 2.617313369661479,
+      "Lf2": 1.9104446222093512,
+      "Lf_sum": 2.617313369661479,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 233,
+        "index_b": 235,
+        "source_state_a": [
+          0.8400619626045227,
+          0.5865099430084229
+        ],
+        "source_state_b": [
+          0.841088056564331,
+          0.5866743326187134
+        ],
+        "next_state_a": [
+          0.8392703533172607,
+          0.547612726688385
+        ],
+        "next_state_b": [
+          0.8419362306594849,
+          0.5481519103050232
+        ],
+        "denominator_distance": 0.0010391788865862558,
+        "numerator": 0.002719856793332137,
+        "pair_ratio": 2.617313369661479
+      }
+    },
+    {
+      "tile": 11,
+      "region": 1,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 0.3398845928732036,
+      "Lr2": 0.28667036171197174,
+      "Lr_sum": 0.6265549545851754,
+      "Lr_action_dependence": false,
+      "Lf1": 2.147014634059483,
+      "Lf2": 2.2860421973157923,
+      "Lf_sum": 2.2860421973157923,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 841,
+        "index_b": 1599,
+        "source_state_a": [
+          0.5018453598022461,
+          0.6255841255187988
+        ],
+        "source_state_b": [
+          0.500619113445282,
+          0.6247009038925171
+        ],
+        "next_state_a": [
+          0.5021869540214539,
+          0.6647686958312988
+        ],
+        "next_state_b": [
+          0.4994770884513855,
+          0.6626259088516235
+        ],
+        "denominator_distance": 0.0015112116228707061,
+        "numerator": 0.0034546935389565135,
+        "pair_ratio": 2.2860421973157923
+      }
+    },
+    {
+      "tile": 11,
+      "region": 1,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 0.3398845928732036,
+      "Lr2": 0.28667036171197174,
+      "Lr_sum": 0.6265549545851754,
+      "Lr_action_dependence": false,
+      "Lf1": 1.9704712467100238,
+      "Lf2": 1.7088371097358661,
+      "Lf_sum": 1.9704712467100238,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 319,
+        "index_b": 434,
+        "source_state_a": [
+          0.8962470293045044,
+          0.5839425325393677
+        ],
+        "source_state_b": [
+          0.8948439955711365,
+          0.5843165516853333
+        ],
+        "next_state_a": [
+          0.8585759997367859,
+          0.5839880704879761
+        ],
+        "next_state_b": [
+          0.855931282043457,
+          0.5850797891616821
+        ],
+        "denominator_distance": 0.0014520309840072773,
+        "numerator": 0.0028611853033184025,
+        "pair_ratio": 1.9704712467100238
+      }
+    },
+    {
+      "tile": 11,
+      "region": 1,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 0.3398845928732036,
+      "Lr2": 0.28667036171197174,
+      "Lr_sum": 0.6265549545851754,
+      "Lr_action_dependence": false,
+      "Lf1": 1.849106063204636,
+      "Lf2": 1.8590461164629142,
+      "Lf_sum": 1.8590461164629142,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 209,
+        "index_b": 212,
+        "source_state_a": [
+          0.7150079011917114,
+          0.6489708423614502
+        ],
+        "source_state_b": [
+          0.7152359485626221,
+          0.6502073407173157
+        ],
+        "next_state_a": [
+          0.7523737549781799,
+          0.650019109249115
+        ],
+        "next_state_b": [
+          0.7546682357788086,
+          0.6504653692245483
+        ],
+        "denominator_distance": 0.001257351894831868,
+        "numerator": 0.0023374751571144706,
+        "pair_ratio": 1.8590461164629142
+      }
+    },
+    {
+      "tile": 12,
+      "region": 2,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 0.9851469247630024,
+      "Lr2": 1.0828960220216532,
+      "Lr_sum": 2.0680429467846557,
+      "Lr_action_dependence": false,
+      "Lf1": 1.7941261953328742,
+      "Lf2": 1.7044751815825085,
+      "Lf_sum": 1.7941261953328742,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 435,
+        "index_b": 559,
+        "source_state_a": [
+          0.49673086404800415,
+          0.7925352454185486
+        ],
+        "source_state_b": [
+          0.4979384243488312,
+          0.7942838072776794
+        ],
+        "next_state_a": [
+          0.49766021966934204,
+          0.749187171459198
+        ],
+        "next_state_b": [
+          0.4971235990524292,
+          0.7529617547988892
+        ],
+        "denominator_distance": 0.0021250106953473497,
+        "numerator": 0.003812537353885206,
+        "pair_ratio": 1.7941261953328742
+      }
+    },
+    {
+      "tile": 12,
+      "region": 2,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 0.9851469247630024,
+      "Lr2": 1.0828960220216532,
+      "Lr_sum": 2.0680429467846557,
+      "Lr_action_dependence": false,
+      "Lf1": 2.8151790082384998,
+      "Lf2": 2.3887441721101905,
+      "Lf_sum": 2.8151790082384998,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 544,
+        "index_b": 1051,
+        "source_state_a": [
+          0.49750518798828125,
+          0.6671041250228882
+        ],
+        "source_state_b": [
+          0.49865996837615967,
+          0.6670198440551758
+        ],
+        "next_state_a": [
+          0.4960673749446869,
+          0.7085948586463928
+        ],
+        "next_state_b": [
+          0.49862349033355713,
+          0.7106174826622009
+        ],
+        "denominator_distance": 0.0011578519014740912,
+        "numerator": 0.0032595603676788933,
+        "pair_ratio": 2.8151790082384998
+      }
+    },
+    {
+      "tile": 12,
+      "region": 2,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 0.9851469247630024,
+      "Lr2": 1.0828960220216532,
+      "Lr_sum": 2.0680429467846557,
+      "Lr_action_dependence": false,
+      "Lf1": 1.9981737214134017,
+      "Lf2": 2.2565258648977506,
+      "Lf_sum": 2.2565258648977506,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 62,
+        "index_b": 82,
+        "source_state_a": [
+          0.369637131690979,
+          0.743735134601593
+        ],
+        "source_state_b": [
+          0.3692483603954315,
+          0.7452812194824219
+        ],
+        "next_state_a": [
+          0.33469659090042114,
+          0.743004560470581
+        ],
+        "next_state_b": [
+          0.3319980502128601,
+          0.7453834414482117
+        ],
+        "denominator_distance": 0.0015942150353604285,
+        "numerator": 0.003597387461499689,
+        "pair_ratio": 2.2565258648977506
+      }
+    },
+    {
+      "tile": 12,
+      "region": 2,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 0.9851469247630024,
+      "Lr2": 1.0828960220216532,
+      "Lr_sum": 2.0680429467846557,
+      "Lr_action_dependence": false,
+      "Lf1": 2.324614232296834,
+      "Lf2": 1.6724113508306022,
+      "Lf_sum": 2.324614232296834,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 570,
+        "index_b": 572,
+        "source_state_a": [
+          0.009291814640164375,
+          0.9143996834754944
+        ],
+        "source_state_b": [
+          0.008267594501376152,
+          0.9145792722702026
+        ],
+        "next_state_a": [
+          0.04477544128894806,
+          0.9144750237464905
+        ],
+        "next_state_b": [
+          0.04245666787028313,
+          0.9137921333312988
+        ],
+        "denominator_distance": 0.0010398456750326608,
+        "numerator": 0.002417240055573232,
+        "pair_ratio": 2.324614232296834
+      }
+    },
+    {
+      "tile": 13,
+      "region": 2,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 7.270778245027177,
+      "Lr2": 7.2659822964798995,
+      "Lr_sum": 14.536760541507077,
+      "Lr_action_dependence": false,
+      "Lf1": 1.7941261953328742,
+      "Lf2": 1.7044751815825085,
+      "Lf_sum": 1.7941261953328742,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 435,
+        "index_b": 559,
+        "source_state_a": [
+          0.49673086404800415,
+          0.7925352454185486
+        ],
+        "source_state_b": [
+          0.4979384243488312,
+          0.7942838072776794
+        ],
+        "next_state_a": [
+          0.49766021966934204,
+          0.749187171459198
+        ],
+        "next_state_b": [
+          0.4971235990524292,
+          0.7529617547988892
+        ],
+        "denominator_distance": 0.0021250106953473497,
+        "numerator": 0.003812537353885206,
+        "pair_ratio": 1.7941261953328742
+      }
+    },
+    {
+      "tile": 13,
+      "region": 2,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 7.270778245027177,
+      "Lr2": 7.2659822964798995,
+      "Lr_sum": 14.536760541507077,
+      "Lr_action_dependence": false,
+      "Lf1": 2.8151790082384998,
+      "Lf2": 2.3887441721101905,
+      "Lf_sum": 2.8151790082384998,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 544,
+        "index_b": 1051,
+        "source_state_a": [
+          0.49750518798828125,
+          0.6671041250228882
+        ],
+        "source_state_b": [
+          0.49865996837615967,
+          0.6670198440551758
+        ],
+        "next_state_a": [
+          0.4960673749446869,
+          0.7085948586463928
+        ],
+        "next_state_b": [
+          0.49862349033355713,
+          0.7106174826622009
+        ],
+        "denominator_distance": 0.0011578519014740912,
+        "numerator": 0.0032595603676788933,
+        "pair_ratio": 2.8151790082384998
+      }
+    },
+    {
+      "tile": 13,
+      "region": 2,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 7.270778245027177,
+      "Lr2": 7.2659822964798995,
+      "Lr_sum": 14.536760541507077,
+      "Lr_action_dependence": false,
+      "Lf1": 1.9981737214134017,
+      "Lf2": 2.2565258648977506,
+      "Lf_sum": 2.2565258648977506,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 62,
+        "index_b": 82,
+        "source_state_a": [
+          0.369637131690979,
+          0.743735134601593
+        ],
+        "source_state_b": [
+          0.3692483603954315,
+          0.7452812194824219
+        ],
+        "next_state_a": [
+          0.33469659090042114,
+          0.743004560470581
+        ],
+        "next_state_b": [
+          0.3319980502128601,
+          0.7453834414482117
+        ],
+        "denominator_distance": 0.0015942150353604285,
+        "numerator": 0.003597387461499689,
+        "pair_ratio": 2.2565258648977506
+      }
+    },
+    {
+      "tile": 13,
+      "region": 2,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 7.270778245027177,
+      "Lr2": 7.2659822964798995,
+      "Lr_sum": 14.536760541507077,
+      "Lr_action_dependence": false,
+      "Lf1": 2.324614232296834,
+      "Lf2": 1.6724113508306022,
+      "Lf_sum": 2.324614232296834,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 570,
+        "index_b": 572,
+        "source_state_a": [
+          0.009291814640164375,
+          0.9143996834754944
+        ],
+        "source_state_b": [
+          0.008267594501376152,
+          0.9145792722702026
+        ],
+        "next_state_a": [
+          0.04477544128894806,
+          0.9144750237464905
+        ],
+        "next_state_b": [
+          0.04245666787028313,
+          0.9137921333312988
+        ],
+        "denominator_distance": 0.0010398456750326608,
+        "numerator": 0.002417240055573232,
+        "pair_ratio": 2.324614232296834
+      }
+    },
+    {
+      "tile": 14,
+      "region": 1,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 7.268164210185181,
+      "Lr2": 7.26411874534023,
+      "Lr_sum": 14.53228295552541,
+      "Lr_action_dependence": false,
+      "Lf1": 2.617313369661479,
+      "Lf2": 1.9104446222093512,
+      "Lf_sum": 2.617313369661479,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 233,
+        "index_b": 235,
+        "source_state_a": [
+          0.8400619626045227,
+          0.5865099430084229
+        ],
+        "source_state_b": [
+          0.841088056564331,
+          0.5866743326187134
+        ],
+        "next_state_a": [
+          0.8392703533172607,
+          0.547612726688385
+        ],
+        "next_state_b": [
+          0.8419362306594849,
+          0.5481519103050232
+        ],
+        "denominator_distance": 0.0010391788865862558,
+        "numerator": 0.002719856793332137,
+        "pair_ratio": 2.617313369661479
+      }
+    },
+    {
+      "tile": 14,
+      "region": 1,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 7.268164210185181,
+      "Lr2": 7.26411874534023,
+      "Lr_sum": 14.53228295552541,
+      "Lr_action_dependence": false,
+      "Lf1": 2.147014634059483,
+      "Lf2": 2.2860421973157923,
+      "Lf_sum": 2.2860421973157923,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 841,
+        "index_b": 1599,
+        "source_state_a": [
+          0.5018453598022461,
+          0.6255841255187988
+        ],
+        "source_state_b": [
+          0.500619113445282,
+          0.6247009038925171
+        ],
+        "next_state_a": [
+          0.5021869540214539,
+          0.6647686958312988
+        ],
+        "next_state_b": [
+          0.4994770884513855,
+          0.6626259088516235
+        ],
+        "denominator_distance": 0.0015112116228707061,
+        "numerator": 0.0034546935389565135,
+        "pair_ratio": 2.2860421973157923
+      }
+    },
+    {
+      "tile": 14,
+      "region": 1,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 7.268164210185181,
+      "Lr2": 7.26411874534023,
+      "Lr_sum": 14.53228295552541,
+      "Lr_action_dependence": false,
+      "Lf1": 1.9704712467100238,
+      "Lf2": 1.7088371097358661,
+      "Lf_sum": 1.9704712467100238,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 319,
+        "index_b": 434,
+        "source_state_a": [
+          0.8962470293045044,
+          0.5839425325393677
+        ],
+        "source_state_b": [
+          0.8948439955711365,
+          0.5843165516853333
+        ],
+        "next_state_a": [
+          0.8585759997367859,
+          0.5839880704879761
+        ],
+        "next_state_b": [
+          0.855931282043457,
+          0.5850797891616821
+        ],
+        "denominator_distance": 0.0014520309840072773,
+        "numerator": 0.0028611853033184025,
+        "pair_ratio": 1.9704712467100238
+      }
+    },
+    {
+      "tile": 14,
+      "region": 1,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 7.268164210185181,
+      "Lr2": 7.26411874534023,
+      "Lr_sum": 14.53228295552541,
+      "Lr_action_dependence": false,
+      "Lf1": 1.849106063204636,
+      "Lf2": 1.8590461164629142,
+      "Lf_sum": 1.8590461164629142,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 209,
+        "index_b": 212,
+        "source_state_a": [
+          0.7150079011917114,
+          0.6489708423614502
+        ],
+        "source_state_b": [
+          0.7152359485626221,
+          0.6502073407173157
+        ],
+        "next_state_a": [
+          0.7523737549781799,
+          0.650019109249115
+        ],
+        "next_state_b": [
+          0.7546682357788086,
+          0.6504653692245483
+        ],
+        "denominator_distance": 0.001257351894831868,
+        "numerator": 0.0023374751571144706,
+        "pair_ratio": 1.8590461164629142
+      }
+    },
+    {
+      "tile": 15,
+      "region": 1,
+      "action": 0,
+      "lr_source": "next_tile",
+      "Lr1": 0.779307381416918,
+      "Lr2": 0.8801934169513979,
+      "Lr_sum": 1.6595007983683159,
+      "Lr_action_dependence": false,
+      "Lf1": 2.617313369661479,
+      "Lf2": 1.9104446222093512,
+      "Lf_sum": 2.617313369661479,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 233,
+        "index_b": 235,
+        "source_state_a": [
+          0.8400619626045227,
+          0.5865099430084229
+        ],
+        "source_state_b": [
+          0.841088056564331,
+          0.5866743326187134
+        ],
+        "next_state_a": [
+          0.8392703533172607,
+          0.547612726688385
+        ],
+        "next_state_b": [
+          0.8419362306594849,
+          0.5481519103050232
+        ],
+        "denominator_distance": 0.0010391788865862558,
+        "numerator": 0.002719856793332137,
+        "pair_ratio": 2.617313369661479
+      }
+    },
+    {
+      "tile": 15,
+      "region": 1,
+      "action": 1,
+      "lr_source": "next_tile",
+      "Lr1": 0.779307381416918,
+      "Lr2": 0.8801934169513979,
+      "Lr_sum": 1.6595007983683159,
+      "Lr_action_dependence": false,
+      "Lf1": 2.147014634059483,
+      "Lf2": 2.2860421973157923,
+      "Lf_sum": 2.2860421973157923,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 841,
+        "index_b": 1599,
+        "source_state_a": [
+          0.5018453598022461,
+          0.6255841255187988
+        ],
+        "source_state_b": [
+          0.500619113445282,
+          0.6247009038925171
+        ],
+        "next_state_a": [
+          0.5021869540214539,
+          0.6647686958312988
+        ],
+        "next_state_b": [
+          0.4994770884513855,
+          0.6626259088516235
+        ],
+        "denominator_distance": 0.0015112116228707061,
+        "numerator": 0.0034546935389565135,
+        "pair_ratio": 2.2860421973157923
+      }
+    },
+    {
+      "tile": 15,
+      "region": 1,
+      "action": 2,
+      "lr_source": "next_tile",
+      "Lr1": 0.779307381416918,
+      "Lr2": 0.8801934169513979,
+      "Lr_sum": 1.6595007983683159,
+      "Lr_action_dependence": false,
+      "Lf1": 1.9704712467100238,
+      "Lf2": 1.7088371097358661,
+      "Lf_sum": 1.9704712467100238,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 319,
+        "index_b": 434,
+        "source_state_a": [
+          0.8962470293045044,
+          0.5839425325393677
+        ],
+        "source_state_b": [
+          0.8948439955711365,
+          0.5843165516853333
+        ],
+        "next_state_a": [
+          0.8585759997367859,
+          0.5839880704879761
+        ],
+        "next_state_b": [
+          0.855931282043457,
+          0.5850797891616821
+        ],
+        "denominator_distance": 0.0014520309840072773,
+        "numerator": 0.0028611853033184025,
+        "pair_ratio": 1.9704712467100238
+      }
+    },
+    {
+      "tile": 15,
+      "region": 1,
+      "action": 3,
+      "lr_source": "next_tile",
+      "Lr1": 0.779307381416918,
+      "Lr2": 0.8801934169513979,
+      "Lr_sum": 1.6595007983683159,
+      "Lr_action_dependence": false,
+      "Lf1": 1.849106063204636,
+      "Lf2": 1.8590461164629142,
+      "Lf_sum": 1.8590461164629142,
+      "Lq_empirical_sum": 0.0,
+      "LQ_bellman_bound": null,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 209,
+        "index_b": 212,
+        "source_state_a": [
+          0.7150079011917114,
+          0.6489708423614502
+        ],
+        "source_state_b": [
+          0.7152359485626221,
+          0.6502073407173157
+        ],
+        "next_state_a": [
+          0.7523737549781799,
+          0.650019109249115
+        ],
+        "next_state_b": [
+          0.7546682357788086,
+          0.6504653692245483
+        ],
+        "denominator_distance": 0.001257351894831868,
+        "numerator": 0.0023374751571144706,
+        "pair_ratio": 1.8590461164629142
+      }
+    }
+  ]
+}

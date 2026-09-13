@@ -1,0 +1,968 @@
+{
+  "lipschitz_method_version": 3,
+  "gamma": 0.96,
+  "sigma": 0.0005,
+  "dynamics_sigma": 0.0005,
+  "deterministic_sigma_scale": 0.001,
+  "deterministic_sigma": 5e-07,
+  "theoretical_global_wasserstein_kernel_lipschitz": 1.00000039999992,
+  "estimator": "mean",
+  "min_pair_distance": 0.04,
+  "neighbor_category_pairs": [
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ]
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ]
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ]
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ]
+    }
+  ],
+  "Lf_grouping": "source_category_action_pair",
+  "constants": [
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 0,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "n_i_r1": 197,
+      "n_j_r1": 91,
+      "n_i_r2": 96,
+      "n_j_r2": 142,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 100,
+      "pairs_r2": 100,
+      "Lf1": 1.0000000106491977,
+      "Lf2": 1.0000000056513954,
+      "Lf_sum": 1.0000000106491977,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 43,
+        "index_b": 64,
+        "source_state_a": [
+          0.5383477807044983,
+          0.5032333135604858
+        ],
+        "source_state_b": [
+          0.46145889163017273,
+          0.6299635171890259
+        ],
+        "fitted_mean_next_a": [
+          0.538355726015108,
+          0.4632163813394448
+        ],
+        "fitted_mean_next_b": [
+          0.46146683694078244,
+          0.5899465849679848
+        ],
+        "fitted_sigma_a": 0.0005710132785358314,
+        "fitted_sigma_b": 0.0005255756695322643,
+        "source_distance": 0.1482310553656526,
+        "wasserstein_distance": 0.14823106929374755,
+        "pair_ratio": 1.0000000939620575
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 1,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "n_i_r1": 165,
+      "n_j_r1": 96,
+      "n_i_r2": 111,
+      "n_j_r2": 156,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 100,
+      "pairs_r2": 100,
+      "Lf1": 1.000000014435518,
+      "Lf2": 1.0000000057690768,
+      "Lf_sum": 1.000000014435518,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 129,
+        "index_b": 60,
+        "source_state_a": [
+          0.5389989018440247,
+          0.5121651887893677
+        ],
+        "source_state_b": [
+          0.4997260570526123,
+          0.6305434703826904
+        ],
+        "fitted_mean_next_a": [
+          0.5389907446253711,
+          0.5521683747406387
+        ],
+        "fitted_mean_next_b": [
+          0.4997178998339588,
+          0.6705466563339615
+        ],
+        "fitted_sigma_a": 0.000566923454273709,
+        "fitted_sigma_b": 0.000520230663906958,
+        "source_distance": 0.12472278817841742,
+        "wasserstein_distance": 0.12472280565891598,
+        "pair_ratio": 1.000000140154809
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 2,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "n_i_r1": 177,
+      "n_j_r1": 85,
+      "n_i_r2": 106,
+      "n_j_r2": 129,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 1,
+      "pairs_rejected_below_gap_r2": 1,
+      "pairs_r1": 99,
+      "pairs_r2": 99,
+      "Lf1": 1.000000012737528,
+      "Lf2": 1.0000000048625401,
+      "Lf_sum": 1.000000012737528,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 144,
+        "index_b": 24,
+        "source_state_a": [
+          0.5037007331848145,
+          0.5131013989448547
+        ],
+        "source_state_b": [
+          0.49357494711875916,
+          0.6267018914222717
+        ],
+        "fitted_mean_next_a": [
+          0.4636909353693004,
+          0.5130980293031326
+        ],
+        "fitted_mean_next_b": [
+          0.4535651493032451,
+          0.6266985217805496
+        ],
+        "fitted_sigma_a": 0.0005648700658248225,
+        "fitted_sigma_b": 0.0005210898265032827,
+        "source_distance": 0.11405088090219731,
+        "wasserstein_distance": 0.11405089770793524,
+        "pair_ratio": 1.0000001473529867
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 2,
+      "action": 3,
+      "tile_edges": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "n_i_r1": 170,
+      "n_j_r1": 89,
+      "n_i_r2": 108,
+      "n_j_r2": 139,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 1,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 99,
+      "pairs_r2": 100,
+      "Lf1": 1.0000000160668432,
+      "Lf2": 1.0000000088921905,
+      "Lf_sum": 1.0000000160668432,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 0,
+        "index_b": 34,
+        "source_state_a": [
+          0.5054159760475159,
+          0.5056148171424866
+        ],
+        "source_state_b": [
+          0.49258989095687866,
+          0.6255434155464172
+        ],
+        "fitted_mean_next_a": [
+          0.5454087340476322,
+          0.5056223258474166
+        ],
+        "fitted_mean_next_b": [
+          0.532582648956995,
+          0.6255509242513473
+        ],
+        "fitted_sigma_a": 0.0005679938509110592,
+        "fitted_sigma_b": 0.0005212274152342056,
+        "source_distance": 0.12061250836411432,
+        "wasserstein_distance": 0.12061252649738566,
+        "pair_ratio": 1.0000001503432072
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 0,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "n_i_r1": 197,
+      "n_j_r1": 469,
+      "n_i_r2": 96,
+      "n_j_r2": 476,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 1,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 99,
+      "pairs_r2": 100,
+      "Lf1": 1.0000001037872934,
+      "Lf2": 1.000000091158746,
+      "Lf_sum": 1.0000001037872934,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 184,
+        "index_b": 263,
+        "source_state_a": [
+          0.778752863407135,
+          0.5874958634376526
+        ],
+        "source_state_b": [
+          0.7855027318000793,
+          0.43072709441185
+        ],
+        "fitted_mean_next_a": [
+          0.7787608087177447,
+          0.5474789312166115
+        ],
+        "fitted_mean_next_b": [
+          0.785510677110689,
+          0.39071016219080895
+        ],
+        "fitted_sigma_a": 0.0005254252729105949,
+        "fitted_sigma_b": 0.0006202802974176278,
+        "source_distance": 0.15691401360358964,
+        "wasserstein_distance": 0.1569140709437457,
+        "pair_ratio": 1.000000365424061
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 1,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "n_i_r1": 165,
+      "n_j_r1": 488,
+      "n_i_r2": 111,
+      "n_j_r2": 464,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 100,
+      "pairs_r2": 100,
+      "Lf1": 1.0000000959559536,
+      "Lf2": 1.0000000837361247,
+      "Lf_sum": 1.0000000959559536,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 121,
+        "index_b": 219,
+        "source_state_a": [
+          0.6605901718139648,
+          0.5088561177253723
+        ],
+        "source_state_b": [
+          0.7012880444526672,
+          0.39108696579933167
+        ],
+        "fitted_mean_next_a": [
+          0.6605820145953113,
+          0.5488593036766434
+        ],
+        "fitted_mean_next_b": [
+          0.7012798872340137,
+          0.4310901517506027
+        ],
+        "fitted_sigma_a": 0.000573007294847231,
+        "fitted_sigma_b": 0.0006442650833821301,
+        "source_distance": 0.12460292927012144,
+        "wasserstein_distance": 0.12460297002094188,
+        "pair_ratio": 1.000000327045445
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 2,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "n_i_r1": 177,
+      "n_j_r1": 502,
+      "n_i_r2": 106,
+      "n_j_r2": 464,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 100,
+      "pairs_r2": 100,
+      "Lf1": 1.000000080815891,
+      "Lf2": 1.000000079982113,
+      "Lf_sum": 1.000000080815891,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 149,
+        "index_b": 443,
+        "source_state_a": [
+          0.6224386096000671,
+          0.5942209362983704
+        ],
+        "source_state_b": [
+          0.6771650910377502,
+          0.3998435139656067
+        ],
+        "fitted_mean_next_a": [
+          0.5824288117845531,
+          0.5942175666566483
+        ],
+        "fitted_mean_next_b": [
+          0.6371552932222362,
+          0.3998401443238846
+        ],
+        "fitted_sigma_a": 0.0005215831917566348,
+        "fitted_sigma_b": 0.0006389668176875622,
+        "source_distance": 0.20193456881692803,
+        "wasserstein_distance": 0.20193463705147247,
+        "pair_ratio": 1.0000003379042273
+      }
+    },
+    {
+      "category_i": 1,
+      "category_j": 4,
+      "action": 3,
+      "tile_edges": [
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "n_i_r1": 170,
+      "n_j_r1": 495,
+      "n_i_r2": 108,
+      "n_j_r2": 450,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 100,
+      "pairs_r2": 100,
+      "Lf1": 1.0000000971766734,
+      "Lf2": 1.0000000874750214,
+      "Lf_sum": 1.0000000971766734,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 16,
+        "index_b": 264,
+        "source_state_a": [
+          0.6625699400901794,
+          0.6186229586601257
+        ],
+        "source_state_b": [
+          0.6218867301940918,
+          0.3915936350822449
+        ],
+        "fitted_mean_next_a": [
+          0.7025626980902958,
+          0.6186304673650558
+        ],
+        "fitted_mean_next_b": [
+          0.6618794881942082,
+          0.3916011437871749
+        ],
+        "fitted_sigma_a": 0.000506591410793106,
+        "fitted_sigma_b": 0.0006431882058898978,
+        "source_distance": 0.23064569653839037,
+        "wasserstein_distance": 0.23064577743598108,
+        "pair_ratio": 1.000000350743985
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 0,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "n_i_r1": 91,
+      "n_j_r1": 445,
+      "n_i_r2": 142,
+      "n_j_r2": 504,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 100,
+      "pairs_r2": 100,
+      "Lf1": 1.0000000227199848,
+      "Lf2": 1.0000000153613946,
+      "Lf_sum": 1.0000000227199848,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 24,
+        "index_b": 184,
+        "source_state_a": [
+          0.4565582275390625,
+          0.5810878872871399
+        ],
+        "source_state_b": [
+          0.499269038438797,
+          0.3486582636833191
+        ],
+        "fitted_mean_next_a": [
+          0.4565661728496722,
+          0.5410709550660988
+        ],
+        "fitted_mean_next_b": [
+          0.4992769837494067,
+          0.30864133146227807
+        ],
+        "fitted_sigma_a": 0.0005405624733925825,
+        "fitted_sigma_b": 0.0006194291574815865,
+        "source_distance": 0.236321271358138,
+        "wasserstein_distance": 0.2363212976780434,
+        "pair_ratio": 1.0000001113734083
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 1,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "n_i_r1": 96,
+      "n_j_r1": 422,
+      "n_i_r2": 156,
+      "n_j_r2": 509,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 100,
+      "pairs_r2": 100,
+      "Lf1": 1.000000024969874,
+      "Lf2": 1.0000000163882043,
+      "Lf_sum": 1.000000024969874,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 58,
+        "index_b": 277,
+        "source_state_a": [
+          0.49991029500961304,
+          0.5522209405899048
+        ],
+        "source_state_b": [
+          0.4997745752334595,
+          0.428639680147171
+        ],
+        "fitted_mean_next_a": [
+          0.49990213779095954,
+          0.5922241265411758
+        ],
+        "fitted_mean_next_b": [
+          0.499766418014806,
+          0.4686428660984421
+        ],
+        "fitted_sigma_a": 0.0005491420414554487,
+        "fitted_sigma_b": 0.0005982529753022671,
+        "source_distance": 0.12358133496799763,
+        "wasserstein_distance": 0.12358135448456647,
+        "pair_ratio": 1.000000157924891
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 2,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "n_i_r1": 85,
+      "n_j_r1": 457,
+      "n_i_r2": 129,
+      "n_j_r2": 497,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 100,
+      "pairs_r2": 100,
+      "Lf1": 1.000000025810259,
+      "Lf2": 1.0000000189650242,
+      "Lf_sum": 1.000000025810259,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 65,
+        "index_b": 65,
+        "source_state_a": [
+          0.4591740369796753,
+          0.5438351035118103
+        ],
+        "source_state_b": [
+          0.4629921317100525,
+          0.40347766876220703
+        ],
+        "fitted_mean_next_a": [
+          0.41916423916416123,
+          0.5438317338700882
+        ],
+        "fitted_mean_next_b": [
+          0.42298233389453843,
+          0.40347429912048494
+        ],
+        "fitted_sigma_a": 0.0005526825629515158,
+        "fitted_sigma_b": 0.0005998757397553179,
+        "source_distance": 0.14040935630099324,
+        "wasserstein_distance": 0.14040937216315422,
+        "pair_ratio": 1.000000112970826
+      }
+    },
+    {
+      "category_i": 2,
+      "category_j": 3,
+      "action": 3,
+      "tile_edges": [
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "n_i_r1": 89,
+      "n_j_r1": 455,
+      "n_i_r2": 139,
+      "n_j_r2": 472,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 100,
+      "pairs_r2": 100,
+      "Lf1": 1.0000000200063626,
+      "Lf2": 1.0000000157936275,
+      "Lf_sum": 1.0000000200063626,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R1",
+      "Lf_witness": {
+        "index_a": 61,
+        "index_b": 227,
+        "source_state_a": [
+          0.46284571290016174,
+          0.5103774666786194
+        ],
+        "source_state_b": [
+          0.4626842141151428,
+          0.3927149772644043
+        ],
+        "fitted_mean_next_a": [
+          0.5028384709002781,
+          0.5103849753835494
+        ],
+        "fitted_mean_next_b": [
+          0.5026769721152592,
+          0.39272248596933435
+        ],
+        "fitted_sigma_a": 0.0005639101045018583,
+        "fitted_sigma_b": 0.0006034204084199499,
+        "source_distance": 0.11766260024752062,
+        "wasserstein_distance": 0.11766261351481222,
+        "pair_ratio": 1.0000001127570832
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 0,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_r1": 445,
+      "n_j_r1": 469,
+      "n_i_r2": 504,
+      "n_j_r2": 476,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 1,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 99,
+      "pairs_r2": 100,
+      "Lf1": 1.0000000250343823,
+      "Lf2": 1.0000000262064455,
+      "Lf_sum": 1.0000000262064455,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 15,
+        "index_b": 148,
+        "source_state_a": [
+          0.457048237323761,
+          0.42972153425216675
+        ],
+        "source_state_b": [
+          0.5395174622535706,
+          0.3491411805152893
+        ],
+        "fitted_mean_next_a": [
+          0.4570561826343707,
+          0.3897046020311257
+        ],
+        "fitted_mean_next_b": [
+          0.5395254075641802,
+          0.3091242482942483
+        ],
+        "fitted_sigma_a": 0.0005899531765477836,
+        "fitted_sigma_b": 0.0006304954072538946,
+        "source_distance": 0.11530119890479813,
+        "wasserstein_distance": 0.11530121316026455,
+        "pair_ratio": 1.000000123636758
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 1,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_r1": 422,
+      "n_j_r1": 488,
+      "n_i_r2": 509,
+      "n_j_r2": 464,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 1,
+      "pairs_r1": 100,
+      "pairs_r2": 99,
+      "Lf1": 1.0000000195849725,
+      "Lf2": 1.0000000263430038,
+      "Lf_sum": 1.0000000263430038,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 324,
+        "index_b": 382,
+        "source_state_a": [
+          0.4625304937362671,
+          0.39004573225975037
+        ],
+        "source_state_b": [
+          0.5727766156196594,
+          0.35552388429641724
+        ],
+        "fitted_mean_next_a": [
+          0.4625223365176136,
+          0.4300489182110214
+        ],
+        "fitted_mean_next_b": [
+          0.5727684584010059,
+          0.3955270702476883
+        ],
+        "fitted_sigma_a": 0.000604278479018272,
+        "fitted_sigma_b": 0.0006396399665553583,
+        "source_distance": 0.11552473924286212,
+        "wasserstein_distance": 0.11552475006681853,
+        "pair_ratio": 1.0000000936938398
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 2,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_r1": 457,
+      "n_j_r1": 502,
+      "n_i_r2": 497,
+      "n_j_r2": 464,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 0,
+      "pairs_r1": 100,
+      "pairs_r2": 100,
+      "Lf1": 1.000000025581165,
+      "Lf2": 1.0000000270077212,
+      "Lf_sum": 1.0000000270077212,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 165,
+        "index_b": 243,
+        "source_state_a": [
+          0.4533282518386841,
+          0.42858996987342834
+        ],
+        "source_state_b": [
+          0.5003901720046997,
+          0.38904908299446106
+        ],
+        "fitted_mean_next_a": [
+          0.41331845402317,
+          0.42858660023170625
+        ],
+        "fitted_mean_next_b": [
+          0.46038037418918565,
+          0.38904571335273896
+        ],
+        "fitted_sigma_a": 0.0005896304730642897,
+        "fitted_sigma_b": 0.0006141402845872563,
+        "source_distance": 0.0614679271237262,
+        "wasserstein_distance": 0.06146793689680366,
+        "pair_ratio": 1.000000158994746
+      }
+    },
+    {
+      "category_i": 3,
+      "category_j": 4,
+      "action": 3,
+      "tile_edges": [
+        [
+          1,
+          2
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "n_i_r1": 455,
+      "n_j_r1": 495,
+      "n_i_r2": 472,
+      "n_j_r2": 450,
+      "pairs_considered_r1": 100,
+      "pairs_considered_r2": 100,
+      "pairs_rejected_below_gap_r1": 0,
+      "pairs_rejected_below_gap_r2": 1,
+      "pairs_r1": 100,
+      "pairs_r2": 99,
+      "Lf1": 1.000000026054502,
+      "Lf2": 1.000000026756028,
+      "Lf_sum": 1.000000026756028,
+      "mean_map_Lf": 1.0,
+      "theoretical_global_K_P_verification": 1.00000039999992,
+      "Lf_behavior": "R2",
+      "Lf_witness": {
+        "index_a": 48,
+        "index_b": 130,
+        "source_state_a": [
+          0.38301917910575867,
+          0.46958833932876587
+        ],
+        "source_state_b": [
+          0.5421205759048462,
+          0.3498222529888153
+        ],
+        "fitted_mean_next_a": [
+          0.4230119371058751,
+          0.4695958480336959
+        ],
+        "fitted_mean_next_b": [
+          0.5821133339049626,
+          0.34982976169374536
+        ],
+        "fitted_sigma_a": 0.0005681951392213342,
+        "fitted_sigma_b": 0.0006312111298368035,
+        "source_distance": 0.19914108039430034,
+        "wasserstein_distance": 0.19914110033501203,
+        "pair_ratio": 1.000000100133592
+      }
+    }
+  ]
+}
